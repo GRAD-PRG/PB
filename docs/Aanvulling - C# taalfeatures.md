@@ -4,6 +4,8 @@
 
 C# is een taal die continu evolueert. Elke nieuwe versie brengt features die het schrijven van code eenvoudiger, leesbaarder of performanter maken. Dit document bespreekt een reeks taalfeatures die in verschillende C#-versies zijn geïntroduceerd, van C# 2.0 tot en met C# 14.
 
+In dit document vind je een overzicht van elder niet besproken taalfeatures, die striks gezien ook niet tot de scope behoren van dit opleidingsonderdeel (geen verplichte stof).
+
 Voor elke feature vind je een korte uitleg, voorbeeldcode en een verwijzing naar de officiële Microsoft-documentatie.
 
 ## Overzicht per C#-versie

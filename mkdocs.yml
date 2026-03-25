@@ -44,4 +44,20 @@ plugins:
   - search:
       lang: nl
 
-
+nav:
+  - Home: index.md
+  - Versiebeheer:
+    - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
+  - Generatieve AI:
+    - GitHub Copilot in Visual Studio: Aanvulling - GitHub Copilot in Visual Studio.md
+  - Algoritmisch:
+    - Iteratie statements: Aanvulling bij D06 - Iteratie statements - voordelen en verschillen.md
+  - Datatypes (value vs reference):
+    - Nullable datatypes: Aanvulling bij D12 - Nullable datatypes en null checks.md
+  - Numerieke en temporal informatie:
+    - Numerieke datatypes: Aanvulling bij D12 - 2.1. Numerieke datatypes en (impliciete) afrondingen.md
+    - Afronden van komagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van komagetallen - belgische btw.md
+    - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van strings.md
+  - OOP:
+    - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
+  - C# taalfeatures: C# taalfeatures.md
