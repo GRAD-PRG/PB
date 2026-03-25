@@ -1,6 +1,6 @@
 site_name: Programmeren Basis
-site_description: Aanvullend cursusmateriaal C# — Graduaat Programmeren HOGENT
-site_url: https://<username>.github.io/<repo-naam>/  # Pas aan!
+site_description: Leermateriaal — Graduaat Programmeren HOGENT
+site_url: https://GRAD-PRG.github.io/PB/
 
 theme:
   name: material
