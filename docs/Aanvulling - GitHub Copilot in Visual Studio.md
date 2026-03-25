@@ -1,4 +1,4 @@
-# GitHub Copilot in Visual Studio
+# GitHub Copilot in Visual Studio 2026
 
 ## 1. Wat is GitHub Copilot?
 

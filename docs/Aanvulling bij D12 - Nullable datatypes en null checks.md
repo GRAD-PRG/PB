@@ -1,4 +1,4 @@
-# Null ?!?
+# Null(able datatypes) ?, Null checks ?: ?. ?? ??= ! en Null warnings
 
 ## Het probleem zonder nullable datatypes
 

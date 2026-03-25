@@ -1,9 +1,5 @@
 # Git & GitHub met Visual Studio 2026
 
-**Programmeren Basis**
-
----
-
 ## 1. Wat is versiebeheer?
 
 Als programmeur werk je voortdurend aan code: je schrijft nieuwe functies, je past bestaande code aan, je lost bugs op. Soms werkt een aanpassing niet zoals verwacht en wil je terug naar een vorige versie. Of je wilt samenwerken met iemand anders, code uitwisselen en nagaan wie juist welke aanpassing heeft verricht. Precies hiervoor bestaat versiebeheer.
@@ -15,8 +11,6 @@ Versiebeheer (Engels: *version control*) is een systeem dat elke wijziging aan j
 
 Versiebeheer is standaard in de professionele softwarewereld. Vrijwel elk bedrijf dat software ontwikkelt, gebruikt het dagelijks. Het is dus een vaardigheid die je sowieso nodig zult hebben.
 
----
-
 ## 2. Git
 
 Git is niet het enige, maar wel het populairste versiebeheersysteem.
@@ -25,8 +19,6 @@ Git is gratis, open source, en werkt lokaal op je eigen computer. Dat betekent d
 
 > **Belangrijk:** Git is de motor onder de motorkap. Het is de software die het eigenlijke versiebeheer doet. Git zelf heeft geen website of grafische interface — het is een programma dat je via commando's kunt aansturen (zie hiervoor het opleidingsonderdeel Digitale Werkomgeving 1/2), maar dat hoeft niet: Visual Studio doet dat voor jou.
 
----
-
 ## 3. GitHub
 
 GitHub ([github.com](https://github.com)) is een online platform waar je je Git-repositories kunt opslaan en delen. Het is eigendom van Microsoft (overgenomen in 2018). GitHub voegt een webinterface, samenwerking en extra tools toe bovenop Git.
@@ -34,8 +26,6 @@ GitHub ([github.com](https://github.com)) is een online platform waar je je Git-
 Je kunt GitHub vergelijken met OneDrive of Google Drive, maar dan specifiek ontworpen voor code. Het verschil: GitHub houdt niet gewoon bestanden bij, maar de volledige geschiedenis van elke wijziging.
 
 Er bestaan ook alternatieven voor GitHub, zoals GitLab en Bitbucket. Ze doen vergelijkbare dingen, maar in deze cursus gebruiken we GitHub.
-
----
 
 ## 4. Wat is een repository?
 
@@ -50,8 +40,6 @@ Een repository kan twee zichtbaarheden hebben:
 
 - **Public:** iedereen op het internet kan de code bekijken en clonen. Maar niet iedereen kan er wijzigingen naar uploaden — dat kunnen alleen mensen die als collaborator zijn toegevoegd. Een public repo betekent dus niet dat iedereen zomaar je code kan aanpassen.
 - **Private:** alleen jij en de mensen die je expliciet toegang geeft (collaborators) kunnen de repository zien. Voor opdrachten gebruiken we private repositories zodat je code niet publiek zichtbaar is.
-
----
 
 ## 5. Clone en fork
 
@@ -79,8 +67,6 @@ Fork is geen Git-concept maar een GitHub-functie. Git zelf kent het woord "fork"
 | **Kun je pushen?**       | Alleen als je collaborator bent    | Ja, naar je eigen fork                                    |
 
 
----
-
 ## 6. Belangrijke termen
 
 Hieronder vind je de belangrijkste Git-termen die je in deze cursus tegenkomt. Je hoeft ze niet uit het hoofd te leren — je leert ze door ze te gebruiken.
@@ -99,7 +85,6 @@ Hieronder vind je de belangrijkste Git-termen die je in deze cursus tegenkomt. J
 | **issue**        | Een ticket of discussiepunt op GitHub, gekoppeld aan een repository. Handig voor feedback, vragen of te melden problemen.                                                                   |
 | **merge conflict** | Ontstaat wanneer twee personen (of jijzelf op twee plekken) dezelfde regels in hetzelfde bestand hebben gewijzigd. Git kan dan niet automatisch kiezen welke versie juist is.              |
 
----
 
 ## 7. De basisworkflow
 
@@ -110,8 +95,6 @@ De dagelijkse Git-workflow is eigenlijk heel eenvoudig en bestaat uit drie stapp
 3. **Push** — upload je commits naar GitHub.
 
 > **Onthoud:** Je moet altijd eerst committen vóór je kunt pushen. Een push zonder commit doet niets. Commit = lokaal opslaan van een snapshot. Push = dat snapshot uploaden naar GitHub.
-
----
 
 ## 8. Voorbereidingen (eenmalig)
 
@@ -139,8 +122,6 @@ Je hoeft dit maar één keer te doen. Visual Studio onthoudt je account.
 GitHub stuurt standaard e-mailnotificaties wanneer iemand je toevoegt als collaborator, je tagt in een issue (`@gebruikersnaam`), of reageert op een issue waar je bij betrokken bent. Je hoeft hier niets voor te configureren — het werkt automatisch zolang je e-mailadres geverifieerd is (wat onderdeel is van de registratie).
 
 > **Tip:** Controleer af en toe je spam-folder als je geen meldingen lijkt te ontvangen. E-mails van GitHub (`noreply@github.com`) worden soms als spam gefilterd.
-
----
 
 ## 9. Code ophalen van de lector of iemand anders (clonen)
 
@@ -177,8 +158,6 @@ Met de solution (die gedeeld wordt) open in Visual Studio:
 
 Op het GitHub-platform kan je makkelijk de link terugvinden die je kan delen.
 
----
-
 ## 10. Een eigen kopie maken (forken)
 
 Soms wil je niet alleen code ophalen, maar ook je eigen versie bijhouden op GitHub — zodat je kunt pushen, anderen kunt toevoegen als collaborator, en de lector feedback kan geven. Dan gebruik je een fork.
@@ -193,8 +172,6 @@ Soms wil je niet alleen code ophalen, maar ook je eigen versie bijhouden op GitH
 Je hebt nu een eigen repository op GitHub én een lokale werkkopie. Als je commit en pusht, gaan je wijzigingen naar jouw fork — niet naar de repository van de lector.
 
 > **Wanneer clone, wanneer fork?** Gebruik clone als je alleen code wilt ophalen om mee te oefenen (bv. voorbeeldcode bekijken). Gebruik fork als je een eigen versie nodig hebt op GitHub waar je naartoe kunt pushen en waar anderen aan kunnen samenwerken.
-
----
 
 ## 11. Je eigen repository aanmaken
 
@@ -235,8 +212,6 @@ Nadat je aan je code hebt gewerkt:
 
 > **Goede gewoonte:** Commit regelmatig en met duidelijke berichten. Niet één grote commit op het einde van de week met "alles" als bericht, maar meerdere kleine commits zoals `Oefening 1 afgewerkt`, `Bug in oefening 2 opgelost`. Dit helpt je om terug te kijken naar je werk en maakt feedback door de lector eenvoudiger.
 
----
-
 ## 12. Terugkijken naar oude versies
 
 Een van de grootste voordelen van Git is dat je altijd kunt terugkijken naar eerdere versies van je code. Elke commit die je hebt gemaakt is bewaard en kun je opnieuw bekijken.
@@ -264,8 +239,6 @@ Dit is de eenvoudigste en veiligste manier om oude code terug te halen. Er besta
 
 > **Geruststelling:** Git gooit nooit zomaar iets weg. Zelfs als je per ongeluk code verwijdert en dat commit, staat de oude versie nog in je geschiedenis. Je kunt altijd terugkijken en terughalen.
 
----
-
 ## 13. Feedback via Issues
 
 De lector kan feedback geven via Issues op GitHub. Een issue is een soort ticket of notitie, gekoppeld aan je repository. Hieronder lees je hoe je ermee werkt.
@@ -286,8 +259,6 @@ Onderaan elk issue vind je een tekstveld waar je een reactie kunt schrijven. Geb
 Als je de feedback hebt verwerkt en het probleem is opgelost, kun je het issue sluiten. Dit doe je onderaan het issue via de knop **Close issue** (of **Close with comment** als je er meteen een reactie bij wilt schrijven). Gesloten issues verdwijnen uit de standaardlijst, maar zijn niet verwijderd — je kunt ze altijd terugvinden door op "Closed" te klikken in het Issues-overzicht.
 
 > **Tip:** Behandel issues als een to-do-lijst. Nieuwe feedback van de lector komt binnen als open issue. Na het verwerken sluit je het. Zo houd je een duidelijk overzicht van wat nog te doen is.
-
----
 
 ## 14. Samenvatting
 
