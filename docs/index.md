@@ -5,4 +5,3 @@
 
 !!! warning "Let op"
     Dit materiaal is een aanvullend op het reguliere leermateriaal, geen vervanging.  Wat hier behandeld wordt is te kennen, tenzij anders vermeld.
-
