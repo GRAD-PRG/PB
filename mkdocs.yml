@@ -66,6 +66,9 @@ nav:
     - D06: deel-06.md
     - D06: deel-06-oefeningen.md
     - D06: deel-06-oplossingen.md
+    - DGFX1: deel-gfx1.md
+    - DGFX1: deel-gfx1-oefeningen.md
+    - DGFX1: deel-gfx1-oplossingen.md
     - D07: deel-07.md
     - D07: deel-07-oefeningen.md
     - D07: deel-07-oplossingen.md
@@ -75,6 +78,9 @@ nav:
     - D09: deel-09.md
     - D09: deel-09-oefeningen.md
     - D09: deel-09-oplossingen.md
+    - DPA1: deel-pa1.md
+    - DPA1: deel-pa1-oefeningen.md
+    - DPA1: deel-pa1-oplossingen.md
     - D10: deel-10.md
     - D10: deel-10-oefeningen.md
     - D10: deel-10-oplossingen.md
@@ -82,13 +88,23 @@ nav:
     - D11: deel-11.md
     - D11: deel-11-oefeningen.md
     - D11: deel-11-oplossingen.md
+    - DPA2: deel-pa2.md
+    - DPA2: deel-pa2-oefeningen.md
+    - DPA2: deel-pa2-oplossingen.md
+    - DSK1: deel-sk1.md
     - D12: deel-12.md
     - D12: deel-12-oefeningen.md
     - D12: deel-12-oplossingen.md
+    - DEBD: deel-ebd.md
+    - DEBD: deel-ebd-oefeningen.md
+    - DEBD: deel-ebd-oplossingen.md
     - D13: deel-13.md
     - D13: deel-13-oefeningen.md
     - D13: deel-13-oplossingen.md
     - D13: deel-13-verdieping.md
+    - DPA3: deel-pa3.md
+    - DPA3: deel-pa3-oefeningen.md
+    - DPA3: deel-pa3-oplossingen.md
     - D14: deel-14.md
     - D14: deel-14-oefeningen.md
     - D14: deel-14-oplossingen.md
@@ -96,15 +112,24 @@ nav:
     - D15: deel-15-oefeningen.md
     - D15: deel-15-oplossingen.md
     - D15: deel-15-verdieping.md
+    - DPA4: deel-pa4.md
+    - DPA4: deel-pa4-oefeningen.md
+    - DPA4: deel-pa4-oplossingen.md
     - D16: deel-16.md
     - D16: deel-16-oefeningen.md
     - D16: deel-16-oplossingen.md
+    - DPA5: deel-pa5.md
+    - DPA5: deel-pa5-oefeningen.md
+    - DPA5: deel-pa5-oplossingen.md
     - D17: deel-17.md
     - D17: deel-17-oefeningen.md
     - D17: deel-17-oplossingen.md
     - D18: deel-18.md
     - D18: deel-18-oefeningen.md
     - D18: deel-18-oplossingen.md
+    - DGFX2: deel-gfx2.md
+    - DGFX2: deel-gfx2-oefeningen.md
+    - DGFX2: deel-gfx2-oplossingen.md
   - AANVULLING:
     - versiebeheer:
       - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
