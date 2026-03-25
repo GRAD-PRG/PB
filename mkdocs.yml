@@ -7,14 +7,14 @@ theme:
   language: nl
   palette:
     - scheme: default
-      primary: light green
-      accent: light green
+      primary: grey
+      accent: grey
       toggle:
         icon: material/brightness-7
         name: Donkere modus
     - scheme: slate
-      primary: light green
-      accent: light green
+      primary: grey
+      accent: grey
       toggle:
         icon: material/brightness-4
         name: Lichte modus
