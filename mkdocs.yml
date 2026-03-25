@@ -1,0 +1,57 @@
+site_name: Programmeren Basis
+site_description: Aanvullend cursusmateriaal C# — Graduaat Programmeren HOGENT
+site_url: https://<username>.github.io/<repo-naam>/  # Pas aan!
+
+theme:
+  name: material
+  language: nl
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Donkere modus
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Lichte modus
+  features:
+    - navigation.sections      # Secties uitklappen in navigatie
+    - navigation.top            # "Terug naar boven"-knop
+    - search.suggest            # Zoeksuggesties
+    - search.highlight          # Zoekresultaten markeren
+    - content.code.copy         # Kopieerknop bij codeblokken
+    - content.code.annotate     # Annotaties in code
+
+markdown_extensions:
+  - admonition                  # Callout-blokken (tip, warning, note, ...)
+  - pymdownx.details            # Inklapbare blokken
+  - pymdownx.superfences        # Betere code fences
+  - pymdownx.highlight:         # Syntax highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite       # Inline code highlighting
+  - pymdownx.tabbed:            # Tabs in content
+      alternate_style: true
+  - attr_list                   # Attributen op elementen
+  - md_in_html                  # Markdown binnen HTML-blokken
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: nl
+
+nav:
+  - Home: index.md
+  # Voeg hier je pagina's toe, bv.:
+  # - Datatypes:
+  #   - Numerieke types: datatypes/numeriek.md
+  #   - Nullable types: datatypes/nullable.md
+  # - Controlestructuren:
+  #   - If/else: controle/if-else.md
+  #   - Lussen: controle/lussen.md
+  # - Git & GitHub:
+  #   - Eerste stappen: git/eerste-stappen.md
