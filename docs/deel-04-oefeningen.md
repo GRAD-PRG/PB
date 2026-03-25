@@ -1,0 +1,237 @@
+# Programmeren Basis - Deel 04 - Oefeningen
+> **Opmerking**
+>
+> We raden je aan om zoveel mogelijk oefeningen te maken, dat is de beste voorbereiding.
+>
+> Als je te ver achterop raakt bij het volgen van deze cursus, dan zul je daar wellicht niet de tijd voor vinden want het zijn er behoorlijk veel.
+
+> **Waarschuwing**
+>
+> Enkele aandachtspunten bij het oplossen van deze oefeningen :
+
+## Debugging
+### Oefening D04muntstukken
+Momenteel loopt er één en ander fout in een bepaald stuk code, de code levert een foutief programmaverloop, of op zijn minst foutieve uitvoer op.
+
+```csharp
+int muntstukkenVan2Euro;
+Console.Write("Aantal muntstukken van 2 euro?: ");
+muntstukkenVan2Euro = int.Parse(Console.ReadLine());
+
+int muntstukkenVan1Euro = 0;
+Console.Write("Aantal muntstukken van 1 euro?: ");
+muntstukkenVan2Euro = int.Parse(Console.ReadLine());
+
+int muntstukkenVan50Cent;
+Console.Write("Aantal muntstukken van 50 eurocent?: ");
+muntstukkenVan50Cent = int.Parse(Console.ReadLine());
+
+double totaalBedrag = muntstukkenVan2Euro * 2;
+totaalBedrag += muntstukkenVan1Euro;
+totaalBedrag += muntstukkenVan50Cent / 2;
+
+string formuleAlsTekst = $"{muntstukkenVan2Euro} x 2 + ";
+formuleAlsTekst += $"{muntstukkenVan1Euro} x 1 + ";
+formuleAlsTekst += $"{muntstukkenVan50Cent} x 0.5";
+
+Console.WriteLine($"{formuleAlsTekst} = {totaalBedrag} euro");
+```
+
+Indien de gebruiker de getallen *5*, *4* en *3* invoert, bekomen we…​
+
+```csharp
+Aantal muntstukken van 2 euro?: 5
+Aantal muntstukken van 1 euro?: 4
+Aantal muntstukken van 50 eurocent?: 3
+4 x 2 + 0 x 1 + 3 x 0.5 = 9 euro
+```
+
+Dat resultaat is uiteraard niet correct. Het totaal zou *15,5* moeten zijn, maar ook in de formule zouden we *4 x 1* in plaats van *0 x 1* moeten terugvinden.
+
+Indien de gebruiker de getallen *5*, *4* en *3* invoert, zouden we volgende uitvoer moeten bekomen…​
+
+```csharp
+Aantal muntstukken van 2 euro?: 5
+Aantal muntstukken van 1 euro?: 4
+Aantal muntstukken van 50 eurocent?: 3
+5 x 2 + 4 x 1 + 3 x 0.5 = 15,5 euro
+```
+
+Het totaal zou effectief *15,5* moeten zijn, en in de formule moeten we *4 x 1* terugvinden.
+
+Maak gebruik van de debugger om in te schatten waar het foutloopt, en wat er foutloopt. Corrigeer dan ook de code op gepaste wijze.
+
+## If …​ else if …​ else …​ en logische bewerkingen
+### Oefening D04groterofgelijk
+Schrijf een programma dat de gebruiker om twee getallen en naargelang de situatie "het eerste is groter", "het tweede is groter" en "ze zijn gelijk" afbeeldt.
+
+### Oefening D04bmi
+Maak een programma om onderstaand programmaverloop te bekomen…​ . (In het getoonde scenario werd *153* en *84* ingevoerd.
+
+```csharp
+Lengte in cm?: 153
+Gewicht in kg?: 84
+BMI: 35,8836344995515 (zwaarlijvigheid)
+```
+
+Er wordt gevraagd naar de lengte in centimeter en het gewicht in kilogram. Na invoer van de gebruiker zal ons programma de body mass index (gewicht-in-kilogram / lengte-in-meter²) berekenen en afdrukken.
+
+Niet allen het bmi maar ook de bijhorende omschrijving (*ondergewicht*, *normaal gewicht*, *overgewicht*, …​) wordt door het programma afgedrukt.
+
+-   Onder de 18,5: *ondergewicht*.
+
+-   Vanaf 18,5 en minder dan 25: *normaal gewicht*.
+
+-   Vanaf 25 en minder dan 30: *overgewicht*.
+
+-   Vanaf 30 en minder dan 40: *zwaarlijvigheid*.
+
+-   Vanaf 40: *ernstige zwaarlijvigheid*.
+
+### Oefening D04prijsappels
+Schrijf een programma dat de gebruiker vraagt hoeveel kilo appels hij wenst aan te kopen. Druk vervolgens de prijs af. De prijs bedraagt 3 euro per kilo, of 2,5 euro indien minstens 10 kilo wordt afgenomen, 2 euro bij een minimum aankoop van 20 kilo.
+
+Voorbeeld programmaverloop (indien *17* wordt ingevoerd)…​
+
+```csharp
+Aantal kilo aan te kopen appels?: 17
+Prijs: 42,5
+```
+
+### ★ Oefening D04ohm
+Maak een programma dat vraagt aan de gebruiker wat zij/hij wenst te berekenen: *Spanning*, *Weerstand* of *Stroomsterkte*.
+
+Vraag vervolgens de twee andere waarden (indien de gebruiker "Spanning" kiest vraag je aan de gebruiker de stroomsterkte en de weerstand) en bereken de gewenste waarde.
+
+Hier kunnen we de 'wet van Ohm' gebruiken. U = I x R.
+
+Hierin staat de letter U voor spanning, de I staat voor de stroomsterkte, en de R staat voor de weerstand. Of met ander woorden: Spanning = Stroomsterkte x Weerstand
+
+### Oefening D04score
+Schrijf een programma dat de gebruiker om een score vraagt (in procent) en vervolgens de Amerikaanse lettercode weergeeft.
+
+``` nowrap
+A indien score > 82%
+B indien score > 67% en <=82%
+C indien score > 52% en <=67%
+D indien score > 37% en <=52%
+E indien score > 22% en <=37%
+F indien score <= 22%
+```
+
+### ★ Oefening D04patreonsponsor
+Het youtube kanaal "Adrian’s digital basement" kan gesponsord worden via Patreon, met de volgende sponsor niveaus :
+
+``` nowrap
+vanaf 1    Eur : It's a binary buck
+vanaf 2    Eur : Two's Complement
+vanaf 3.5  Eur : Nibble-Size
+vanaf 7    Eur : Glorious 8-bit simplicity
+vanaf 14   Eur : 16-bit is the future
+vanaf 28   Eur : Cooking with 32-bits
+vanaf 55.5 Eur : Commodore 64
+```
+
+Elke sponsor komt in het niveau terecht dat het beste past bij het gedoneerde bedrag. Wie bv. 10Eur doneert, wordt een "Glorious 8-bit simplicity" sponsor.
+
+Let op : minder dan 1 Eur doneren is niet mogelijk!
+
+Schrijf een programma dat de gebruiker om een geldbedrag vraagt en vervolgens het bereikte sponsor niveau (tussen aanhalingstekens!) weergeeft. Gebruik hiervoor interval checking​​ zoals uitgelegd in de cursus.
+
+Een voorbeeld uitvoering :
+
+```csharp
+Hoeveel euro wil je uitgeven : 10
+Dan word je een "Glorious 8-bit simplicity" sponsor.  (1)
+```
+
+1.  Let op de aanhalingstekens rond het sponsor niveau.
+
+Een andere voorbeeld uitvoering :
+
+```csharp
+Hoeveel euro wil je uitgeven : 0.5
+Helaas, voor dat bedrag kun je niet sponsoren.
+```
+
+### ★ Oefening D04inkomprijs
+Op de afterparty van de premiere van de nieuwe kabouter Plop film kost de inkom 10Eur. Wie echter kleiner is dan 160cm en ouder is dan 20jaar mag binnen aan halve prijs!
+
+Schijf een programma dat de gebruiker om de lengte en leeftijd vraagt en vervolgens de inkomprijs toont.
+
+### Oefening D04toelage
+Een bepaalde instantie voorziet in een toelage bovenop het inkomen van grote minderbedeelde gezinnen. De toelage - bedraagt 3% van het jaarinkomen - vervalt indien het jaarinkomen meer is dan 20000Eur of het aantal kinderen minder is dan 3.
+
+Schrijf een programma dat de gebruiker om het jaarinkomen en aantal kinderen vraagt, en vervolgens de toelage voor dat gezin toont.
+
+### ★ Oefening D04dagnummer
+Vraag de gebruiker om een dagnummer in het jaar (i.e. van 1 t.e.m. 365, dus geen schrikkeljaar). Het programma toont vervolgens in welke maand (als tekst) die dag zich bevindt.
+
+Bv. als de gebruiker 100 ingeeft, toont het programma "April".
+
+### ★ Oefening D04geslaagd
+Een openbaar examen bestaat uit drie delen die elk met een cijfer op 10 beoordeeld worden. Om te slagen moet men :
+
+-   ofwel minstens 5/10 behalen voor elk deel
+
+-   ofwel in totaal minstens 18/30 zonder een cijfer &lt; 4
+
+Schrijf een programma dat de gebruiker om drie scores op 10 vraagt en vervolgens "geslaagd" of "niet geslaagd" toont.
+
+### ★ Oefening D04grootste
+Schrijf een programma dat 3 getallen van de gebruiker inleest en achteraf meldt wat het grootste getal is van de drie. Bv. Als de gebruiker 2 8 en 4 ingeeft toont het programma "Het grootste getal van 2, 8 en 4 is 8".
+
+### Oefening D04schrikkeljaar
+Maak een programma dat van een ingevoerd jaartal op de console brengt of het gaat om een schrikkeljaar of niet.
+
+Een schrikkeljaar is een jaar dat deelbaar is door 4 en niet door 100, of deelbaar is door 400.
+
+### Oefening D04weer
+Maak een programma om een bepaald weerbeeld af te drukken, we hebben vier mogelijkheden:
+
+-   *Regenboog.* (indien het regent en de zon schijnt)
+
+-   *Slecht weer.* (indien het regent en de zon niet schijnt)
+
+-   *Mooi weer.* (indien het niet regent en de zon schijnt)
+
+-   *Saaie dag.* (indien het niet regent en zon niet schijnt)
+
+Vul hiervoor volgende code aan…​
+
+```csharp
+Console.Write("Schijnt de zon (ja/nee)?: ");
+string zon = Console.ReadLine();
+bool deZonSchijnt = (zon == "ja");
+
+Console.Write("Regent het (ja/nee)?: ");
+string regen = Console.ReadLine();
+bool hetRegent = (regen == "ja");
+
+// (1)
+```
+
+1.  hier aanvullen
+
+Zoals je ziet gaan we er voor de eenvoud van uit dat de gebruiker netjes "ja" of "nee" gaat invoeren. Robuustheid bij het opvangen van deze invoer verzorgen we later wel.
+
+Gebruik voor deze oefening `||`, `&&` of `!` operatoren.
+
+Een mogelijk programmaverloop kan er zo uitzien.
+
+```csharp
+Schijnt de zon (ja/nee)?: ja
+Regent het (ja/nee)?: ja
+Regenboog.
+```
+
+### Oefening D04weerzonderlogischeoperatoren
+Maak oefening D04weer opnieuw, maar vermijd voor deze oefening het gebruik van de `&&` of `||` operatoren.
+
+## Invoer robuust opvangen
+### Oefening D04weermetrobuusteinvoer
+Maak oefening D04weerzonderlogischeoperatoren opnieuw, maar houd deze keer rekening met
+
+-   de mogelijkheid dat de gebruiker hoofdletters of kleine letters gebruikt (bv. "JA", "Ja" of "ja")
+
+-   de mogelijkheid dat voor de ingevoerde tekst, of na de ingevoerde tekst, nietszeggende spaties werden opgenomen

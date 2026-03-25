@@ -1,0 +1,147 @@
+# Programmeren Basis - Deel 01 - Oplossingen
+## Oplossing D01codepositioneren
+```csharp
+using System;
+
+namespace Project1
+{
+    class Program
+    {
+        static void Main()
+        {
+            (1)
+        }
+    }
+}
+```
+
+1.  hier kon je je code plakken
+
+Of…​
+
+```csharp
+using System;
+
+(1)
+```
+
+1.  hier kon je je code plakken
+
+## Oplossing D01centimetersnaarmeters
+```csharp
+int lengteInCm = 456;
+Console.WriteLine(lengteInCm);
+Console.WriteLine("cm = ");
+
+int volledigAantalMeters = lengteInCm / 100;
+int aantalResterendeCm = lengteInCm % 100;    (1)
+
+Console.WriteLine(volledigAantalMeters);
+Console.WriteLine("m en ");
+Console.WriteLine(aantalResterendeCm);
+Console.WriteLine("cm");
+```
+
+1.  je kan het zonder de *modulo* operator `%`
+
+Het resultaat is echter complexer, en minder elegant:
+
+`int aantalResterendeCm = lengteInCm - (volledigAantalMeters * 100);`
+
+## Oplossing D01totalebedrag
+```csharp
+int biljettenVan10Euro = 7;
+int biljettenVan5Euro = 6;
+int muntstukkenVan2Euro = 5;
+int muntstukkenVan1Euro = 4;
+int muntstukkenVan50Cent = 3;
+
+double totaalBedrag = biljettenVan10Euro * 10 +
+                      biljettenVan5Euro * 5 +
+                      muntstukkenVan2Euro * 2 +
+                      muntstukkenVan1Euro +
+                      muntstukkenVan50Cent * 0.5; (1)
+
+Console.WriteLine(totaalBedrag); (2)
+```
+
+1.  samengestelde waarde wordt toegekend aan een double variabele
+
+2.  afdrukken van de berekende waarde
+
+> **Opmerking**
+>
+> Merk op dat je alle code van één instructie over meerdere regels mag spreiden.
+
+> **Opmerking**
+>
+> De inhoud van de variabele `muntstukkenVan1Euro` hoeven we uiteraard niet te vermenigvuldigen met 1.
+
+> **Opmerking**
+>
+> Je kan uiteraard ook haakjes gebruiken om de leesbaarheid te bevorderen…​
+
+## Oplossing D01bmi
+```csharp
+int lengteInCm = 182;
+int gewichtInKg = 72;
+
+double lengteInM = lengteInCm / 100.0;  (1)
+double bmi = gewichtInKg / (lengteInM * lengteInM);
+
+Console.WriteLine(bmi);
+```
+
+1.  merk op hoe gebruik is gemaakt van de double literal `100.0`
+
+Indien je zou delen door de `int` waarde `100` (dus `lengteInCm / 100`) bekom je een geheel getal.
+
+`182 / 100` zou zo `1` opleveren. Het is echter de bedoeling met `1.82` verder te rekenen.
+
+De uitvoer van het programma is…​
+
+```csharp
+21,7365052529888
+```
+
+Werk je met een int literal `100`…​
+
+```csharp
+double lengteInM = lengteInCm / 100;  (1)
+```
+
+Dan krijgen we een foutieve output…​
+
+```csharp
+72
+```
+
+## Oplossing D01waardesomwisselen
+```csharp
+int a = 5;
+int b = 13;
+
+int temp = a;   (1)
+a = b;          (2)
+b = temp;       (3)
+
+Console.WriteLine(a);
+Console.WriteLine(b);
+```
+
+1.  nog voor we de inhoud van de eerste variabele overschrijven met die van de andere variabele, maken we hiervan een backup
+
+2.  overschrijf de eerste variabele met de inhoud van de tweede variabele
+
+3.  de backup (oorspronkelijke waarde van de eerste variabele) kan uiteindelijk aan de tweede variabele worden toegekend
+
+## Oplossing D01euronaarpound
+```csharp
+double euroBedrag = 105.4;
+double poundBedrag = euroBedrag * 0.88;
+
+Console.Write(euroBedrag);
+Console.Write("EUR = ");
+Console.Write(poundBedrag);
+Console.Write("GPB");
+```

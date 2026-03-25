@@ -46,18 +46,23 @@ plugins:
 
 nav:
   - HOME: index.md
-  - VERSIEBEHEER:
-    - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
-  - GENERATIEVE AI:
-    - GitHub Copilot in Visual Studio: Aanvulling - GitHub Copilot in Visual Studio.md
-  - ALGORITMISCH:
-    - Iteratie statements: Aanvulling bij D06 - Iteratie statements - voordelen en verschillen.md
-  - DATATYPES (VALUE VS REFERENCE):
-    - Nullable datatypes: Aanvulling bij D12 - Nullable datatypes en null checks.md
-  - NUMERIEKE EN TEMPORAL INFORMATIE:
-    - Numerieke datatypes: Aanvulling bij D12 - 2.1. Numerieke datatypes en (impliciete) afrondingsfouten.md
-    - Afronden van komagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van komagetallen - belgische wetgeving.md
-    - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van inputstrings.md
-  - OOP:
-    - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
-  - C# TAALFEATURES: Aanvulling - C# taalfeatures.md
+  - REGULIER UITGESCHREVEN CURSUSMATERIAAL:
+    - D00: deel-00.md
+    - D01: deel-01.md
+    - D02: deel-02.md
+  - AANVULLING:
+    - VERSIEBEHEER:
+      - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
+    - GENERATIEVE AI:
+      - GitHub Copilot in Visual Studio: Aanvulling - GitHub Copilot in Visual Studio.md
+    - ALGORITMISCH:
+      - Iteratie statements: Aanvulling bij D06 - Iteratie statements - voordelen en verschillen.md
+    - DATATYPES (VALUE VS REFERENCE):
+      - Nullable datatypes: Aanvulling bij D12 - Nullable datatypes en null checks.md
+    - NUMERIEKE EN TEMPORAL INFORMATIE:
+      - Numerieke datatypes: Aanvulling bij D12 - 2.1. Numerieke datatypes en (impliciete) afrondingsfouten.md
+      - Afronden van komagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van komagetallen - belgische wetgeving.md
+      - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van inputstrings.md
+    - OOP:
+      - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
+    - C# TAALFEATURES: Aanvulling - C# taalfeatures.md
