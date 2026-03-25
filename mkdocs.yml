@@ -44,14 +44,4 @@ plugins:
   - search:
       lang: nl
 
-nav:
-  - Home: index.md
-  # Voeg hier je pagina's toe, bv.:
-  # - Datatypes:
-  #   - Numerieke types: datatypes/numeriek.md
-  #   - Nullable types: datatypes/nullable.md
-  # - Controlestructuren:
-  #   - If/else: controle/if-else.md
-  #   - Lussen: controle/lussen.md
-  # - Git & GitHub:
-  #   - Eerste stappen: git/eerste-stappen.md
+
