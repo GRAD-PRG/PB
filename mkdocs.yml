@@ -45,24 +45,79 @@ plugins:
       lang: nl
 
 nav:
-  - HOME: index.md
+  - home: index.md
   - REGULIER UITGESCHREVEN CURSUSMATERIAAL:
     - D00: deel-00.md
     - D01: deel-01.md
+    - D01: deel-01-oefeningen.md
+    - D01: deel-01-oplossingen.md
     - D02: deel-02.md
+    - D02: deel-02-oefeningen.md
+    - D02: deel-02-oplossingen.md
+    - D03: deel-03.md
+    - D03: deel-03-oefeningen.md
+    - D03: deel-03-oplossingen.md
+    - D04: deel-04.md
+    - D04: deel-04-oefeningen.md
+    - D04: deel-04-oplossingen.md
+    - D05: deel-05.md
+    - D05: deel-05-oefeningen.md
+    - D05: deel-05-oplossingen.md
+    - D06: deel-06.md
+    - D06: deel-06-oefeningen.md
+    - D06: deel-06-oplossingen.md
+    - D07: deel-07.md
+    - D07: deel-07-oefeningen.md
+    - D07: deel-07-oplossingen.md
+    - D08: deel-08.md
+    - D08: deel-08-oefeningen.md
+    - D08: deel-08-oplossingen.md
+    - D09: deel-09.md
+    - D09: deel-09-oefeningen.md
+    - D09: deel-09-oplossingen.md
+    - D10: deel-10.md
+    - D10: deel-10-oefeningen.md
+    - D10: deel-10-oplossingen.md
+    - D10: deel-10-verdieping.md
+    - D11: deel-11.md
+    - D11: deel-11-oefeningen.md
+    - D11: deel-11-oplossingen.md
+    - D12: deel-12.md
+    - D12: deel-12-oefeningen.md
+    - D12: deel-12-oplossingen.md
+    - D13: deel-13.md
+    - D13: deel-13-oefeningen.md
+    - D13: deel-13-oplossingen.md
+    - D13: deel-13-verdieping.md
+    - D14: deel-14.md
+    - D14: deel-14-oefeningen.md
+    - D14: deel-14-oplossingen.md
+    - D15: deel-15.md
+    - D15: deel-15-oefeningen.md
+    - D15: deel-15-oplossingen.md
+    - D15: deel-15-verdieping.md
+    - D16: deel-16.md
+    - D16: deel-16-oefeningen.md
+    - D16: deel-16-oplossingen.md
+    - D17: deel-17.md
+    - D17: deel-17-oefeningen.md
+    - D17: deel-17-oplossingen.md
+    - D18: deel-18.md
+    - D18: deel-18-oefeningen.md
+    - D18: deel-18-oplossingen.md
   - AANVULLING:
-    - VERSIEBEHEER:
+    - versiebeheer:
       - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
-    - GENERATIEVE AI:
+    - generatieve ai:
       - GitHub Copilot in Visual Studio: Aanvulling - GitHub Copilot in Visual Studio.md
-    - ALGORITMISCH:
+    - algoritmisch:
       - Iteratie statements: Aanvulling bij D06 - Iteratie statements - voordelen en verschillen.md
-    - DATATYPES (VALUE VS REFERENCE):
+    - datatypes (value vs reference):
       - Nullable datatypes: Aanvulling bij D12 - Nullable datatypes en null checks.md
-    - NUMERIEKE EN TEMPORAL INFORMATIE:
+    - numerieke en temporal informatie:
       - Numerieke datatypes: Aanvulling bij D12 - 2.1. Numerieke datatypes en (impliciete) afrondingsfouten.md
       - Afronden van komagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van komagetallen - belgische wetgeving.md
       - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van inputstrings.md
     - OOP:
       - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
-    - C# TAALFEATURES: Aanvulling - C# taalfeatures.md
+    - C# taalfeatures: Aanvulling - C# taalfeatures.md
