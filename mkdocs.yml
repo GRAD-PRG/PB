@@ -170,6 +170,7 @@ nav:
       - Numerieke datatypes: Aanvulling bij D12 - 2.1. Numerieke datatypes en (impliciete) afrondingsfouten.md
       - Afronden van komagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van komagetallen - belgische wetgeving.md
       - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van inputstrings.md
+    - collecties: Aanvulling bij D16 en D17 - Collecties.md
     - OOP:
       - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
     - C# taalfeatures: Aanvulling - Cs taalfeatures.md
