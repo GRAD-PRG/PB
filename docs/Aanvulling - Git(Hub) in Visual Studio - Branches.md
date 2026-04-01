@@ -22,7 +22,7 @@ De commits op `fase-2` bestaan alleen op die branch. Als je terugschakelt naar `
 
 ## Waarom branches?
 
-In deze opdracht werk je in fases. Na elke bespreking met je lector krijg je feedback en nieuwe vereisten. Het is handig om op dat moment een duidelijke scheidslijn te trekken:
+Bij de opdrachten werk je in fases. Na elke bespreking met je lector krijg je feedback en nieuwe vereisten. Het is handig om op dat moment een duidelijke scheidslijn te trekken:
 
 - **main** = de staat van je project bij de laatste bespreking (je laatst goedgekeurde tussenresultaat)
 - **een nieuwe branch** = al het werk dat je doet vóór de volgende bespreking
@@ -33,7 +33,7 @@ Die vergelijking gebeurt via een **Pull Request** op GitHub — daar komen we st
 
 ## Een branch aanmaken in Visual Studio
 
-> Je maakt een nieuwe branch aan **na** een bespreking, wanneer je klaar bent om aan de volgende fase te beginnen.
+> Je maakt een nieuwe branch aan **na** een bespreking met de lector, wanneer je klaar bent om aan de volgende fase te beginnen.
 
 1. Kijk onderaan in de statusbalk van Visual Studio. Daar staat de naam van je huidige branch, waarschijnlijk **main**.
 
@@ -41,9 +41,9 @@ Die vergelijking gebeurt via een **Pull Request** op GitHub — daar komen we st
 
 3. Kies **New Branch...** (of **Nieuwe vertakking...**).
 
-4. Vul een naam in voor je branch, bijvoorbeeld `fase-2`. Gebruik geen spaties of speciale tekens.
+4. Vul een naam in voor je branch, bijvoorbeeld `fase-2`, `fase-3`, .... Gebruik geen spaties of speciale tekens.
 
-5. Bij **Based on** staat normaal `main` — laat dat zo staan.
+5. Bij **Based on** staat normaal `main` — laat dat zo staan.  We baseren onze nieuwe branch op de laatste staat van `main`, zodat we een duidelijk referentiepunt hebben voor onze wijzigingen.
 
 6. Zorg dat **Checkout branch** aangevinkt is. Dit zorgt ervoor dat je meteen op de nieuwe branch terechtkomt.
 
@@ -59,13 +59,13 @@ Je werkt op je branch precies zoals je gewend bent:
 - Commits maken met een duidelijke boodschap
 - Pushen naar GitHub
 
-Bij de eerste push zal Visual Studio de branch ook aanmaken op GitHub. Dit gebeurt automatisch.
+Bij de eerste push zal git (hier aangestuurd door Visual Studio) de branch ook aanmaken op GitHub. Dit gebeurt automatisch.
 
 > **Belangrijk:** schakel niet terug naar `main` zolang je aan het werk bent. Al je wijzigingen moeten op de branch terechtkomen.
 
 ## Een Pull Request aanmaken
 
-Een Pull Request (PR) is een verzoek op GitHub om de wijzigingen van je branch samen te voegen met `main`. Maar het is ook — en voor ons vooral — een handige manier om al je wijzigingen in één overzicht te bekijken.
+Een Pull Request (PR) is een verzoek om de wijzigingen van je branch samen te voegen met `main`. Maar het is ook — en voor ons vooral — een handige manier om al je wijzigingen in één overzicht te bekijken.
 
 > Maak je Pull Request aan **vóór** de volgende bespreking, nadat je al je werk hebt gecommit en gepusht.
 
@@ -92,24 +92,17 @@ De PR heeft een aantal tabbladen. Het belangrijkste is **Files changed**. Daar z
 
 Dit is het overzicht dat je lector gebruikt om je werk te beoordelen. Je lector kan ook **commentaar achterlaten op specifieke regels** door op het blauwe **+**-icoon naast een regel te klikken.
 
-## Issues koppelen aan een Pull Request
+### Bespreking van de Pull Request
 
-Issues en branches staan los van elkaar: een issue is een taak of opmerking, een branch is een lijn in je codegeschiedenis. Maar je kunt ze aan elkaar koppelen.
+Tijdens de volgende bespreking bespreek je samen met je lector de wijzigingen in de PR. Je kunt dan toelichten waarom je bepaalde dingen gedaan hebt, en je lector kan feedback geven.
 
-Als je in de beschrijving van je Pull Request schrijft:
+Het kan zijn dat je samen beslist dat er nog aanpassingen nodig zijn. In dat geval werk je verder op dezelfde branch, maakt nieuwe commits, en pusht die weer naar GitHub. De PR wordt automatisch bijgewerkt met die nieuwe commits.
 
-```
-Fixes #3
-Closes #5
-```
-
-dan sluit GitHub die issues automatisch wanneer de PR gemerged wordt. Zo houd je bij welke taken afgewerkt zijn.
-
-> Dit is optioneel maar handig — bespreek met je lector of en hoe je dit toepast.
+Indien er geen aanpassingen nodig zijn, of nadat je die hebt doorgevoerd, is de volgende stap het mergen van de branch met `main`.
 
 ## Mergen
 
-Na de bespreking, als je lector akkoord geeft, wordt de branch gemerged met `main`. Dat betekent dat alle wijzigingen van je branch samengevoegd worden met `main`, zodat `main` weer up-to-date is.
+Na de bespreking, als je _project-lead_ (je _lector_ dus hier) akkoord geeft, wordt de branch gemerged met `main`. Dat betekent dat alle wijzigingen van je branch samengevoegd worden met `main`, zodat `main` weer up-to-date is.
 
 ```
 main:    ●───●───●───────────●  (merge commit)
@@ -117,15 +110,19 @@ main:    ●───●───●───────────●  (merge
 fase-2:            ●───●───●
 ```
 
-> Het mergen gebeurt samen met je lector op GitHub, via de knop **Merge pull request** onderaan de PR.
+> Het mergen gebeurt samen met je _project-lead_ (je _lector_ allicht) op GitHub (na het reviewen), via de knop **Merge pull request** onderaan de PR.
 
 ### Na de merge: terug naar main
 
-Na het mergen moet je in Visual Studio terugschakelen naar `main` en je lokale kopie bijwerken:
+> [!IMPORTANT]
 
-1. Klik onderaan in de statusbalk op de naam van je branch (bv. `fase-2`).
-2. Kies **main** uit de lijst.
-3. Doe een **Pull** (via **Git → Pull** in het menu, of het pijltje-omlaag in de statusbalk).
+> Na het mergen **moet** je in Visual Studio terugschakelen naar `main` en je lokale kopie bijwerken:
+>
+> 1. Klik onderaan in de statusbalk op de naam van je branch (bv. `fase-2`).
+> 2. Kies **main** uit de lijst.
+> 3. Doe een **Pull** (via **Git → Pull** in het menu, of het pijltje-omlaag in de statusbalk).
+>
+> ⚠️ **Sla deze stap niet over!** Als je dit vergeet, werk je verder op de oude branch en raakt je project in de war.
 
 Nu is je lokale `main` weer up-to-date met alles wat je op de branch gedaan hebt. Vanaf hier kun je een nieuwe branch aanmaken voor de volgende fase, en begint de cyclus opnieuw.
 
@@ -136,8 +133,8 @@ Nu is je lokale `main` weer up-to-date met alles wat je op de branch gedaan hebt
 | Bespreking | Tussenresultaat bespreken, issues aanmaken | In de klas |
 | Branch aanmaken | Nieuwe branch vanuit `main` | Visual Studio |
 | Werken | Code schrijven, committen, pushen | Visual Studio |
-| PR aanmaken | Pull Request openen naar `main` | GitHub |
-| Volgende bespreking | Code review via de PR | In de klas + GitHub |
+| PR aanmaken | Pull Request openen naar `main` | GitHub of Visual Studio (zie verderop) |
+| Volgende bespreking | Code review via de PR | In de klas + GitHub of Visual Studio |
 | Merge | Branch samenvoegen met `main` | GitHub |
 | Opruimen | Terugschakelen naar `main`, pullen | Visual Studio |
 
@@ -155,7 +152,22 @@ Nu is je lokale `main` weer up-to-date met alles wat je op de branch gedaan hebt
 
 De stappen hierboven zijn alles wat je nodig hebt om met branches te werken. Wat hieronder volgt zijn optionele technieken die het proces nog vlotter kunnen maken.
 
-### Een branch aanmaken vanuit een issue op GitHub
+### Commits koppelen aan een Issue, Issues koppelen aan een Pull Request
+
+Issues en branches staan los van elkaar: een issue is een taak of opmerking, een branch is een lijn in je codegeschiedenis. Maar je kunt ze aan elkaar koppelen.
+
+Als je in de beschrijving van je Pull Request schrijft:
+
+```
+Fixes #3
+Closes #3
+```
+
+dan sluit GitHub die issue (met nummer/tag `#3`) automatisch wanneer de PR gemerged wordt. Zo houd je bij welke taken afgewerkt zijn.  Indien dit vergeten wordt, is dat geen ramp: je kunt altijd later nog manueel de issues sluiten.
+
+Bij het committen kun je ook een issue refereren door `#3` te vermelden in je commit message. Dat maakt het makkelijker om later terug te vinden welke commits bij welk issue horen.  Om de issue te close-en, kan je bij de commit message ook `Fixes #3` of `Closes #3` schrijven, maar dat is in de hier -met pull request werkende workflow- niet nodig — je sluit het issue uiteindelijk via de PR, niet per individuele commit.
+
+## Een branch aanmaken vanuit een issue op GitHub
 
 In plaats van eerst een branch aan te maken in Visual Studio en dan pas te beginnen werken, kun je ook vertrekken vanuit een issue op GitHub. Dit koppelt de branch meteen aan het issue.
 
@@ -189,4 +201,4 @@ Je lector kan een **branch protection rule** instellen die dit voorkomt. Daarmee
 
 Dit is iets wat je lector instelt, niet iets wat je zelf hoeft te doen. Maar als het actief is en je probeert te pushen naar `main`, krijg je een foutmelding. De oplossing is dan simpel: maak een branch aan en werk daar verder.
 
-> **Voor lectoren:** de instelling vind je op GitHub via **Settings → Branches → Add branch ruleset**. Maak een regel aan voor `main` met als vereiste **Require a pull request before merging**. Optioneel kun je ook **Require approvals** aanvinken, zodat een PR pas gemerged kan worden nadat jij als reviewer hebt goedgekeurd.
+> **In geval je zelf een project-lead of reviewer rol wil opnemen:** de instelling vind je op GitHub via **Settings → Branches → Add branch ruleset**. Maak een regel aan voor `main` met als vereiste **Require a pull request before merging**. Optioneel kun je ook **Require approvals** aanvinken, zodat een PR pas gemerged kan worden nadat jij als reviewer hebt goedgekeurd.
