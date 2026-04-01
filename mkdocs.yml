@@ -173,4 +173,5 @@ nav:
     - collecties: Aanvulling bij D16 en D17 - Collecties.md
     - OOP:
       - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
+      - Dependency Inversion & Injection: Aanvulling bij D18 - Dependency inversion.md
     - C# taalfeatures: Aanvulling - Cs taalfeatures.md

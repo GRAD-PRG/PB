@@ -1,0 +1,177 @@
+﻿site_name: Programmeren Basis
+site_description: Leermateriaal — Graduaat Programmeren HOGENT
+site_url: https://GRAD-PRG.github.io/PB/
+
+theme:
+  name: material
+  language: nl
+  palette:
+    - scheme: default
+      primary: grey
+      accent: grey
+      toggle:
+        icon: material/brightness-7
+        name: Donkere modus
+    - scheme: slate
+      primary: grey
+      accent: grey
+      toggle:
+        icon: material/brightness-4
+        name: Lichte modus
+  features:
+    - navigation.sections      # Secties uitklappen in navigatie
+    - navigation.top            # "Terug naar boven"-knop
+    - search.suggest            # Zoeksuggesties
+    - search.highlight          # Zoekresultaten markeren
+    - content.code.copy         # Kopieerknop bij codeblokken
+    - content.code.annotate     # Annotaties in code
+
+markdown_extensions:
+  - admonition                  # Callout-blokken (tip, warning, note, ...)
+  - pymdownx.details            # Inklapbare blokken
+  - pymdownx.superfences        # Betere code fences
+  - pymdownx.highlight:         # Syntax highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite       # Inline code highlighting
+  - pymdownx.tabbed:            # Tabs in content
+      alternate_style: true
+  - attr_list                   # Attributen op elementen
+  - md_in_html                  # Markdown binnen HTML-blokken
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: nl
+
+nav:
+  - home: index.md
+  - REGULIER UITGESCHREVEN CURSUSMATERIAAL:
+    - D00: deel-00.md
+    - D01:
+      - uitleg: deel-01.md
+      - oefeningen: deel-01-oefeningen.md
+      - oplossingen: deel-01-oplossingen.md
+    - D02:
+      - uitleg: deel-02.md
+      - oefeningen: deel-02-oefeningen.md
+      - oplossingen: deel-02-oplossingen.md
+    - D03:
+      - uitleg: deel-03.md
+      - oefeningen: deel-03-oefeningen.md
+      - oplossingen: deel-03-oplossingen.md
+    - D04:
+      - uitleg: deel-04.md
+      - oefeningen: deel-04-oefeningen.md
+      - oplossingen: deel-04-oplossingen.md
+    - D05:
+      - uitleg: deel-05.md
+      - oefeningen: deel-05-oefeningen.md
+      - oplossingen: deel-05-oplossingen.md
+    - D06:
+      - uitleg: deel-06.md
+      - oefeningen: deel-06-oefeningen.md
+      - oplossingen: deel-06-oplossingen.md
+    - DGFX1:
+      - uitleg: deel-gfx1.md
+      - oefeningen: deel-gfx1-oefeningen.md
+      - oplossingen: deel-gfx1-oplossingen.md
+    - D07:
+      - uitleg: deel-07.md
+      - oefeningen: deel-07-oefeningen.md
+      - oplossingen: deel-07-oplossingen.md
+    - D08:
+      - uitleg: deel-08.md
+      - oefeningen: deel-08-oefeningen.md
+      - oplossingen: deel-08-oplossingen.md
+    - D09:
+      - uitleg: deel-09.md
+      - oefeningen: deel-09-oefeningen.md
+      - oplossingen: deel-09-oplossingen.md
+    - DPA1:
+      - uitleg: deel-pa1.md
+      - oefeningen: deel-pa1-oefeningen.md
+      - oplossingen: deel-pa1-oplossingen.md
+    - D10:
+      - uitleg: deel-10.md
+      - oefeningen: deel-10-oefeningen.md
+      - oplossingen: deel-10-oplossingen.md
+      - verdieping: deel-10-verdieping.md
+    - D11:
+      - uitleg: deel-11.md
+      - oefeningen: deel-11-oefeningen.md
+      - oplossingen: deel-11-oplossingen.md
+    - DPA2:
+      - uitleg: deel-pa2.md
+      - oefeningen: deel-pa2-oefeningen.md
+      - oplossingen: deel-pa2-oplossingen.md
+    - DSK1:
+      - uitleg: deel-sk1.md
+    - D12:
+      - uitleg: deel-12.md
+      - oefeningen: deel-12-oefeningen.md
+      - oplossingen: deel-12-oplossingen.md
+    - DEBD:
+      - uitleg: deel-ebd.md
+      - oefeningen: deel-ebd-oefeningen.md
+      - oplossingen: deel-ebd-oplossingen.md
+    - D13:
+      - uitleg: deel-13.md
+      - oefeningen: deel-13-oefeningen.md
+      - oplossingen: deel-13-oplossingen.md
+      - verdieping: deel-13-verdieping.md
+    - DPA3:
+      - uitleg: deel-pa3.md
+      - oefeningen: deel-pa3-oefeningen.md
+      - oplossingen: deel-pa3-oplossingen.md
+    - D14:
+      - uitleg: deel-14.md
+      - oefeningen: deel-14-oefeningen.md
+      - oplossingen: deel-14-oplossingen.md
+    - D15:
+      - uitleg: deel-15.md
+      - oefeningen: deel-15-oefeningen.md
+      - oplossingen: deel-15-oplossingen.md
+      - verdieping: deel-15-verdieping.md
+    - DPA4:
+      - uitleg: deel-pa4.md
+      - oefeningen: deel-pa4-oefeningen.md
+      - oplossingen: deel-pa4-oplossingen.md
+    - D16:
+      - uitleg: deel-16.md
+      - oefeningen: deel-16-oefeningen.md
+      - oplossingen: deel-16-oplossingen.md
+    - DPA5:
+      - uitleg: deel-pa5.md
+      - oefeningen: deel-pa5-oefeningen.md
+      - oplossingen: deel-pa5-oplossingen.md
+    - D17:
+      - uitleg: deel-17.md
+      - oefeningen: deel-17-oefeningen.md
+      - oplossingen: deel-17-oplossingen.md
+    - D18:
+      - uitleg: deel-18.md
+      - oefeningen: deel-18-oefeningen.md
+      - oplossingen: deel-18-oplossingen.md
+    - DGFX2:
+      - uitleg: deel-gfx2.md
+      - oefeningen: deel-gfx2-oefeningen.md
+      - oplossingen: deel-gfx2-oplossingen.md
+  - AANVULLINGEN:
+    - versiebeheer:
+      - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
+    - generatieve ai:
+      - GitHub Copilot in Visual Studio: Aanvulling - GitHub Copilot in Visual Studio.md
+    - algoritmisch:
+      - Iteratie statements: Aanvulling bij D06 - Iteratie statements - voordelen en verschillen.md
+    - datatypes (value vs reference):
+      - Nullable datatypes: Aanvulling bij D12 - Nullable datatypes en null checks.md
+    - numerieke en temporal informatie:
+      - Numerieke datatypes: Aanvulling bij D12 - 2.1. Numerieke datatypes en (impliciete) afrondingsfouten.md
+      - Afronden van komagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van komagetallen - belgische wetgeving.md
+      - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van inputstrings.md
+    - collecties: Aanvulling bij D16 en D17 - Collecties.md
+    - OOP:
+      - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
+      - Dependency Inversion & Injection: Aanvulling bij D18 - Dependency inversion.md
+    - C# taalfeatures: Aanvulling - Cs taalfeatures.md
