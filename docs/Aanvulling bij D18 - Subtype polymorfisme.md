@@ -214,9 +214,6 @@ namespace SubtypePolymofisme.VoorbeeldMetHerdefinitie.Werknemers {
         static void PrintDetails(Werknemer w) {
             Console.WriteLine($"{w.Naam} verdient {w.JaarSalaris()} per jaar.");
         }
-        static void PrintDetails(Manager m) {
-            Console.WriteLine($"{m.Naam} verdient {m.JaarSalaris()} per jaar.");
-        }
         static decimal TotaleJaarSalaris(Werknemer[] werknemers) {
             decimal totaal = 0;
             foreach (var w in werknemers) totaal += w.JaarSalaris();
@@ -240,7 +237,7 @@ namespace SubtypePolymofisme.VoorbeeldMetHerdefinitie.Werknemers {
         // HERDEFINITIE (of REDEFINITION) is het aanpassen van het gedrag dat gebonden wordt aan
         // een methode in een afgeleide klasse.
         //
-        // Per implementatie-member erf je als het ware drie dinge over:
+        // Per implementatie-member erf je als het ware drie dingen over:
         // (1) de aanwezigheid in de interface, technisch: de signatuur (naam, parameters, returntype)
         // (2) de implementatie (de code in de body van de method)
         // (3) de binding van de aanwezige member (1) aan de implementatie (2)
