@@ -1,0 +1,6286 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Leermateriaal — Graduaat Programmeren HOGENT">
+      
+      
+      
+        <link rel="canonical" href="https://GRAD-PRG.github.io/PB/deel-14/">
+      
+      
+        <link rel="prev" href="../deel-pa3-oplossingen/">
+      
+      
+        <link rel="next" href="../deel-14-oefeningen/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>uitleg - Programmeren Basis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmeren-basis-deel-14" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmeren Basis" class="md-header__button md-logo" aria-label="Programmeren Basis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmeren Basis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              uitleg
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Donkere modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Donkere modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Lichte modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lichte modus" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmeren Basis" class="md-nav__button md-logo" aria-label="Programmeren Basis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programmeren Basis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REGULIER UITGESCHREVEN CURSUSMATERIAAL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REGULIER UITGESCHREVEN CURSUSMATERIAAL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D00
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D01
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D01
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D02
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D02
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D03
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D03
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D04
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D04
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D05
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D05
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D06
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D06
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGFX1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DGFX1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D07
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D07
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D08
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D08
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D09
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D09
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D10
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D10
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D11
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D11
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSK1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSK1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-sk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D12
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D12
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEBD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DEBD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_19" id="__nav_2_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D13
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D13
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_20" id="__nav_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_21" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_21_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_21">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objecten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objecten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-klasse-datavelden-en-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Klasse, datavelden en methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Klasse, datavelden en methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-of-set-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get of Set prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namen-van-klassen-starten-met-een-hoofdletter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namen van klassen starten met een hoofdletter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-gedrag-en-toestand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Gedrag en toestand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-terminologie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Terminologie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-private-en-public" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Private en public
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-een-nieuwe-klasse-toevoegen-in-visual-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Een nieuwe klasse toevoegen in Visual Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-objecten-aanmaken-met-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Objecten aanmaken met new
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Objecten aanmaken met new">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-reference-type-en-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Reference type en null
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-source-code-en-run-time-constructie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Source code en run-time constructie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-instance-methods-oproepen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Instance methods oproepen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Instance methods oproepen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-objectdiagrammen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Objectdiagrammen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-instance-methods-versus-class-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Instance methods versus class methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Instance methods versus class methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-object-gerelateerde-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1. Object gerelateerde method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-klasse-gerelateerde-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2. Klasse gerelateerde method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. this
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. this">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-underscore-voor-datavelden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1. Underscore voor datavelden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nullreferenceexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. NullReferenceException
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-volwaardig-datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Volwaardig datatype
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Volwaardig datatype">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-nog-eens-met-een-objectdiagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Nog eens met een objectdiagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-terug-naar-de-nullreferenceexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Terug naar de NullReferenceException
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_22" id="__nav_2_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D15
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D15
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_23" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_23" id="__nav_2_23_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_23">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D16
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_24">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D16
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_25" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_25" id="__nav_2_25_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA5
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_25">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_26" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_26" id="__nav_2_26_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D17
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_26_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_26">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D17
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_27" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_27" id="__nav_2_27_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D18
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_27_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_27">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D18
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_28" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_28" id="__nav_2_28_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGFX2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_28_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_28">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DGFX2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AANVULLINGEN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AANVULLINGEN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    versiebeheer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    versiebeheer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20Git%28Hub%29%20in%20Visual%20Studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git(Hub) in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling - Git(Hub) in Visual Studio - Branches" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git(Hub) branches in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    generatieve ai
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    generatieve ai
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20GitHub%20Copilot%20in%20Visual%20Studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Copilot in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    algoritmisch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    algoritmisch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D06%20-%20Iteratie%20statements%20-%20voordelen%20en%20verschillen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iteratie statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    datatypes (value vs reference)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    datatypes (value vs reference)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%20Nullable%20datatypes%20en%20null%20checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nullable datatypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    numerieke en temporal informatie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    numerieke en temporal informatie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%202.1.%20Numerieke%20datatypes%20en%20%28impliciete%29%20afrondingsfouten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numerieke datatypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%202.2%20expliciet%20afronden%20van%20komagetallen%20-%20belgische%20wetgeving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Afronden van komagetallen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%203.1.1.%20DateTime%20waarde%20maken%20-%20omzetten%20van%20inputstrings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime waarde maken
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D16%20en%20D17%20-%20Collecties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    collecties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OOP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D18%20-%20Subtype%20polymorfisme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtype polymorfisme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D18%20-%20Dependency%20inversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Inversion & Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20Cs%20taalfeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# taalfeatures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objecten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objecten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-klasse-datavelden-en-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Klasse, datavelden en methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Klasse, datavelden en methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-of-set-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get of Set prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namen-van-klassen-starten-met-een-hoofdletter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namen van klassen starten met een hoofdletter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-gedrag-en-toestand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Gedrag en toestand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-terminologie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Terminologie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-private-en-public" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Private en public
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-een-nieuwe-klasse-toevoegen-in-visual-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Een nieuwe klasse toevoegen in Visual Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-objecten-aanmaken-met-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Objecten aanmaken met new
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Objecten aanmaken met new">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-reference-type-en-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Reference type en null
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-source-code-en-run-time-constructie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Source code en run-time constructie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-instance-methods-oproepen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Instance methods oproepen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Instance methods oproepen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-objectdiagrammen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Objectdiagrammen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-instance-methods-versus-class-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Instance methods versus class methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Instance methods versus class methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-object-gerelateerde-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1. Object gerelateerde method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-klasse-gerelateerde-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2. Klasse gerelateerde method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. this
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. this">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-underscore-voor-datavelden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1. Underscore voor datavelden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nullreferenceexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. NullReferenceException
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-volwaardig-datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Volwaardig datatype
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Volwaardig datatype">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-nog-eens-met-een-objectdiagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Nog eens met een objectdiagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-terug-naar-de-nullreferenceexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Terug naar de NullReferenceException
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="programmeren-basis-deel-14">Programmeren Basis - Deel 14<a class="headerlink" href="#programmeren-basis-deel-14" title="Permanent link">&para;</a></h1>
+<h2 id="1-objecten">1. Objecten<a class="headerlink" href="#1-objecten" title="Permanent link">&para;</a></h2>
+<p>Vaak werken we in de code met <strong>objecten</strong>. <em>Objecten</em> bundelen zaken die conceptueel samen horen, bijvoorbeeld:</p>
+<ul>
+<li>
+<p>informatie die bij een <em>persoon</em> hoort, bijvoorbeeld zijn <em>naam</em>, <em>adres</em> of <em>geboortedatum</em></p>
+</li>
+<li>
+<p>functionaliteit die <em>met</em> of <em>op</em> dat <em>persoon object</em> van toepassing is, bijvoorbeeld <em>adres wijzigen</em>, <em>leeftijd berekenen</em>, <em>initialen bepalen</em>, …​</p>
+</li>
+</ul>
+<p>Objecten zijn <strong>steeds van een bepaald (data)type</strong>, en worden ook wel eens een <strong>instantie van dat type</strong> genoemd. Een object zou bijvoorbeeld een instantie kunnen zijn van een type als <code>Persoon</code>, <code>Random</code> of <code>string</code>.</p>
+<p>Een datatype als <code>Persoon</code> zou je zelf moeten definiëren, daar hebben we het straks over. Tot dus ver hebben we vooral gewerkt met instanties van voorgedefinieerde datatypes.</p>
+<p>Voorbeeld van objecten van voorgedefinieerde datatypes</p>
+<p>Objecten <code>naam</code>, <code>familienaam</code> of <code>randomGenerator</code> houden informatie bij over twee <em>teksten</em> (van type <code>string</code>), of een <em>getal generator</em> (van type <code>Random</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Jan&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">familienaam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Janssens&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Naam (in hoofdletters): {naam.ToUpper()}&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Random</span><span class="w"> </span><span class="n">randomGenerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Willekeurig getal: {randomGenerator.Next(1, 11)}&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Niet alleen houden ze informatie over deze <em>tekst</em> of <em>getal generator</em> bij, ze staan ook nog eens toe daarmee of daarop handelingen toe te passen.</p>
+<p>Zo kan je van deze <em>tekst</em> <code>naam</code> met de <code>ToUpper</code> method een <em>hoofdletter-representatie</em> opvragen.</p>
+<p>Zal de <code>Next</code> method het <em>volgende willekeurige getal</em> van deze <em>generator</em> <code>randomGenerator</code> opleveren.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Naam</span><span class="w"> </span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="n">hoofdletters</span><span class="p">):</span><span class="w"> </span><span class="n">JAN</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Willekeurig</span><span class="w"> </span><span class="n">getal</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Opmerking: Dot notatie</strong></p>
+<p>Voor de dot staat de naam van het object waarmee wordt gewerkt, waarvan bijvoorbeeld informatie wordt opgeleverd.</p>
+<p><code>naam.ToUpper()</code> zal van de tekst in variabele <code>naam</code>, en bijvoorbeeld niet van de tekst <code>familienaam</code>, een hoofdletter-reprenstatie opleveren.</p>
+</blockquote>
+<p>Straks willen we ook met objecten van onze eigen datatypes gaan werken. Bijvoorbeeld objecten van type <code>Persoon</code>.</p>
+<p>Voorbeeld van objecten van zelfgedefinieerde datatypes</p>
+<p>Ook deze objecten moeten informatie bijhouden, bijvoorbeeld de <em>naam</em> of <em>geboortedatum</em> van de <em>persoon</em> die met dat object wordt voorgesteld.</p>
+<p>Op die <code>Persoon</code> objecten willen we echter graag ook bepaalde handelen uitvoeren…​</p>
+<p>We zijn geïnteresseerd in het <code>Persoon</code> object met de hoogste <code>Leeftijd</code>. Van die <code>Persoon</code> willen we graag de <em>naam</em> opvragen. Een method als <code>GetNaam</code> zou ons die naam moeten opleveren.</p>
+<p>De <code>Persoon</code> objecten zouden elk een <em>naam</em> en <em>geboortedatum</em> moeten krijgen, bijvoorbeeld via methods als <code>SetNaam</code> en <code>SetGeboortedatum</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">vader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">vader</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Victor&quot;</span><span class="p">);</span><span class="w">                 </span><span class="c1">// (1)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="n">vader</span><span class="p">.</span><span class="n">SetGeboortedatum</span><span class="p">(</span><span class="n">geboorteDatum1</span><span class="p">);</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">zoon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="n">zoon</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Piet&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="n">zoon</span><span class="p">.</span><span class="n">SetGeboortedatum</span><span class="p">(</span><span class="n">geboorteDatum2</span><span class="p">);</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="n">Persoon</span><span class="p">[]</span><span class="w"> </span><span class="n">familie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="n">familie</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vader</span><span class="p">;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="n">familie</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zoon</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Oudste</span><span class="p">(</span><span class="n">familie</span><span class="p">);</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;De oudste persoon is: {oudste.GetNaam()}&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// (2)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">Persoon</span><span class="w"> </span><span class="nf">Oudste</span><span class="p">(</span><span class="n">Persoon</span><span class="p">[]</span><span class="w"> </span><span class="n">personen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">personen</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">            </span><span class="c1">// We veronderstellen dat de eerste persoon de oudste is...</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">            </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personen</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">            </span><span class="c1">// En bekijken vanaf het tweede element of er sprake is van nog een oudere...</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">personen</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">                </span><span class="c1">// Vervang indien zo de tot-nu-toe-oudste door de persoon in kwestie...</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Leeftijd</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">oudste</span><span class="p">.</span><span class="n">Leeftijd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (3)</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">                    </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">oudste</span><span class="p">;</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Instellen van de <em>naam</em> (<code>SetNaam</code>) of <em>geboortedatum</em> (<code>SetGeboortedatum</code>).</p>
+</li>
+<li>
+<p>Opvragen van de <em>naam</em> via <code>GetNaam</code>.</p>
+</li>
+<li>
+<p>Opvragen van de <em>leeftijd</em> via <code>Leeftijd</code>.</p>
+</li>
+</ol>
+<p>Zo meteen bespreken we hoe we dergelijk eigen datatype als <code>Persoon</code> kunnen creëren.</p>
+<p>Samengevat…​</p>
+<p><strong>Een object bevindt zich in een bepaalde toestand</strong>. Deze <em>toestand</em> wordt bepaald door de informatie die door dat object wordt bijgehouden. Bijvoorbeeld de <em>tekst</em> in een <code>string</code> object, of de <em>naam</em> en de <em>geboortedatum</em> in een <code>Persoon</code> object.</p>
+<p>Daarnaast <strong>vertoont een object gedrag</strong>. Meer specifiek kan een object <em>vragen beantwoorden</em> of <em>opdrachten uitvoeren</em>. Bijvoorbeeld kan een <code>string</code> object antwoorden op de vraag wat zijn <em>hoofdletter-representatie</em> is, of kan een <code>Persoon</code> object zijn <em>leeftijd</em> opleveren.</p>
+<h2 id="2-klasse-datavelden-en-methods">2. Klasse, datavelden en methods<a class="headerlink" href="#2-klasse-datavelden-en-methods" title="Permanent link">&para;</a></h2>
+<p><strong>Een (data)type kan worden gedefinieerd aan de hand van een klasse.</strong></p>
+<p>Een <em>klasse</em> (Engels: <em>class</em>) is een voorschrift van wat voor informatie alle objecten van die klasse kunnen <em>bijhouden</em>, en welke functionaliteiten ze kunnen <em>uitvoeren</em>.</p>
+<ul>
+<li>
+<p>Aan de hand van <strong>datavelden</strong> (<em>variabelen op klasseniveau</em>) wordt het mogelijk gemaakt informatie bij te houden.</p>
+</li>
+<li>
+<p><strong>Methods</strong> (<em>commando’s</em> of <em>queries</em>) worden gebruikt om functionaliteit te voorzien.</p>
+</li>
+</ul>
+<p>Voorbeeld van een eigen klasse</p>
+<p>Elk object van het type <code>Persoon</code> zal zijn eigen <em>naam</em> en <em>geboortedatum</em> kennen.</p>
+<p>Van elk <code>Persoon</code> object kan je de <em>naam</em> en <em>geboortedatum</em> instellen en opvragen.</p>
+<p>Daarnaast is het ook mogelijk van elk <em>Persoon</em> object de <code>Leeftijd</code> na te gaan.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Persoon</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetNaam</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_naam</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetNaam</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">_naam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">_geboortedatum</span><span class="p">;</span><span class="w">  </span><span class="c1">// (2)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="nf">GetGeboortedatum</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_geboortedatum</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetGeboortedatum</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboortedatum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="n">_geboortedatum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geboortedatum</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Leeftijd</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetGeboortedatum</span><span class="p">().</span><span class="n">Date</span><span class="p">.</span><span class="n">AddYears</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Today</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">            </span><span class="n">leeftijd</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">            </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">AddYears</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">leeftijd</span><span class="p">;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>een dataveld <code>_naam</code></p>
+</li>
+<li>
+<p>een dataveld <code>_geboortedatum</code></p>
+</li>
+</ol>
+<p>We hebben twee <strong>datavelden</strong> (soms ook gewoon <em>velden</em> genoemd) voor het bijhouden van de toestand van onze verschillende <code>Persoon</code> instanties:</p>
+<ul>
+<li>
+<p><code>_naam</code> van type <code>string</code> voor het bijhouden van de naam</p>
+</li>
+<li>
+<p><code>_geboortedatum</code> van type <code>DateTime</code> voor het bijhouden van de geboortedatum</p>
+</li>
+</ul>
+<p>Merk op dat dit variabelen zijn die niet in een method, maar <strong>rechtstreeks in een klasse worden gedeclareerd</strong>.</p>
+<p>Typisch ga je het sleutelwoord <code>private</code> terugvinden op die declaratieregel. Zo meteen iets meer over die <code>private</code>.</p>
+<blockquote>
+<p><strong>Opmerking: Underscore voor datavelden</strong></p>
+<p>Doorgaans worden de namen van datavelden met een underscore gestart. Het voordeel is dat je zo meteen ook ziet (aan het al dan niet starten met een underscore) of het over een dataveld of een gewone lokale variabele.</p>
+</blockquote>
+<p>We beschikken ook vijf methods.</p>
+<p>Twee daarvan zijn <strong>commando’s</strong> (<code>void</code> methods) die de toestand van een <code>Persoon</code> object kunnen manipuleren:</p>
+<ul>
+<li>
+<p><code>SetNaam</code> voor het instellen van de naam</p>
+</li>
+<li>
+<p><code>SetGeboortedatum</code> voor het instellen van de geboortedatum</p>
+</li>
+</ul>
+<p>En we hebben ook drie <strong>queries</strong> die de toestand, of een afgeleide toestand, kunnen opleveren:</p>
+<ul>
+<li>
+<p><code>GetNaam</code> voor het opvragen van de naam</p>
+</li>
+<li>
+<p><code>GetGeboortedatum</code> voor het opvragen van de geboortedatum</p>
+</li>
+<li>
+<p><code>Leeftijd</code> voor het opvragen van de leeftijd</p>
+</li>
+</ul>
+<h3 id="get-of-set-prefix">Get of Set prefix<a class="headerlink" href="#get-of-set-prefix" title="Permanent link">&para;</a></h3>
+<p>De <em>Get</em> en <em>Set</em> prefixen worden gebruikt om te benadrukken dat het gaat om het opvragen (<em>getten</em>) of instellen (<em>setten</em>) van een bepaalde <em>eigenschap</em>. De <em>naam</em> en de <em>geboortedatum</em> kan je als een <em>'eigenschap'</em> van een <em>persoon</em> bekijken.</p>
+<p>Vooral indien je zowel voorziet in de mogelijkheid eigenschappen <em>op te vragen</em> als <em>in te stellen</em>, zijn deze prefixen zinvol. Ze benadrukken extra dat het gaat om het <em>getten</em> of <em>setten</em> van een waarde.</p>
+<blockquote>
+<p><strong>Opmerking: Bij properties laten we die vallen.</strong></p>
+<p>Verderop (in een volgend deel van het cursusmateriaal) werken we voor elke eigenschap met een zogenaamde <em>property</em>.</p>
+<p>Eén property (met één naam) kan de mogelijkheid bieden de eigenschap zowel <em>in te stellen</em> als <em>op te vragen</em>. Vanaf dan laten we de <em>Get</em> of <em>Set</em> prefixen meestal vallen.</p>
+</blockquote>
+<p>Zolang we nog niet aan de slag gaan met properties, maken we vrij vaak gebruik van deze prefixen. Maar het hoeft enkel indien het zinvol is te benadrukken dat het gaat om <em>getten</em> of <em>setten</em>.</p>
+<p>Omdat in dit voorbeeld de <em>leeftijd</em> enkel opvraagbaar is, biedt een <em>Get</em> prefix hier weinig meerwaarde.</p>
+<h3 id="namen-van-klassen-starten-met-een-hoofdletter">Namen van klassen starten met een hoofdletter<a class="headerlink" href="#namen-van-klassen-starten-met-een-hoofdletter" title="Permanent link">&para;</a></h3>
+<p>Net als de namen van methods gaan we telkens de namen van klassen starten met een hoofdletter. <em>Upper CamelCasing</em> (zoals men dat wel eens noemt) is hier van toepassing.</p>
+<h3 id="21-gedrag-en-toestand">2.1. Gedrag en toestand<a class="headerlink" href="#21-gedrag-en-toestand" title="Permanent link">&para;</a></h3>
+<p>We zouden de verschillende onderdelen (<em>members</em>) van een klasse in volgend overzicht kunnen plaatsen…​</p>
+<p><img alt="Klasse members" src="../images/klasse%20members.png" /></p>
+<p>In dit overzicht staat het begrip <em>toestand</em> centraal. Zoals reeds aangegeven wordt de <strong>toestand</strong> bepaald door de informatie die door dat object wordt bijgehouden.</p>
+<p>Vraag je je af welke datavelden in een klasse moeten worden voorzien? Of dus welke toestand objecten van dit type kunnen aannemen?</p>
+<p>Stel jezelf dan de vraag in wat twee verschillende instanties van dit type kunnen verschillen?</p>
+<p>Elke <code>Persoon</code> kan een eigen <em>naam</em> hebben, en een eigen <em>geboortedatum</em>.</p>
+<p>Die dus anders is dan de <em>naam</em> of <em>geboortedatum</em> van een ander <code>Persoon</code> object.</p>
+<p>Of nog beter, denk na over wat elk object moet <em>weten</em> (<em>bijhouden</em>) om elke vraag (<em>query</em>) te kunnen antwoorden.</p>
+<p>Om te antwoorden op de vragen:</p>
+<ul>
+<li>
+<p>wat is de naam van deze persoon (<code>GetNaam</code>)</p>
+</li>
+<li>
+<p>wat is zijn geboortedatum (<code>GetGeboortedatum</code>)</p>
+</li>
+<li>
+<p>wat is zijn leeftijd (<code>Leeftijd</code>)</p>
+</li>
+</ul>
+<p>Moet elk object minstens beschikken over de kennis</p>
+<ul>
+<li>
+<p>wat de naam is, dit geeft ons <code>string _naam</code> want daarmee kan het gedrag van <code>GetNaam</code> vervuld worden</p>
+</li>
+<li>
+<p>wat de geboortedatum is, dit geeft ons <code>string _geboortedatum</code> want daarmee kan <code>GetGeboortedatum</code> en <code>Leeftijd</code> vervuld worden</p>
+</li>
+</ul>
+<p>Op basis van het gewenste gedrag beslis je welke <em>toestand</em> objecten van een bepaalde klasse kunnen aannemen.</p>
+<p>Of anders uitgedrukt: je voorziet voldoende datavelden om te kunnen voldoen aan het gedrag dat de methods moeten implementeren.</p>
+<h3 id="22-terminologie">2.2. Terminologie<a class="headerlink" href="#22-terminologie" title="Permanent link">&para;</a></h3>
+<p>Het woord <em>'klasse'</em> of <em>'class'</em> heeft verschillende betekenissen. Hier in deze context bedoelen we zoiets als <em>'classificatie'</em> (of noem het <em>soort</em> of <em>categorie</em>). <em>Objecten</em> met dezelfde eigenschappen, horen tot dezelfde <em>categorie</em>.</p>
+<p>Het woord <em>'object'</em> heeft ook veel betekenissen. Wij bedoelen in deze context <em>'exemplaar'</em>. Een instantie (één object) van type <code>string</code> stelt één tekst voor. Een ander object van type <code>string</code> (een andere instantie dus), stelt een ander <em>exemplaar</em> van deze <em>klasse</em> voor, een andere tekst dus.</p>
+<p>Laat je niet teveel in de war brengen, simpel gesteld…​</p>
+<ul>
+<li>
+<p><em>klasse = class = (data)type = categorie</em></p>
+</li>
+<li>
+<p><em>object = instantie = exemplaar</em></p>
+</li>
+</ul>
+<h3 id="23-private-en-public">2.3. Private en public<a class="headerlink" href="#23-private-en-public" title="Permanent link">&para;</a></h3>
+<p>Members van een klasse (onderdelen als datavelden of methods) hebben een bepaalde <em>visibility</em> (Nederlands: zichtbaarheid).</p>
+<p>Deze visibility bepaalt waar deze members kunnen gebruiken:</p>
+<ul>
+<li>
+<p><code>public</code> zaken kunnen elders in ons programma aanspreken, ook buiten de klasse waarin ze zijn gedefinieerd.</p>
+<p>De <code>public</code> methods van klasse <code>Persoon</code> kunnen bijvoorbeeld in een <code>Main</code> method van een <code>Program</code> klasse worden benaderd.</p>
+</li>
+<li>
+<p><code>private</code> zaken kunnen enkel in de klasse zelf gebruikt worden.</p>
+<p>De datavelden van een <code>Persoon</code> object kunnen we enkel in de klasse <code>Persoon</code> zelf gebruiken. Het is <em>niet</em> mogelijk om deze bijvoorbeeld in een method van een andere klasse aan te spreken.</p>
+</li>
+</ul>
+<p>Vergelijk het een beetje met de scope van een variabele. Deze beperkte ook de plaatsen in de code waar we die variabelen konden gebruiken.</p>
+<blockquote>
+<p><strong>Opmerking: Datavelden zijn private.</strong></p>
+<p>Datavelden worden doorgaans niet beschikbaar gesteld buiten de klassen waarin ze zijn gedefinieerd. Visibility <code>private</code> gaat dit verhinderen.</p>
+</blockquote>
+<h3 id="24-een-nieuwe-klasse-toevoegen-in-visual-studio">2.4. Een nieuwe klasse toevoegen in Visual Studio<a class="headerlink" href="#24-een-nieuwe-klasse-toevoegen-in-visual-studio" title="Permanent link">&para;</a></h3>
+<p>Elke klasse wordt doorgaans in een apart broncode document geplaatst.</p>
+<p>Toevoegen van een broncode document aan je Visual Studio project</p>
+<p>Indien je in je project naast een <code>Program</code> klasse ook een <code>Persoon</code> klasse wil toevoegen kies je in de Visual Studio menu voor <strong>Project</strong> <strong>›</strong> <strong>Add Class …​</strong>…​</p>
+<p><img alt="Project &gt; Add Class.." src="../images/Project%20-%20Add%20Class.png" /></p>
+<p>In het resulterende <em>'Add New Item'</em> venster selecteer je de <em>Class</em> template.</p>
+<p><img alt="Add New Item dialog - Class template" src="../images/Add%20New%20Item%20-%20Class.png" /></p>
+<p>Als broncode bestandnaam kan je kiezen voor iets als <em>Persoon.cs</em>. Klik op de <strong>Add</strong> knop.</p>
+<blockquote>
+<p><strong>Opmerking: Klassenaam als bestandsnaam</strong></p>
+<p>Het is altijd een goed idee om je broncode document dezelfde naam te geven als de klasse die erin is gedefinieerd.</p>
+<p>Zo kan je bijvoorbeeld makkelijk in een toolvenster als de <em>Solution Explorer</em> je definitie terugvinden.</p>
+</blockquote>
+<p>Op basis van de uitgekozen bestandsnaam zal een klasse met -in dit geval- de naam <code>Persoon</code> worden toegevoegd.</p>
+<p><img alt="Beide klassen samen." src="../images/Program%20en%20Persoon%20klasse.png" /></p>
+<p>In je project zitten nu alvast twee broncode documenten.</p>
+<p>Vervang de meegegeven <code>class Persoon</code> door onze eigen versie die we daarstraks hadden uitgeschreven.</p>
+<h2 id="3-objecten-aanmaken-met-new">3. Objecten aanmaken met new<a class="headerlink" href="#3-objecten-aanmaken-met-new" title="Permanent link">&para;</a></h2>
+<p>Objecten van onze eigen (of voorgedefinieerde) klassen kunnen we aanmaken met <code>new</code>.</p>
+<p>Het sleutelwoord <code>new</code> laat je volgen door de naam van het datatype (de klasse) die je wil <em>instantiëren</em>. Na de naam van het datatype staan ronde haakjes, bijvoorbeeld <code>new Persoon()</code> of <code>new Random()</code>.</p>
+<p>Dergelijke <em>object initializer</em> maakt <em>het object/de instantie</em> aan (reserveert hiervoor geheugen), en levert de verwijzing (de referentie) naar dit object op. Typisch ga je meteen de opgeleverde verwijzing toekennen aan een variabele van corresponderend datatype, bijvoorbeeld…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</code></pre></div>
+<p>Door de verwijzing in een variabele op te slaan kun je het object via die variabele gebruiken, bijvoorbeeld…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">p</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Jan&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">());</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>Van één klasse kan je oneindig veel objecten maken. De klasse is als het ware de <em>moule</em>, de objecten zijn dan de <em>afgietsels</em>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">...</span>
+</code></pre></div>
+</blockquote>
+<h3 id="31-reference-type-en-null">3.1. Reference type en null<a class="headerlink" href="#31-reference-type-en-null" title="Permanent link">&para;</a></h3>
+<p>Net als het <code>string</code> datatype, of <em>array datatypes</em>, zijn ook klasse datatypes <strong>reference types</strong>.</p>
+<p>Dat maakt dat er een verschil is tussen de instantie enerzijds, en de <em>opslagplaats</em> (variabele of array-slot bijvoorbeeld) anderzijds.</p>
+<p>Indien de referentie aan de opslagplaats is toegekend, verwijst hij naar het object. Bijvoorbeeld weergegeven met de pijltjes in onderstaande sectie over objectdiagrammen.</p>
+<p>Is er niets toegekend aan deze opslagplaats dan bevat hij <code>null</code>. Indien bijvoorbeeld een variabele als <code>p</code> louter wordt gedeclareerd, maar nooit een waarde krijgt toegekend (<code>Persoon p;</code>) dan bevat hij <code>null</code>.</p>
+<p><img alt="Object diagram - p beval null" src="../images/object%20diagram%20-%20p%20null.png" /></p>
+<p>Je kan <code>null</code> ook expliciet aan een variabele toekennen, bijvoorbeeld <code>Persoon p = null</code>, maar dat gebeurt niet zo vaak. Zoals we straks zien, ga je dat soms wel doen om een <em>"Use of unassigned local variable"</em> compilefout te vermijden.</p>
+<h3 id="32-source-code-en-run-time-constructie">3.2. Source code en run-time constructie<a class="headerlink" href="#32-source-code-en-run-time-constructie" title="Permanent link">&para;</a></h3>
+<p>Het is belangrijk dat je je realiseert dat een klasse en een object op twee verschillende momenten relevant zijn.</p>
+<p>Een klasse is een <em>source code constructie</em>, en is met andere woorden enkel relevant voor de compiler, of dus VOOR de uitvoering begint.</p>
+<p>Een object is dan een <em>run-time constructie</em>, en is enkel relevant NADAT de uitvoering begint.</p>
+<h2 id="4-instance-methods-oproepen">4. Instance methods oproepen<a class="headerlink" href="#4-instance-methods-oproepen" title="Permanent link">&para;</a></h2>
+<p>Bij elk <code>Persoon</code> object kunnen we diens methods oproepen, bijvoorbeeld de <code>Set</code>- en <code>GetNaam</code> methods…​</p>
+<p>Voorbeeld aanroepen van instance methods</p>
+<p>Van de klasse <code>Persoon</code> zouden we twee objecten kunnen maken. Eén om daarmee <em>Jan</em> voor te stellen, geboren op <em>1 januari 2000</em>. En één om een persoon voor te stellen met de naam <em>Piet</em>, geboren op <em>4 maart 2002</em>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">p1</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Jan&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">p1</span><span class="p">.</span><span class="n">SetGeboortedatum</span><span class="p">(</span><span class="n">geboorteDatum1</span><span class="p">);</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">p2</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Piet&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">p2</span><span class="p">.</span><span class="n">SetGeboortedatum</span><span class="p">(</span><span class="n">geboorteDatum2</span><span class="p">);</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">Leeftijd</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="n">Leeftijd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">$&quot;{p1.GetNaam()} is ouder dan {p2.GetNaam()}.&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Jan is ouder dan Piet.</li>
+</ol>
+<p>De variabelen <code>p1</code> en <code>p2</code> bevatten elke een verwijzing (een referentie) naar een instantie van type <code>Persoon</code>.</p>
+<p>Merk op dat de <code>SetNaam</code> en <code>GetNaam</code> methods van precies dat <code>Persoon</code> object worden aangeroepen waar de variabele <code>p1</code> of <code>p2</code> naar verwijst!</p>
+<p>Bij de method oproep staat links naast de methodnaam een expressie (met een punt ertussen). Die expressie duidt het object aan wiens method we oproepen.</p>
+<p>Zo is het van <code>p1</code> dat de naam op <em>"Jan"</em> wordt ingesteld (<code>p1.SetNaam("Jan")</code>). Vragen we vervolgens de naam van <code>p1</code> op (<code>p1.GetNaam()</code>) dan levert ons dat <em>"Jan"</em>, en bijvoorbeeld niet <em>"Piet"</em> (de naam van <code>p2</code>).</p>
+<h3 id="41-objectdiagrammen">4.1. Objectdiagrammen<a class="headerlink" href="#41-objectdiagrammen" title="Permanent link">&para;</a></h3>
+<p>We zouden de toestand van onze twee objecten ook met volgend <em>objectdiagram</em> kunnen modelleren…​</p>
+<p><img alt="Object diagram - voor twee instanties van type Persoon" src="../images/object%20diagram%20-%20Jan%20en%20Piet.png" /></p>
+<p>Het objectdiagram benadrukt nogmaals dat elk object van type <code>Persoon</code> hier zijn eigen <em>naam</em> en <em>geboortedatum</em> kan hebben.</p>
+<p>In een objectdiagram stelt een vierkant een object voor. Dit is een object van het type waarvan de naam in het bovenste compartiment na de dubbelpunt is weergegeven. Dit datatype wordt typisch onderlijnd, bijvoorbeeld :Persoon.</p>
+<p>We krijgen ook de waardes van de datavelden te zien.</p>
+<p>De naam van de variabele die de verwijzing naar een object bevat, kun je ook links van de dubbele punt zetten bovenin het object rechthoekje. In de cursus opteren we er liever voor om een pijl te laten vertrekken vanuit een apart vierkantje dat de variabele voorstelt. Door die pijl valt het beter op dat de variabele een verwijzing bevat. De naam van de variabele schrijven we dan bovenaan het vierkantje (<code>p1</code> en <code>p2</code> hierboven)</p>
+<p>Verderop komen de pijltjes goed van pas, zeker als we meerdere variabelen naar hetzelfde object laten wijzen!</p>
+<h3 id="42-instance-methods-versus-class-methods">4.2. Instance methods versus class methods<a class="headerlink" href="#42-instance-methods-versus-class-methods" title="Permanent link">&para;</a></h3>
+<h4 id="421-object-gerelateerde-method">4.2.1. Object gerelateerde method<a class="headerlink" href="#421-object-gerelateerde-method" title="Permanent link">&para;</a></h4>
+<p>Een method waar geen <code>static</code> voor staat noemen we een <em>instance method</em> of <em>object (related) method</em>. We hebben er ondertussen zelf gecreëerd, bijvoorbeeld <code>Set</code>- en <code>GetNaam</code> uit de <code>Persoon</code> klasse.</p>
+<p>Deze methods worden altijd <em>op</em> een object aangeroepen. Voor de dot staat de naam van het object waarmee wordt gewerkt. Bijvoorbeeld <code>p2.SetNaam("Piet")</code>, de <em>object expressie</em> <code>p2</code> maakt hier duidelijk dat de <em>naam</em> van die <em>persoon</em> wordt ingesteld.</p>
+<p>Ook van voorgedefinieerde <em>instance methods</em> hebben we voorheen reeds gebruik gemaakt.</p>
+<p>Voorbeeld van instance methods</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="n">Factuur</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Factuur</span><span class="p">();</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="n">SetVervaldatum</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span><span class="w">                           </span><span class="c1">// (1)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span><span class="w">                 </span><span class="c1">// (1)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">GetVervaldatum</span><span class="p">());</span><span class="w">          </span><span class="c1">// (1)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">class</span><span class="w"> </span><span class="nc">Factuur</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">_vervaldatum</span><span class="p">;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetVervaldatum</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">vervaldatum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (2)</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">        </span><span class="n">_vervaldatum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vervaldatum</span><span class="p">;</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="nf">GetVervaldatum</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="c1">// (2)</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_vervaldatum</span><span class="p">;</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>We roepen instance methods <code>SetVervaldatum</code>, <code>ToUpper</code> of <code>GetVervaldatum</code> aan <strong>op objecten</strong> van type <code>Factuur</code> en <code>string</code>.</p>
+</li>
+<li>
+<p>Merk op dat er geen <code>static</code> sleutelwoorden in de hoofding van de methods <code>SetVervaldatum</code> en <code>GetVervaldatum</code> wordt vermeld.</p>
+</li>
+</ol>
+<p>Probeer maar eens uit wat er gebeurt wanneer je een <code>static</code> sleutelwoord zou toevoegen in de definitie van bijvoorbeeld de <code>GetVervaldatum</code> method. De compiler levert ons de foutmelding <em>"Member 'Factuur.GetVervaldatum()' cannot be accessed with an instance reference; qualify it with a type name instead"</em>.</p>
+<p>Ook in de implementatie van de <code>GetVervaldatum</code> method zelf zou een compilefout optreden: <em>"An object reference is required for the non-static field …​ _vervaldatum "</em>.</p>
+<p>Het dataveld <code>_vervaldatum</code> is inderdaad <em>non-static</em>, of noem het <em>instance related</em>. Het is gekoppeld aan het object in uitvoering.</p>
+<blockquote>
+<p><strong>Opmerking: Weinig parameters in instance methods.</strong></p>
+<p>Merk op dat bij instance methods typisch weinig parameters word gebruikt.</p>
+<p>Op basis van het object waarop de member wordt aangeroepen is immers reeds duidelijk wat de informatie is waarmee wordt gewerkt.</p>
+<p>Het volstaat bijvoorbeeld voor de <em>dot</em> naar <code>s</code> te verwijzen als je van deze <code>string</code> de <em>hoofdletter representatie</em> wenst op te vragen (<code>s.ToUpper()</code>). Tussen haakjes moet je bij het aanroepen van <code>ToUpper</code> dan ook geen parameterwaardes voorzien.</p>
+</blockquote>
+<h4 id="422-klasse-gerelateerde-method">4.2.2. Klasse gerelateerde method<a class="headerlink" href="#422-klasse-gerelateerde-method" title="Permanent link">&para;</a></h4>
+<p>Er zijn ook methods die niet bij objecten horen, namelijk de <strong>class methods</strong>. Deze methods worden ook wel <em>klasse (gerelateerde) methods</em> genoemd, in tegenstelling dus tot de <em>object (gerelateerde) methods</em>.</p>
+<p>Deze class methods kan je herkennen aan het <code>static</code> sleutelwoord in de hoofding van deze method. De <code>Main</code> method bijvoorbeeld is een class method, en dus geen instance method.</p>
+<p>Voorheen hebben we reeds intensief deze <em>class methods</em> ingezet. Nogmaals: daar was geen object nodig om deze method op aan te roepen.</p>
+<p>Voorbeeld van static methods</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">));</span><span class="w">      </span><span class="c1">// (1)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="kt">char</span><span class="p">.</span><span class="n">ToLower</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">));</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">PrintHelloWorld</span><span class="p">();</span><span class="w">                     </span><span class="c1">// (1)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">PrintHelloWorld</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (2)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>We roepen methods <code>WriteLine</code>, <code>Sqrt</code>, <code>ToLower</code> of <code>PrintHelloWorld</code> aan zonder dat deze op een object van toepassing is.</p>
+</li>
+<li>
+<p>Merk op dat het <code>static</code> sleutelwoord in de hoofding van deze method is vermeld.</p>
+</li>
+</ol>
+<p>Probeer maar eens uit wat er gebeurt wanneer je het <code>static</code> sleutelwoord zou verwijderen in de definitie van de <code>PrintHelloWorld</code> method. De compiler levert ons de foutmelding <em>"An object reference is required for the non-static method 'PrintHelloWorld()' …​"</em>. Indien de method <em>non-static</em> zou zijn, of met andere woorden een <em>instance method</em>, dan zou inderdaad een verwijzing naar een object (<em>object reference</em>) noodzakelijk zijn.</p>
+<p>In het geval van de <code>WriteLine</code>, <code>Sqrt</code> en <code>ToLower</code> methods, zetten we voor de dot de naam van de klasse waarin deze method is gedefinieerd. Voor het oproepen van <code>PrintHelloWorld</code> is dat niet noodzakelijk, daar roepen we deze method op vanuit dezelfde klasse als waarin ze is gedefinieerd.</p>
+<blockquote>
+<p><strong>Opmerking: Meer parameters in static methods.</strong></p>
+<p>Merk op dat bij <code>static</code> methods typisch meer parameters worden ingezet. Dit om duidelijk te maken wat de waardes zijn waarmee wordt gewerkt.</p>
+<p>We geven bij het aanroepen van <code>Console.WriteLine</code>, <code>Math.Sqrt</code> of <code>char.ToLower</code> telkens een parameterwaarde mee. Respectievelijk de <em>waarde die op de console wordt gedrukt</em>, de <em>waarde waarvan de vierkantswortel wordt opgeleverd</em>, of <em>het karakter waarvan de kleine letter variant wordt opgeleverd</em>.</p>
+</blockquote>
+<h3 id="43-this">4.3. this<a class="headerlink" href="#43-this" title="Permanent link">&para;</a></h3>
+<p>Voorheen hebben we benadrukt dat elke <em>instance methods</em> van toepassing is op een bepaald object. Sterker nog bij het aanroepen van die instance method hebben we voor de <em>dot</em> telkens verwezen naar het object in kwestie. Merk in volgend voorbeeld op dat we dat ook kunnen doen…​</p>
+<ul>
+<li>
+<p>Bij het aanspreken van een dataveld.</p>
+</li>
+<li>
+<p>Indien we die method aanroepen in de klasse zelf.</p>
+</li>
+</ul>
+<p>Daar kunnen we bij wijze van de <code>this</code> <em>object expressie</em> verduidelijken op welk object die member van toepassing is. <strong><code>this</code> zal als <em>object expressie</em> steeds wijzen naar het object in uitvoering.</strong></p>
+<p>Voorbeeld van het gebruik van this</p>
+<p>Van <code>Persoon</code> objecten kan je hier niet alleen de <em>naam</em> instellen en opvragen, maar ook de <em>initialen</em> bevragen.</p>
+<p>Zowel bij het aanspreken van het <code>_naam</code> veld, als de <code>GetNaam()</code> method, wordt verduidelijkt dat het gaat om het object in uitvoering (<code>this</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="n">p1</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Jean-Jacques Peters&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">Initialen</span><span class="p">());</span><span class="w">  </span><span class="c1">// JJP (1)</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">        </span><span class="n">p2</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Rita Sanders&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">p2</span><span class="p">.</span><span class="n">Initialen</span><span class="p">());</span><span class="w">  </span><span class="c1">// RS (2)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="k">class</span><span class="w"> </span><span class="nc">Persoon</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_naam</span><span class="p">;</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetNaam</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (3)</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetNaam</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_naam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (3)</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Initialen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">initialen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">        </span><span class="kt">char</span><span class="p">[]</span><span class="w"> </span><span class="n">splitsKarakters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">        </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">naamDelen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">GetNaam</span><span class="p">().</span><span class="n">Split</span><span class="p">(</span><span class="n">splitsKarakters</span><span class="p">);</span><span class="w">  </span><span class="c1">// (4)</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">naamDeel</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">naamDelen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">            </span><span class="n">initialen</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">naamDeel</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">initialen</span><span class="p">;</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Bij de eerste call naar <code>Initialen</code> is <code>p1</code> het object in uitvoering.</p>
+</li>
+<li>
+<p>Bij de tweede call naar <code>Initialen</code> is <code>p2</code> het object in uitvoering.</p>
+</li>
+<li>
+<p>Voor het aanspreken van het dataveld <code>_naam</code> wordt benadrukt dat het gaat om dat object (in uitvoering).</p>
+</li>
+<li>
+<p>Ook bij het aanroepen van <code>GetNaam</code> wordt dat expliciet aangegeven.</p>
+</li>
+</ol>
+<p>Het voorbeeld zou net zo goed werken zonder <code>this</code>.</p>
+<p>Het gebruik ervan kan echter geen kwaad. Je benadrukt ermee dat je gebruik maakt van een member (dataveld of method) van de klasse zelf.</p>
+<h4 id="431-underscore-voor-datavelden">4.3.1. Underscore voor datavelden<a class="headerlink" href="#431-underscore-voor-datavelden" title="Permanent link">&para;</a></h4>
+<p>Het gebruik van <code>this</code> is niet verplicht, al zeker niet indien er geen verwarring mogelijk is! Had het dataveld echter <code>naam</code> genoemd, zonder <em>underscore</em>, dan kan je je allicht inbeelden dat er bepaalde onduidelijkheid is.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Persoon</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetNaam</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="n">naam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// Niet zinvol! (2)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Merk op dat dit dataveld exact hetzelfde noemt als de parameter van de <code>SetNaam</code> method.</p>
+</li>
+<li>
+<p>De <code>naam</code> variabele links van de toekenningsoperator <code>=</code> wijst, net als <code>naam</code> rechts van die operator, naar de parameter, en niet naar het dataveld.</p>
+</li>
+</ol>
+<p>Dergelijk implementatie (<code>naam = naam;</code>) zou bijgevolg geen zinvol resultaat opleveren. Wat we dan weer kunnen oplossen door <code>this.</code> voor de target te vermelden…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Persoon</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetNaam</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">naam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><code>this.naam</code> moet wel naar een member verwijzen van het object in uitvoering, hier dus het <code>naam</code> dataveld.</li>
+</ol>
+<p>Hoewel het werken met <code>this</code> extra duidelijkheid kan verschaffen is het gebruik ervan bijna nooit noodzakelijk. Zeker niet wanneer je elke veldnaam met een <em>underscore</em> laat starten…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Persoon</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetNaam</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">naam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="n">_naam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">naam</span><span class="p">;</span><span class="w">  </span><span class="c1">// (2)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Merk op dat de naam van het dataveld nu opnieuw start met een underscore.</p>
+</li>
+<li>
+<p><code>_naam</code> wijst naar het dataveld.</p>
+</li>
+</ol>
+<p>Je zou van <code>_naam</code> <code>this._naam</code> kunnen maken, maar echt noodzakelijk lijkt het niet. De code is zo best duidelijk.</p>
+<h2 id="5-nullreferenceexception">5. NullReferenceException<a class="headerlink" href="#5-nullreferenceexception" title="Permanent link">&para;</a></h2>
+<p>Wat gebeurt er indien we een instance method aanroepen zonder dat er sprake is van object? Een situatie die wel eens voorvalt wanneer we <em>"vergeten"</em> een object aan te maken.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Persoon</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">//p = new Persoon();  (1)</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">p</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Jan&quot;</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li>Deze regel, die de instantie aanmaakt, en de variabele opvult, <em>vergaten</em> we op te nemen.</li>
+</ol>
+<p>Dan <strong>treedt een NullReferenceException op</strong>, met de bijkomende boodschap <em>"Object reference not set to an instance of an object."</em>.</p>
+<p>Deze error betekent dat er geprobeerd werd een instance method op te roepen zonder object. Dat wil zeggen dat de method werd aangeroepen op een <em>object expressie</em> die tijdens de uitvoering <code>null</code> blijkt te zijn.</p>
+<blockquote>
+<p><strong>Opmerking: Use of unassigned local variable.</strong></p>
+<p>Indien in voorgaande code <code>p</code> een lokale variabele zou zijn, en we de <code>p = null;</code> regel verwijderen, krijgen we de foutmelding: <em>"Use of unassigned local variable."</em></p>
+<p><img alt="Use of unassigned local variable." src="../images/Use%20of%20unassigned%20local%20variable.png" /></p>
+<p>Het voordeel is dat we hiermee worden gewaarschuwd voor de mogelijke <code>NullReferenceException</code>.</p>
+<p>Deze waarschuwing komt er enkel bij gewone <em>lokale variabelen</em>. Zoals we verderop gaan zien, zou het bijvoorbeeld ook kunnen dat je vergat een <em>dataveld</em>, of <em>array-slot</em> op te vullen. In dat geval krijg je die foutmelding niet te zien.</p>
+<p>Om het optreden van die exception nu reeds te kunnen illustreren, kunnen we de <em>unassigned local variable</em> foutmelding omzeilen met de <code>p = null;</code> regel.</p>
+</blockquote>
+<p>Je zult de <code>NullReferenceException</code> nog <em>heeeeeeeeeel vaak</em> tegenkomen in de komende jaren, jullie worden vast goeie vrienden ;)</p>
+<p>Maar geen paniek dus, het wijst er je gewoon op dat je ergens in de code een object vergeet aan te maken, of op te halen.</p>
+<h2 id="6-volwaardig-datatype">6. Volwaardig datatype<a class="headerlink" href="#6-volwaardig-datatype" title="Permanent link">&para;</a></h2>
+<p>Elke klasse introduceert een <em>nieuw (volwaardig) datatype</em> in ons programma.</p>
+<p>Een klasse datatype kan gebruikt worden als type <strong>voor lokale variabelen, datavelden, array-elementen, parameters, return values, enzovoort…​</strong>.</p>
+<p>Alles wat we tot dus ver met voorgedefinieerde datatypes hebben ondernomen, kan met andere woorden ook met onze eigen klasse datatypes.</p>
+<p>Voorbeeld van de flexibele inzet van je (klasse) datatype</p>
+<p>In dit voorbeeld wordt het type <code>Persoon</code> inzet voor <em>lokale variabelen</em>, als <em>array-element type</em> en als <em>return type</em>.</p>
+<p>Method <code>Oudste</code> levert de <em>oudste persoon</em> op (return type <code>Persoon</code>) van een reeks van <code>Persoon</code> objecten (parameter van type <code>Persoon[]</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="n">DateTime</span><span class="w"> </span><span class="n">geboorteDatum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">vader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="n">vader</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Victor&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">        </span><span class="n">vader</span><span class="p">.</span><span class="n">SetGeboortedatum</span><span class="p">(</span><span class="n">geboorteDatum1</span><span class="p">);</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">zoon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">();</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="n">zoon</span><span class="p">.</span><span class="n">SetNaam</span><span class="p">(</span><span class="s">&quot;Piet&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="n">zoon</span><span class="p">.</span><span class="n">SetGeboortedatum</span><span class="p">(</span><span class="n">geboorteDatum2</span><span class="p">);</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">        </span><span class="n">Persoon</span><span class="p">[]</span><span class="w"> </span><span class="n">familie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">  </span><span class="c1">// (2)</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">        </span><span class="n">familie</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vader</span><span class="p">;</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">        </span><span class="n">familie</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zoon</span><span class="p">;</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">oudsteFamilielid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Oudste</span><span class="p">(</span><span class="n">familie</span><span class="p">);</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;De oudste persoon is: {oudsteFamilielid.GetNaam()}&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">Persoon</span><span class="w"> </span><span class="nf">Oudste</span><span class="p">(</span><span class="n">Persoon</span><span class="p">[]</span><span class="w"> </span><span class="n">personen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (3) (4)</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">        </span><span class="n">Persoon</span><span class="w"> </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">personen</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">            </span><span class="c1">// We veronderstellen dat de eerste persoon de oudste is...</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">            </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personen</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="w">            </span><span class="c1">// En bekijken vanaf het tweede element of er sprake is van nog een oudere...</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">personen</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="w">                </span><span class="c1">// Vervang indien zo de tot-nu-toe-oudste door de persoon in kwestie...</span>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Leeftijd</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">oudste</span><span class="p">.</span><span class="n">Leeftijd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">                    </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">oudste</span><span class="p">;</span><span class="w">  </span><span class="c1">// (4)</span>
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Lokale variabelen <code>vader</code>, <code>zoon</code> en <code>oudste</code> zijn van type <code>Persoon</code>.</p>
+</li>
+<li>
+<p>Array variabele <code>familie</code> is van type <code>Persoon[]</code> (lees: <em>Persoon array</em>).</p>
+</li>
+<li>
+<p>Array variabele <code>personen</code>, de parameter van method <code>Oudste</code>, is zijn van type <code>Persoon[]</code> (lees: <em>Persoon array</em>).</p>
+</li>
+<li>
+<p>Method <code>Oudste</code> levert een waarde van type <code>Persoon</code> op. Merk op dat in de hoofding van deze method <code>Persoon</code> dan ook als return type is opgegeven.</p>
+</li>
+</ol>
+<p>De uitvoer van dit voorbeeld zal zijn…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">De</span><span class="w"> </span><span class="n">oudste</span><span class="w"> </span><span class="n">persoon</span><span class="w"> </span><span class="k">is</span><span class="p">:</span><span class="w"> </span><span class="n">Victor</span>
+</code></pre></div>
+<h3 id="61-nog-eens-met-een-objectdiagram">6.1. Nog eens met een objectdiagram<a class="headerlink" href="#61-nog-eens-met-een-objectdiagram" title="Permanent link">&para;</a></h3>
+<p>Heb je het moeilijk de werking van bovenstaande code te doorgronden? Teken dan een objectdiagram dat de situatie toont op het moment dat de <code>return oudste</code> opdracht wordt uitgvoerd.</p>
+<p>Het objectdiagram zou er zo kunnen uitzien…​</p>
+<p><img alt="Objectdiagram" src="../images/VaderZoonFamilieOudste.png" /></p>
+<p>Merk op dat we tijdens uitvoer soms beschikken over meerdere verwijzingen naar hetzelfde object. (Met de pijltjes valt dit nu inderdaad op.) Dat kan zolang er sprake is van reference types, of dus klasse datatypes. Bijvoorbeeld onze eigen type <code>Persoon</code> of <em>array datatypes</em>.</p>
+<p>Zowel de lokale variabelen <code>vader</code> als <code>oudste</code>, net als het <em>eerste array-element</em> wijst naar dat ene object dat <em>Victor</em> voorstelt.</p>
+<p>De rol van de verwijzing is wat de naam van de variabele uitdrukt. Voor de <code>Main</code> method fungeert dat object onder de rol <code>vader</code>, of is het een deel van de <code>familie</code>.</p>
+<p><img alt="Objectdiagram - Main" src="../images/VaderZoonFamilieOudste%20-%20Main.png" /></p>
+<p>Binnen de <code>Oudste</code> method, is het één van de <code>personen</code> die wordt bekeken, en wordt het uiteindelijk als <code>oudste</code> <em>persoon</em> aanzien…​</p>
+<p><img alt="Objectdiagram - Oudste" src="../images/VaderZoonFamilieOudste%20-%20Oudste.png" /></p>
+<h3 id="62-terug-naar-de-nullreferenceexception">6.2. Terug naar de NullReferenceException<a class="headerlink" href="#62-terug-naar-de-nullreferenceexception" title="Permanent link">&para;</a></h3>
+<p>Test eens uit wat je in voorgaand voorbeeld bekomt indien je op regel &lt;2&gt; de <code>new Persoon[2]</code> vervangt door <code>new Persoon[3]</code>…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">...</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Persoon</span><span class="p">[]</span><span class="w"> </span><span class="n">familie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persoon</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">  </span><span class="c1">// (1)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">familie</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vader</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">familie</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zoon</span><span class="p">;</span><span class="w">                   </span><span class="c1">// (2)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">...</span>
+</code></pre></div>
+<ol>
+<li>
+<p>In plaats van <em>2</em> slots, voorzien we er nu <em>3</em>.</p>
+</li>
+<li>
+<p>Toch worden er maar <em>2</em> opgevuld.</p>
+</li>
+</ol>
+<p>Voer je de code uit dan treedt een <code>NullReferenceException</code> exception op. Kan je volgen waarom?</p>
+<p>We voorzien met die <em>3</em> een element teveel in onze <code>familie</code> array. Het laatste slot wordt nooit opgevuld, en bevat bijgevolg <code>null</code>, de defaultwaarde van elke <em>reference type</em>. Een call als <code>personen[i].Leeftijd()</code> wordt zo problematisch. Expressie <code>personen[i]</code> evalueert immers naar <code>null</code> indien <code>i</code> gelijk is aan <em>2</em>.</p>
+<p><img alt="Objectdiagram - Deze keer met 3 slots in de array." src="../images/VaderZoonFamilieOudste%20-%20Main%20-%203%20slots.png" /></p>
+<p>Indien je in de <code>Oudste</code> method rekening wil met de mogelijkheid dat van de array niet alle elementen zinvol zijn opgevuld, kan je een extra controle als <code>if (personen[i] != null) { …​ }</code> inbouwen. Zet dan uiteraard de code die de exceptie kan opleveren als body van het <code>if</code> statement.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="c1">// Vervang indien zo de tot-nu-toe-oudste door de persoon in kwestie...</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Leeftijd</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">oudste</span><span class="p">.</span><span class="n">Leeftijd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="n">oudste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personen</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
