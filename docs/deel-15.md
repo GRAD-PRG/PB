@@ -718,31 +718,27 @@ De hiervoor gedefinieerde property `public string Naam { get; set; }` correspond
 
 Het gebruik van een property maakt de code dus een stuk compacter, **één member per *eigenschap* volstaat**.
 
-Het maakt de code ook *declaratiever*. In *declaratieve code* ligt je **focus op het *wat***, en niet op het *hoe*.
+Het maakt de code ook *declaratiever*. In *declaratieve code* ligt je **focus op het *wat***, zoals met properties:
 
+```csharp
+class Persoon {
+    public string Naam { get; set; }
+}
+```
 
-Met methods:
-Met properties:
+En niet op het *hoe*, zoals met methods:
 
-
-`class Persoon {
+```csharp
+class Persoon {
     private string _naam;
     public string GetNaam() {
-    return _naam;
+        return _naam;
     }
     public void SetNaam(string naam) {
         _naam = naam
     }
-}`
-
-
-`class Persoon {
-    public string Naam { get; set; }
-&#10;
-&#10;
-&#10;
-}`
-
+}
+```
 
 De combinatie van de methods en het dataveld vertelt *hoe* de eigenschap functioneert. Het dataveld verduidelijkt *hoe* de waarde wordt onthouden. De `Get` en `Set` methods *hoe* het *opvragen* of *instellen* dan onderliggend verloopt.
 De property maakt met één eenvoudige regel code duidelijk welke eigenschap wordt voorzien. Ook de `get` en `set` sleutelwoorden verduidelijken *wat* met die eigenschap kan gebeuren (*opvragen* en *instellen*).
@@ -756,32 +752,28 @@ Het *opvragen* van de *eigenschap* gebeurt min of meer identiek, al hoef je hier
 
 
 Met methods:
-Met properties:
 
-
-`Persoon persoon = new Persoon();
-persoon.SetNaam(&quot;Jan&quot;);  // (1)
-&#10;string winnaar = persoon.GetNaam();  // (2)
+```csharp
+Persoon persoon = new Persoon();
+persoon.SetNaam("Jan");  // (1)
+string winnaar = persoon.GetNaam();  // (2)
 Console.Write(winnaar);  // Jan`
-
-
+```
 
 - `"Jan"` moest als parameterwaarde worden meegegeven aan de `SetNaam` method
 - Het aparte method, specifiek voor het *getten* van de eigenschap, hier `GetNaam()`, wordt gebruikt voor het uitlezen van de eigenschap.
 
+Met properties:
 
-
-`Persoon persoon = new Persoon();
+```csharp
+Persoon persoon = new Persoon();
 persoon.Naam = &quot;Jan&quot;;  // (1)
-&#10;string winnaar = persoon.Naam;  // (2)
+string winnaar = persoon.Naam;  // (2)
 Console.Write(winnaar);  // Jan`
-
-
+```
 
 - Met een *klassieke toekenningsregel* kunnen we een waarde toekennen aan de `Naam` eigenschap.
 - Merk op hoe we aan de hand van dezelfde `Naam` member deze eigenschap ook kunnen uitlezen.
-
-
 
 ### 3.3. Waarvoor kiezen we nu (methods of properties)?
 We gieten het nog eens in een schematisch overzicht…​
@@ -902,45 +894,48 @@ In de constructor en in de `Advance()` method wordt dat veld aangepast. Dat is b
 
 Voorheen hadden we een `Step()` method en een `_stepValue` dataveld die enkel in de constructor werd ingesteld. Ter vervanging hiervan volstaat een `Step` property zonder `set` gedeelte.
 
-
 Met methods:
-Met properties:
 
-
-`class Counter {
+```csharp
+class Counter {
     public Counter() {
         _value = 0;
         _stepValue = 1;
     }
-&#10;    private int _value;
+
+    private int _value;
     public int Value() {
         return _value;
     }
-&#10;    private int _stepValue;
+
+    private int _stepValue;
     public int Step() {
         return _stepValue;
     }
-&#10;    public void Advance() {
+
+    public void Advance() {
         _value += Step();
     }
-}`
+}
+```
+Met properties:
 
-
-`class Counter {
+```csharp
+class Counter {
     public Counter() {
         Value = 0;
         Step = 1;
     }
-&#10;
+
     public int Value { get; private set; }
-&#10;
-&#10;
+    
     public int Step { get; }
-&#10;
-&#10;    public void Advance() {
+    
+    public void Advance() {
         Value += Step;
     }
-}`
+}
+```
 
 
 Je merkt hoe je aan de hand van properties toch een stuk compacter kan coderen.
