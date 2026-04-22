@@ -210,7 +210,21 @@ Nadat je aan je code hebt gewerkt:
 4. Klik op **Commit All**. Dit maakt een lokale snapshot.
 5. Klik op de **Push**-knop (pijl omhoog, ↑) of ga naar **Git → Push**. Nu staat je code op GitHub.
 
-> **Goede gewoonte:** Commit regelmatig en met duidelijke berichten. Niet één grote commit op het einde van de week met "alles" als bericht, maar meerdere kleine commits zoals `Oefening 1 afgewerkt`, `Bug in oefening 2 opgelost`. Dit helpt je om terug te kijken naar je werk en maakt feedback door de lector eenvoudiger.
+#### Commit frequentie
+
+Er zijn conventies, het dominante principe in professionele praktijk is **atomaire commits: één commit = één logische wijziging**.  Niet "één uur werk" of "één bestand", maar één samenhangend idee.  De vuistregel die daar uit voortvloeit: als je in je commitbericht het woord "en" nodig hebt ("Los op null-warning én hernoem variable"), zijn het waarschijnlijk/beter meerdere commits.
+
+Een paar werkbare tests om te beslissen of iets "commit-waardig" is:
+- Is de code in een werkende (of minstens compilerende) toestand?
+- Kan ik deze commit in één zin beschrijven zonder lijstje, zonder een "en"?
+- Zou ik deze commit kunnen reverten zonder dat ik ook andere dingen moet terugdraaien?
+- Zou een reviewer deze diff in twee minuten kunnen begrijpen?
+
+Commit dus na het toevoegen van een methode die werkt, na het fixen van een bug, na een refactor (ook los van functionele wijzigingen), ..., gebruik een duidelijke boodschap in gebiedende wijs die omschrijft aan welke noodzaak deze commit het hoofd biedt, bijvoorbeeld:
+- _"Voeg product toe aan voorrad"_
+- _"Bereken totaal inclusief BTW"_
+- _"Los op off-by-one in ticket print-out"_
+- _"Voeg barcode validatie toe"_
 
 ## 12. Terugkijken naar oude versies
 
