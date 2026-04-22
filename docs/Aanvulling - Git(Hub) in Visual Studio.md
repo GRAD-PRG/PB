@@ -206,11 +206,11 @@ Nadat je aan je code hebt gewerkt:
 
 1. Open het **Git Changes**-venster (**View → Git Changes**).
 2. Je ziet een lijst van alle bestanden die je hebt gewijzigd, toegevoegd of verwijderd.
-3. Schrijf een **commit message** — een korte beschrijving van wat je gedaan hebt (bv. `Oefening 3 afgewerkt - lussen`).
+3. Schrijf een **commit message** — een korte beschrijving van wat je gedaan hebt.
 4. Klik op **Commit All**. Dit maakt een lokale snapshot.
 5. Klik op de **Push**-knop (pijl omhoog, ↑) of ga naar **Git → Push**. Nu staat je code op GitHub.
 
-#### Commit frequentie
+## 12. Commit frequentie
 
 Er zijn conventies, het dominante principe in professionele praktijk is **atomaire commits: één commit = één logische wijziging**.  Niet "één uur werk" of "één bestand", maar één samenhangend idee.  De vuistregel die daar uit voortvloeit: als je in je commitbericht het woord "en" nodig hebt (_"Los op null-warning **én** hernoem variable"_), zijn het waarschijnlijk/beter meerdere commits.
 
@@ -228,7 +228,7 @@ Commit dus na het toevoegen van een methode die werkt, na het fixen van een bug,
 - _"Los op off-by-one in ticket print-out"_
 - _"Voeg barcode validatie toe"_
 
-## 12. Terugkijken naar oude versies
+## 13. Terugkijken naar oude versies
 
 Een van de grootste voordelen van Git is dat je altijd kunt terugkijken naar eerdere versies van je code. Elke commit die je hebt gemaakt is bewaard en kun je opnieuw bekijken.
 
@@ -255,7 +255,7 @@ Dit is de eenvoudigste en veiligste manier om oude code terug te halen. Er besta
 
 > **Geruststelling:** Git gooit nooit zomaar iets weg. Zelfs als je per ongeluk code verwijdert en dat commit, staat de oude versie nog in je geschiedenis. Je kunt altijd terugkijken en terughalen.
 
-## 13. Feedback via Issues
+## 14. Feedback via Issues
 
 De lector kan feedback geven via Issues op GitHub. Een issue is een soort ticket of notitie, gekoppeld aan je repository. Hieronder lees je hoe je ermee werkt.
 
@@ -276,7 +276,11 @@ Als je de feedback hebt verwerkt en het probleem is opgelost, kun je het issue s
 
 > **Tip:** Behandel issues als een to-do-lijst. Nieuwe feedback van de lector komt binnen als open issue. Na het verwerken sluit je het. Zo houd je een duidelijk overzicht van wat nog te doen is.
 
-## 14. Samenvatting
+#### Issue sluiten in VS
+
+Je kunt een issue ook sluiten vanuit Visual Studio. Open het issue in GitHub, kopieer het nummer (bv. #13) en voeg dat nummer toe aan je commit message wanneer je de code aanpast. Bijvoorbeeld: _"Hernoem variabele die wijst naar studentenverzameling: fixes #13"_. Wanneer je deze commit pusht, zal GitHub automatisch het issue sluiten zodra de commit in de repository staat.
+
+## 15. Samenvatting
 
 | Wat je wilt doen                     | Hoe                                                                   |
 | ------------------------------------ | --------------------------------------------------------------------- |
