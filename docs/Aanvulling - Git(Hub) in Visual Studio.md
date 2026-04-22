@@ -91,8 +91,8 @@ Hieronder vind je de belangrijkste Git-termen die je in deze cursus tegenkomt. J
 De dagelijkse Git-workflow is eigenlijk heel eenvoudig en bestaat uit drie stappen:
 
 1. **Werk aan je code** — schrijf, test, debug zoals je gewend bent.
-2. **Commit** — maak een snapshot met een beschrijving van wat je gedaan hebt.
-3. **Push** — upload je commits naar GitHub.
+2. **Je maakt commits** — met telkens een beschrijving van de verwachting die je hiermee hebt ingevuld.
+3. **Je pusht** — (upload) je commits naar je online repo (bijvoorbeeld GitHub).
 
 > **Onthoud:** Je moet altijd eerst committen vóór je kunt pushen. Een push zonder commit doet niets. Commit = lokaal opslaan van een snapshot. Push = dat snapshot uploaden naar GitHub.
 
@@ -121,11 +121,11 @@ Je hoeft dit maar één keer te doen. Visual Studio onthoudt je account.
 
 GitHub stuurt standaard e-mailnotificaties wanneer iemand je toevoegt als collaborator, je tagt in een issue (`@gebruikersnaam`), of reageert op een issue waar je bij betrokken bent. Je hoeft hier niets voor te configureren — het werkt automatisch zolang je e-mailadres geverifieerd is (wat onderdeel is van de registratie).
 
-> **Tip:** Controleer af en toe je spam-folder als je geen meldingen lijkt te ontvangen. E-mails van GitHub (`noreply@github.com`) worden soms als spam gefilterd.
+> **Tip:** Controleer af en toe je spam-folder als je geen meldingen lijkt te ontvangen. E-mails van GitHub (`noreply@github.com`) worden wel eens als spam gefilterd.
 
 ## 9. Code ophalen van de lector of iemand anders (clonen)
 
-De lector heeft een repository op GitHub klaargezet met oefeningen of voorbeeldcode. Jij maakt hiervan een lokale kopie via clone.
+De lector heeft een public repository op GitHub klaargezet met oefeningen of voorbeeldcode. Jij maakt hiervan een lokale kopie via clone.
 
 ### Stappen
 
@@ -135,7 +135,7 @@ De lector heeft een repository op GitHub klaargezet met oefeningen of voorbeeldc
 4. Kies een lokale map waar je het project wilt bewaren.
 5. Klik op **Clone**. Visual Studio downloadt alle bestanden en opent het project.
 
-Je hebt nu een lokale kopie. Je kunt de code bekijken, aanpassen en ermee oefenen. Je wijzigingen blijven op jouw computer — je kunt niets kapotmaken aan de repository van de lector.
+Je hebt nu een lokale kopie. Je kunt de code bekijken, aanpassen en ermee oefenen. Je wijzigingen blijven op jouw computer — je kunt niets kapotmaken aan de repository van de lector (je bent immers geen _collaborator_ en kan bijgevolg niet pushen naar de repository van de lector).
 
 ### Updates ophalen
 
@@ -212,16 +212,18 @@ Nadat je aan je code hebt gewerkt:
 
 #### Commit frequentie
 
-Er zijn conventies, het dominante principe in professionele praktijk is **atomaire commits: één commit = één logische wijziging**.  Niet "één uur werk" of "één bestand", maar één samenhangend idee.  De vuistregel die daar uit voortvloeit: als je in je commitbericht het woord "en" nodig hebt ("Los op null-warning én hernoem variable"), zijn het waarschijnlijk/beter meerdere commits.
+Er zijn conventies, het dominante principe in professionele praktijk is **atomaire commits: één commit = één logische wijziging**.  Niet "één uur werk" of "één bestand", maar één samenhangend idee.  De vuistregel die daar uit voortvloeit: als je in je commitbericht het woord "en" nodig hebt (_"Los op null-warning **én** hernoem variable"_), zijn het waarschijnlijk/beter meerdere commits.
 
 Een paar werkbare tests om te beslissen of iets "commit-waardig" is:
+
 - Is de code in een werkende (of minstens compilerende) toestand?
 - Kan ik deze commit in één zin beschrijven zonder lijstje, zonder een "en"?
 - Zou ik deze commit kunnen reverten zonder dat ik ook andere dingen moet terugdraaien?
 - Zou een reviewer deze diff in twee minuten kunnen begrijpen?
 
 Commit dus na het toevoegen van een methode die werkt, na het fixen van een bug, na een refactor (ook los van functionele wijzigingen), ..., gebruik een duidelijke boodschap in gebiedende wijs die omschrijft aan welke noodzaak deze commit het hoofd biedt, bijvoorbeeld:
-- _"Voeg product toe aan voorrad"_
+
+- _"Voeg product toe aan voorraad"_
 - _"Bereken totaal inclusief BTW"_
 - _"Los op off-by-one in ticket print-out"_
 - _"Voeg barcode validatie toe"_
