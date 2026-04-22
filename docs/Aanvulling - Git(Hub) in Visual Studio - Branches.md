@@ -4,7 +4,7 @@
 
 Een branch (vertakking) is een aparte lijn in de geschiedenis van je project. Je kunt het vergelijken met een kopie van je project waarop je verder werkt, zonder dat het origineel verandert.
 
-Tot nu toe heb je altijd op de **main** branch gewerkt. Dat is de standaard branch die aangemaakt wordt bij elke nieuwe repository. Elke commit die je maakte, kwam op die ene lijn terecht:
+Tot nu toe heb je altijd op de **main** branch gewerkt. Dat is de standaard branch die aangemaakt wordt bij elke nieuwe repository (soms is **master** de standaard afhankelijk van je configuratie: ook goed). Elke commit die je maakte, kwam op die ene lijn terecht:
 
 ```
 main:  ●───●───●───●
@@ -22,12 +22,12 @@ De commits op `fase-2` bestaan alleen op die branch. Als je terugschakelt naar `
 
 ## Waarom branches?
 
-Bij de opdrachten werk je in fases. Na elke bespreking met je lector krijg je feedback en nieuwe vereisten. Het is handig om op dat moment een duidelijke scheidslijn te trekken:
+Bij de opdrachten werk je in fases. Na elke bespreking met je _product-owner_, collegae of -bij ons- lector krijg je feedback en nieuwe _backlog_/vereisten. Het is handig om op dat moment een duidelijke scheidslijn te trekken:
 
-- **main** = de staat van je project bij de laatste bespreking (je laatst goedgekeurde tussenresultaat)
-- **een nieuwe branch** = al het werk dat je doet vóór de volgende bespreking
+- **main** = de staat van je project bij de laatste bespreking (je laatst goedgekeurde tussenresultaat), of dus het cummulatieve resultaat van al volledige afwerkte fases (die de status DONE hebben gekregen)
+- **een nieuwe branch** = wordt dan gebruikt voor de volgende fase (die nog niet volledig is afgerond)
 
-Zo kan je lector bij de volgende bespreking makkelijk vergelijken: wat stond er op `main` (het vorige tussenresultaat), en wat heb je sindsdien veranderd (de branch)?
+Zo kan de product_owner (of je lector) bij de volgende bespreking makkelijk vergelijken: wat stond er op `main` (het vorige tussenresultaat), en wat heb je sindsdien veranderd (de branch)?
 
 Die vergelijking gebeurt via een **Pull Request** op GitHub — daar komen we straks op terug.
 
@@ -35,7 +35,7 @@ Die vergelijking gebeurt via een **Pull Request** op GitHub — daar komen we st
 
 > Je maakt een nieuwe branch aan **na** een bespreking met de lector, wanneer je klaar bent om aan de volgende fase te beginnen.
 
-1. Kijk onderaan in de statusbalk van Visual Studio. Daar staat de naam van je huidige branch, waarschijnlijk **main**.
+1. Kijk onderaan in de statusbalk van Visual Studio. Daar staat de naam van je huidige branch, waarschijnlijk **main** (of **master**).
 
 2. Klik op die naam. Er verschijnt een menu.
 
