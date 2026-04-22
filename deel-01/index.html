@@ -1,0 +1,6381 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Leermateriaal — Graduaat Programmeren HOGENT">
+      
+      
+      
+        <link rel="canonical" href="https://GRAD-PRG.github.io/PB/deel-01/">
+      
+      
+        <link rel="prev" href="../deel-00/">
+      
+      
+        <link rel="next" href="../deel-01-oefeningen/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>uitleg - Programmeren Basis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmeren-basis-deel-01" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmeren Basis" class="md-header__button md-logo" aria-label="Programmeren Basis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmeren Basis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              uitleg
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Donkere modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Donkere modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Lichte modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lichte modus" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmeren Basis" class="md-nav__button md-logo" aria-label="Programmeren Basis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programmeren Basis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REGULIER UITGESCHREVEN CURSUSMATERIAAL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REGULIER UITGESCHREVEN CURSUSMATERIAAL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D00
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D01
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D01
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Hello World!
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Hello World!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-projecten-en-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Projecten en solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-starten-vanuit-de-voorbeeldsolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Starten vanuit de voorbeeldsolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-een-applicatie-uitvoeren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Een app(licatie) uitvoeren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-wat-is-een-hello-world-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Wat is een Hello World app?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-verdere-werkwijze-in-deze-cursus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Verdere werkwijze in deze cursus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-compileren-en-de-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Compileren en de IDE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Compileren en de IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Compiler
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Compiler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-compilefouten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Compilefouten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.1. Compilefouten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111-error-list-toolvenster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1.1. Error List toolvenster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112-error-squiggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1.2. Error squiggles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113-quick-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1.3. Quick Action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-integrated-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Integrated Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-enkele-taalelementen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Enkele taalelementen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Enkele taalelementen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-statements-en-terminators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Statements en terminators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Literals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-commentaar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Commentaar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-variabelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Variabelen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Variabelen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-declaratie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1. Declaratie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-analogie-geheugen-en-datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2. Analogie, geheugen en datatype
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-meerdere-variabelen-en-hun-naam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3. Meerdere variabelen en hun naam
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-gebruiken-van-de-variabele" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4. Gebruiken van de variabele
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-string-int-en-double-waardes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. String, int en double waardes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-static-type-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Static type checking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6. Static type checking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-expressies-en-hun-datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1. Expressies en hun datatype
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-berekeningen-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. Berekeningen maken
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7. Berekeningen maken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#371-rest-na-deling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.1. Rest na deling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#372-operator-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2. Operator precedence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7.2. Operator precedence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3721-haakjes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2.1. Haakjes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D02
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D02
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D03
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D03
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D04
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D04
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D05
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D05
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D06
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D06
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGFX1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DGFX1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D07
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D07
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D08
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D08
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D09
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D09
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D10
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D10
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D11
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D11
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSK1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSK1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-sk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D12
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D12
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEBD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DEBD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_19" id="__nav_2_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D13
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D13
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_20" id="__nav_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_21" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_21">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_22" id="__nav_2_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D15
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D15
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_23" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_23" id="__nav_2_23_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_23">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D16
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_24">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D16
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_25" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_25" id="__nav_2_25_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA5
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_25">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_26" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_26" id="__nav_2_26_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D17
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_26_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_26">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D17
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_27" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_27" id="__nav_2_27_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D18
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_27_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_27">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D18
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_28" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_28" id="__nav_2_28_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGFX2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_28_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_28">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DGFX2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AANVULLINGEN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AANVULLINGEN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    versiebeheer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    versiebeheer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20Git%28Hub%29%20in%20Visual%20Studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git(Hub) in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling - Git(Hub) in Visual Studio - Branches" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git(Hub) branches in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    generatieve ai
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    generatieve ai
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20GitHub%20Copilot%20in%20Visual%20Studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Copilot in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    algoritmisch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    algoritmisch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D06%20-%20Iteratie%20statements%20-%20voordelen%20en%20verschillen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iteratie statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    datatypes (value vs reference)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    datatypes (value vs reference)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%20Nullable%20datatypes%20en%20null%20checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nullable datatypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    numerieke en temporal informatie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    numerieke en temporal informatie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%202.1.%20Numerieke%20datatypes%20en%20%28impliciete%29%20afrondingsfouten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numerieke datatypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%202.2%20expliciet%20afronden%20van%20komagetallen%20-%20belgische%20wetgeving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Afronden van komagetallen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%203.1.1.%20DateTime%20waarde%20maken%20-%20omzetten%20van%20inputstrings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime waarde maken
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D16%20en%20D17%20-%20Collecties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    collecties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OOP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D18%20-%20Subtype%20polymorfisme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtype polymorfisme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D18%20-%20Dependency%20inversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Inversion & Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20Cs%20taalfeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# taalfeatures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Hello World!
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Hello World!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-projecten-en-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Projecten en solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-starten-vanuit-de-voorbeeldsolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Starten vanuit de voorbeeldsolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-een-applicatie-uitvoeren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Een app(licatie) uitvoeren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-wat-is-een-hello-world-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Wat is een Hello World app?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-verdere-werkwijze-in-deze-cursus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Verdere werkwijze in deze cursus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-compileren-en-de-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Compileren en de IDE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Compileren en de IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Compiler
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Compiler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-compilefouten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Compilefouten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.1. Compilefouten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111-error-list-toolvenster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1.1. Error List toolvenster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112-error-squiggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1.2. Error squiggles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113-quick-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1.3. Quick Action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-integrated-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Integrated Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-enkele-taalelementen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Enkele taalelementen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Enkele taalelementen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-statements-en-terminators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Statements en terminators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Literals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-commentaar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Commentaar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-variabelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Variabelen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Variabelen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-declaratie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1. Declaratie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-analogie-geheugen-en-datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2. Analogie, geheugen en datatype
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-meerdere-variabelen-en-hun-naam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3. Meerdere variabelen en hun naam
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-gebruiken-van-de-variabele" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4. Gebruiken van de variabele
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-string-int-en-double-waardes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. String, int en double waardes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-static-type-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Static type checking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6. Static type checking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-expressies-en-hun-datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1. Expressies en hun datatype
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-berekeningen-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. Berekeningen maken
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7. Berekeningen maken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#371-rest-na-deling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.1. Rest na deling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#372-operator-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2. Operator precedence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7.2. Operator precedence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3721-haakjes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2.1. Haakjes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="programmeren-basis-deel-01">Programmeren Basis - Deel 01<a class="headerlink" href="#programmeren-basis-deel-01" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>In dit cursusmateriaal wordt verondersteld dat Visual Studio op je toestel is geïnstalleerd.</p>
+<p>In dit cursusmateriaal wordt gewerkt met de <em>Enterprise</em> editie, geïnstalleerd op een Windows 10. We raden aan de studenten van onze opleiding dezelfde configuratie aan . De Enterprise versie heeft de meest volledige set aan mogelijkheden.</p>
+<p>In het verdiepingsmateriaal vind je meer informatie over de verschillende versies van Visual Studio, en over het downloaden en installeren van Visual Studio.</p>
+</blockquote>
+<h2 id="1-hello-world">1. Hello World!<a class="headerlink" href="#1-hello-world" title="Permanent link">&para;</a></h2>
+<h3 id="11-projecten-en-solutions">1.1. Projecten en solutions<a class="headerlink" href="#11-projecten-en-solutions" title="Permanent link">&para;</a></h3>
+<p>Om een <em>programma</em>, <em>applicatie</em>, <em>app</em>, …​, en dit zijn allemaal synoniemen, op te bouwen, creëren we in Visual Studio een <em>project</em>. Dit project hoort op zijn beurt tot een <em>solution</em>. Een project is een technologische eenheid die deel uitmaakt van het te ontwikkelen systeem. Het resultaat is een applicatie of een applicatie-component.</p>
+<p>We kunnen verschillende soorten van projecten creëren. Visual Studio helpt ons daarmee door verschillende templates aan te bieden. Enkele voorbeelden van templates zijn: <em>console applicaties</em>, <em>Windows Forms applicaties</em>, <em>WPF applicaties</em> en <em>class libraries</em>.</p>
+<p>Meerdere van dergelijke applicatie-componenten kunnen gecombineerd worden om tot een gehele <em>oplossing</em> te komen. In dat geval spreken we over een <em>solution</em>. Een solution is dus een verzameling en configuratie van alle componenten (als projecten) die deel uit maken van het te ontwikkelen systeem.</p>
+<p>De meeste voorbeelden en oefeningen die je in dit cursusmateriaal vindt, zijn opgesteld aan de hand van console applicaties. Dit soort van applicaties heeft beperkte mogelijkheden voor invoer en uitvoer, en zijn bedoeld voor het creëren van opdrachtregel programma’s (<em>command line applications</em>). Console applicaties worden in deze cursus ook ingezet vanwege hun eenvoud. De aangebrachte stof kan je echter later ook in andere soorten applicaties (bijvoorbeeld desktop, web of mobile applicaties) gaan inzetten.</p>
+<h3 id="12-starten-vanuit-de-voorbeeldsolution">1.2. Starten vanuit de voorbeeldsolution<a class="headerlink" href="#12-starten-vanuit-de-voorbeeldsolution" title="Permanent link">&para;</a></h3>
+<p>Voor de eenvoud vertrekken we in het begin van een reeds opgezet project en solution.</p>
+<p>Download het <a href="../attachments/solution1.zip">solution1.zip</a> archief en pak het uit.</p>
+<blockquote>
+<p><strong>Opmerking: Wat is een archief (zip) bestand?</strong></p>
+<p>In een archief bestand, bijvoorbeeld met de extensie <em>zip</em>, zitten meerdere bestanden en mappen samen verpakt.</p>
+<p><strong>Tip: Hoe pak ik in Windows een archief uit?</strong></p>
+<p>In <em>Windows</em> kan je deze <em>uitpakken</em> (<em>decomprimeren</em>) door in de <em>Verkenner</em> te rechterklikken op de bestandsnaam, en te kiezen voor een optie als <em>Alles uitpakken…​</em>…​</p>
+<p>Kies in welke map je dit archief wil decomprimeren, klik op <em>Uitpakken</em> en open deze doelmap…​</p>
+</blockquote>
+<p>Open het bestand met de <em>.sln</em> extensie (bijvoorbeeld door er op te dubbelklikken)…​</p>
+<p><img alt="Voorbeeldsolution openen.png" src="../images/Voorbeeldsolution%20openen.png" /></p>
+<p>Visual Studio opent de solution en het bijhorende project…​</p>
+<p><img alt="Voorbeeldsolution geopend in Visual Studio" src="../images/Voorbeeldsolution%20geopend%20in%20Visual%20Studio.png" /></p>
+<p>Het is in dit bestand (<em>Program.cs</em>) dat we onze eigen code gaan verwerken.</p>
+<blockquote>
+<p><strong>Tip: Wat doe ik als ik geen broncode krijg te zien?</strong></p>
+<p>Indien je geen broncode te zien krijgt, vouw je in het <em>Solution Explorer</em> toolvenster de <em>Project1</em> node open (klik op het pijltje naast <em>Project1</em>), en dubbelklik je op de naam van ons broncodebestand <em>Program.cs</em>.</p>
+<p><strong>Tip: Waar vind ik de Solution Explorer?</strong></p>
+<p>Vind je de <em>Solution Explorer</em> niet terug kies dan in de <em>View</em> menu van Visual Studio voor <em>Solution Explorer</em>. Doorgaans verschijnt dit toolvenster vervolgens aan de rechterkant van onze ontwikkelomgeving.</p>
+<p><strong>Opmerking: Waarvoor dient deze Solution Explorer?</strong></p>
+<p>In de <em>Solution Explorer</em> krijgen we te zien hoe het broncodebestand <em>Program.cs</em> deel uit maakt van het project <em>Project1</em>, dat op zijn beurt deel uitmaakt van de solution <em>Solution1</em>. Naast het eenvoudigweg openen van broncodebestanden, kan je dit toolvenster gebruiken om de configuratie van je oplossing te <em>verkennen</em> of aan te passen.</p>
+<p>Je zou er bijvoorbeeld broncodebestanden of projecten kunnen toevoegen, hernoemen, verwijderen, …​ .</p>
+<p>Momenteel is dat voor ons nog niet noodzakelijk. Wanneer we later complexere projecten en solutions gaan opzetten, komen we hierop terug.</p>
+</blockquote>
+<h3 id="13-een-applicatie-uitvoeren">1.3. Een app(licatie) uitvoeren<a class="headerlink" href="#13-een-applicatie-uitvoeren" title="Permanent link">&para;</a></h3>
+<p>Om het programma te starten klik je in de werkbalk op de <em>play knop</em> (een groene pijl) waarop de projectnaam staat vermeld…​</p>
+<p><img alt="Programma uit de voorbeeldsolution starten." src="../images/Visual%20Studio%20-%20Programma%20starten.png" /></p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Er bestaan verschillende manieren om programma’s op te starten. Naast het klikken op de play knop kan je in de <em>Debug</em> menu van Visual Studio bijvoorbeeld ook kiezen voor <em>Start Debugging</em>.</p>
+</blockquote>
+<p>Het programma wordt uitgevoerd en de tekst <em>Hello World!</em> wordt op de console gedrukt…​</p>
+<p><img alt="Uitvoer van het Hello World voorbeeld" src="../images/Voorbeeldsolution%20-%20Hello%20World%20-%20Uitvoer.png" /></p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>We krijgen van de console mee dat het programma succesvol beëindigd werd (<em>exited with code 0</em>).</p>
+</blockquote>
+<p>Druk als gebruiker eender welke toets om de console af te sluiten, of gebruik de systeemknop voor het sluiten (het kruisje bovenaan rechts in het venster). Sinds Visual Studio 2019 zal bij het uitvoeren van een console applicatie by default de console niet meer sluiten eens het programma is beëindigd. Vroeger was dit wel het geval, en was het moeilijk op deze wijze de uitvoer af te lezen. Het console scherm sloot immers onmiddelijk na het afdrukken van de tekst <em>Hello World!</em>.</p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>Wat hier de <em>console</em> wordt genoemd, is het venster -of anders gezegd de uitvoeringsomgeving- in dewelke het programma wordt uitgevoerd.</p>
+<p>In het verdiepingsmateriaal vind je meer informatie over deze tekstuele <em>uitvoeromgeving</em>.</p>
+</blockquote>
+<h3 id="14-wat-is-een-hello-world-app">1.4. Wat is een Hello World app?<a class="headerlink" href="#14-wat-is-een-hello-world-app" title="Permanent link">&para;</a></h3>
+<p>Programmeercursussen starten typisch met een <em>Hello World</em> voorbeeld. Dergelijk voorbeeld illustreert een basishandeling van een programma, namelijk het brengen van uitvoer. In dit geval het brengen van tekst op de <em>console</em>.</p>
+<p>Vaak brengt men in deze voorbeelden de tekst <em>Hello World!</em> naar voor, maar om te illustreren hoe je die uitvoer brengt maakt het niet uit met welke tekst je werkt.</p>
+<p>Als je naar de code kijkt begrijpt je allicht hoe ons algoritme het programma de opdracht geeft een <em>regel te schrijven</em> (<code>WriteLine</code>) die bestaat uit de tekst <code>"Hello World!"</code>. Hiervoor zorgt dus de instructie <code>Console.WriteLine("Hello World!")</code>.</p>
+<p>Het goede bron voor <em>Hello World</em> broncode -in zowat elke mogelijke taal- is de <a href="http://helloworldcollection.de/">The Hello World Collection (http://helloworldcollection.de)</a></p>
+<h3 id="15-verdere-werkwijze-in-deze-cursus">1.5. Verdere werkwijze in deze cursus<a class="headerlink" href="#15-verdere-werkwijze-in-deze-cursus" title="Permanent link">&para;</a></h3>
+<p>Voorlopig komen alle instructies van de voorbeelden en oefeningen in dit cursusmateriaal in de <code>Main</code> <em>method</em> terecht. Meer specifiek tussen diens accolades, of met ander woorden tussen de <code>{</code> en <code>}</code> symbolen…​</p>
+<p>Program.cs</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Project1</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="p">...</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>hier komt onze eigen code te staan</li>
+</ol>
+<p>We kunnen momenteel steeds dezelfde Solution1, Project1 en Program.cs voor het uittesten van de voorbeelden, en het maken van de oefeningen gebruiken.</p>
+<p>Indien je een stuk programmacode wil bewaren, kan je bijvoorbeeld de inhoud van het broncode document (of van de <code>Main</code> method) kopiëren, en in een ander document opslaan. Daarna kan je eventueel de inhoud van de <code>Main</code> method vervangen om met een nieuw voorbeeld of oefening aan de slag te gaan.</p>
+<p>Taalelementen als <em>namespaces</em> (<code>namespace</code> sleutelwoord) en <em>klassen</em> (<code>class</code> sleutelwoord) mag je momenteel gewoon negeren. We komen hier later uitvoering op terug.</p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>Kan je je toch niet bedwingen, dan vind je in bij de het verdiepingsmateriaal meer informatie terug over:</p>
+<ul>
+<li>
+<p>Dot notaties, bijvoorbeeld in <code>Console.WriteLine</code> of <code>Console</code> <em>dot</em> <code>WriteLine</code></p>
+</li>
+<li>
+<p>Using directives (<code>using</code> sleutelwoord)</p>
+</li>
+<li>
+<p>Namespaces (<code>namespace</code> sleutelwoord)</p>
+</li>
+<li>
+<p>Sleutelwoorden</p>
+</li>
+</ul>
+<p><strong>Opmerking</strong></p>
+<p>Ook over het hoe en waarom code te structuren over verschillende methods, klassen, namespace of broncodedocumenten, kan je bij de verdieping nalezen:</p>
+<ul>
+<li>
+<p>Code onderdelen of klassen</p>
+</li>
+<li>
+<p>Hoofdmethod Main</p>
+</li>
+<li>
+<p>Meerdere methods in een klasse</p>
+</li>
+<li>
+<p>Een method publiek of privaat definiëren</p>
+</li>
+</ul>
+<p><strong>Opmerking</strong></p>
+<p>Ook al bij de verdieping kan je terugvinden hoe we in Visual Studio een nieuwe project creëren.</p>
+<p><strong>Opmerking: Program.cs</strong></p>
+<p>Technisch gezien kan je sinds <em>C# 9.0</em> ook aan de slag met <em>top-level statements</em>. Deze komen rechtstreeks (eventueel in combinatie met using directives) in een broncode bestand worden opgenomen.</p>
+<p>De omsluitende <code>Main(string[] args)</code>, klasse en namespace container wordt er dan op de achtergrond voor ons rond gezet.</p>
+<p>Je kan met andere woorden hetzelfde resultaat bereiken met…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">...</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>hier komt onze eigen code te staan</li>
+</ol>
+<p>Bijvoorbeeld…​</p>
+<p>Program.cs</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Toch zal je al snel gebruik willen maken van extra methods, klassen of namespace. Om die reden is het geen slecht idee, deze voor de volledigheid meteen ook op te nemen.</p>
+</blockquote>
+<h2 id="2-compileren-en-de-ide">2. Compileren en de IDE<a class="headerlink" href="#2-compileren-en-de-ide" title="Permanent link">&para;</a></h2>
+<h3 id="21-compiler">2.1. Compiler<a class="headerlink" href="#21-compiler" title="Permanent link">&para;</a></h3>
+<p>Visual Studio maakt gebruik van de C# compiler om onze C# broncode, bij het creëren van een Console Application, om te zetten naar een uitvoerbaar bestand. Onze C# broncode zit doorgaans vervat in een bestand met de .cs extensie. <em>cs</em> als logische afkorting voor <em>See Sharp</em>, de eerder fonetische schrijfwijze van <em>C#</em>. Het uitvoerbaar bestand, ook wel de <em>executable</em> of simpelweg de <em>applicatie</em> genoemd, zit typisch vervat in een bestand met de .exe extensie.</p>
+<p>De compiler is de tool waar wij als ontwikkelaar mee communiceren. We vertellen deze compiler, aan de hand van een <em>algoritme</em> (een verzameling van instructies), noem het gerust een <em>programma</em>, hoe onze applicatie er uit ziet, hoe het programmaverloop in elkaar zit.</p>
+<p>Als de compiler ons, of dus de broncode, verstaat, kan het een applicatie, of een onderdeel voor een applicatie <em>bouwen</em>. Men spreekt hier ook wel over het <em>build</em> proces. Visual Studio zal na het <em>compileren</em>, en dus het bouwen van de Console Application executable, deze executable gaan opstarten in de opdrachtregel-omgeving. Dit op het moment dat we op de <em>play</em> knop klikken op de <em>Standard</em> werkbalk, of kiezen voor <em>Start Debugging</em> in de <em>Debug</em> menu-optie.</p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>Je kan het openen van de opdrachtregel-omgeving, en het opstarten van de applicatie, ook manueel verrichten. Visual Studio maakt dit proces voor ons echter vele malen eenvoudiger.</p>
+</blockquote>
+<h4 id="211-compilefouten">2.1.1. Compilefouten<a class="headerlink" href="#211-compilefouten" title="Permanent link">&para;</a></h4>
+<p>Als de compiler ons niet verstaat, zal het aan ons vertellen <em>wat</em> het niet verstaat, en soms zelfs suggesties maken <em>hoe</em> we deze fout kunnen corrigeren. We spreken hier over een <em>compile-</em> of <em>buildfout</em>. Stel dat we in voorgaand programma, in plaats van de voor gedefinieerde functionaliteit met de naam <code>WriteLine</code>, opeens <code>WwriteLine</code> proberen aan te roepen. We tikken bijvoorbeeld per ongeluk een <em>w</em> te veel. Dan krijgen we in Visual Studio te zien dat de compiler ons niet meer begrijpt.</p>
+<p><img alt="Visual Studio - Compilefout - Error List" src="../images/Visual%20Studio%20-%20Compilefout%20-%20Error%20List.png" /></p>
+<h5 id="2111-error-list-toolvenster">2.1.1.1. Error List toolvenster<a class="headerlink" href="#2111-error-list-toolvenster" title="Permanent link">&para;</a></h5>
+<p>Het <em>Error List</em> toolvenster toon een overzicht van alle compilefouten. Per fout krijgen we een omschrijving, eventuele verbeter suggesties en de locatie (bestand en regel) te zien.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Dubbelklik je in dit toolvenster op dergelijke foutregel dan verspringt de focus naar de code editor en staat de cursus meteen op de positie waar iets fout is. Dit is uitermate handig in situaties waar we met veel broncode en eventueel veel compilefouten zitten.</p>
+<p><strong>Tip: Waar kan ik het Error List toolvenster vinden?</strong></p>
+<p>Vind je het Error List toolvenster niet terug, kan kies je in de menu van Visual Studio onder <em>View</em> voor <em>Error List</em>.</p>
+<p><img alt="Visual Studio - View - Error List" src="../images/Visual%20Studio%20-%20View%20toolvensters.png" /></p>
+</blockquote>
+<h5 id="2112-error-squiggles">2.1.1.2. Error squiggles<a class="headerlink" href="#2112-error-squiggles" title="Permanent link">&para;</a></h5>
+<p>Ook de rode kartellijn (<em>error squiggle</em>) onder <em>wWriteLine</em> maakt meteen in de code editor duidelijk dat zich daar een fout bevindt.</p>
+<p><img alt="Visual Studio - Compilefout - Kartellijn" src="../images/Visual%20Studio%20-%20Compilefout%20-%20Kartellijn.png" /></p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Hover je met je muisindicator boven deze kartellijn, dan krijg je dezelfde omschrijving van deze fout te zien, als in het <em>Error List</em> toolvenster wordt getoond.</p>
+</blockquote>
+<h5 id="2113-quick-action">2.1.1.3. Quick Action<a class="headerlink" href="#2113-quick-action" title="Permanent link">&para;</a></h5>
+<p>Merk op dat in geval van compilefouten de code editor soms ook <em>quick action</em> lichtbol icoontjes vertoont. Deze bieden ons <em>vlugge</em> toegang tot <em>handelingen</em> die hopelijk leiden tot verbetering.</p>
+<p><img alt="Visual Studio - Compilefout - Quick action" src="../images/Visual%20Studio%20-%20Compilefout%20-%20Quick%20action.png" /></p>
+<p>Kies je hier effectief voor <em>Change wWriteLine to WriteLine.</em> dan zal onze code worden aangepast. Het preview venster visualiseerde dit alvast.</p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>Bij elke nieuwe versie van een taal als C#, zeg dus maar gerust bij elke nieuwe versie van een compiler, verstaat deze andere, nieuwe, eenvoudigere instructies/algoritmes en wordt deze beter in het duidelijk maken wat deze niet verstaat.</p>
+</blockquote>
+<h3 id="22-integrated-development-environment">2.2. Integrated Development Environment<a class="headerlink" href="#22-integrated-development-environment" title="Permanent link">&para;</a></h3>
+<p>Doorgaans verschijnt het <em>Error List</em> toolvenster onderaan links in de Visual Studio IDE. Deze plaatsing valt echter makkelijk aan te passen, je kan bijvoorbeeld het toolvenster aan eender welke kant van het Visual Studio hoofdvenster, of eender welke kant van een ander toolvenster vasthaken (<em>docking</em>), of zelf laten drijven (<em>floating</em>) boven het hoofdvenster.</p>
+<p>Versleep het toolvenster (klik op de titel en beweeg de muisindicator) om deze ergens anders te plaatsen. Als je met de muisindicator sleept boven één van de voorgedefinieerde layout-posities, in het kruis midden op het scherm, dan geeft Visual Studio een preview, in de vorm van een blauw vak, waar dit toolvenster zal terechtkomen.</p>
+<p><img alt="Visual Studio - Toolvensters verplaatsen" src="../images/Visual%20Studio%20-%20Toolvensters%20verplaatsen.png" /></p>
+<p>Of rechterklik op de titel van het toolvenster om de mogelijkheden te verkennen.</p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>Men spreekt wel eens over een <em>IDE</em>, of voluit <em>Integrated Development Environment</em>. Logisch, want we merken al snel dat deze Visual Studio ontwikkelomgeving een samenhangen is van verschillende tools als: de code editor, de compiler, het <em>Error List</em> of <em>Solution Explorer</em> toolvenster, …​ .</p>
+</blockquote>
+<h2 id="3-enkele-taalelementen">3. Enkele taalelementen<a class="headerlink" href="#3-enkele-taalelementen" title="Permanent link">&para;</a></h2>
+<h3 id="31-statements-en-terminators">3.1. Statements en terminators<a class="headerlink" href="#31-statements-en-terminators" title="Permanent link">&para;</a></h3>
+<p><em>Instructies</em> worden ook wel eens <em>statements</em> genoemd.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Bemerk dat instructies worden afgesloten met een <code>;</code>. Deze moet duidelijk maken dat dat het einde is van de opdracht die we geven (<em>statement terminator</em>).</p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/statements">Microsoft Docs: Statements (C# Programming Guide)</a></p>
+<h3 id="32-literals">3.2. Literals<a class="headerlink" href="#32-literals" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>De bedoeling van deze instructie is om de tekst <em>Hello World!</em> op de console te drukken, hoe vaak je het programma ook uitvoert.</p>
+<p>Omdat deze tekst een onveranderlijk -lees <em>letterlijk</em>- stuk tekst is, noemt men dit ook wel een <em>string literal</em>. Een <em>string</em> is een <em>aaneenschakeling</em> van meerdere karakters.</p>
+<p>Een string literal plaats men steeds tussen aanhalingstekens (<code>"…​"</code>).</p>
+<p>Probeer het zelf eens zelf, maak hiervan…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Console.WriteLine();&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Voer het programma uit, en merk op dat we een geheel andere uitvoer verkrijgen. Deze keer komt de tekst <em>Console.WriteLine();</em> op de console.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Gelukkig toont Visual Studio tekstuele data in het rood (bij default kleuren-instellingen), dus kan je makkelijk zien of je goed bezig bent qua aanhalingstekens. Als plots de helft van je programma in het rood staat ben je wellicht een afsluitend aanhalingsteken vergeten.</p>
+<p>Je kan Visual Studio ook zo configureren dat andere kleuren in de code editor worden gebruikt.</p>
+</blockquote>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type">Microsoft Docs: string (C# Reference)</a></p>
+<h3 id="33-commentaar">3.3. Commentaar<a class="headerlink" href="#33-commentaar" title="Permanent link">&para;</a></h3>
+<p>Wens je je programma’s te verduidelijken dan kan dit aan de hand van <em>commentaar</em>.</p>
+<p>Volgend voorbeeld zal, net als voorgaande, <em>Hello World!</em> afdrukken. Tekst die worden voorafgegaan door <code>//</code> wordt geïnterpreteerd als <em>commentaar</em> en wordt bijgevolg door de compiler genegeerd.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">//Volgende instructie</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">//zorgt voor</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">//uitvoer...</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Indien we het voorbeeld uitvoeren dan krijgen we opnieuw net dezelfde uitvoer…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Hello</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
+</code></pre></div>
+<p>Let echter op, het feit dat commentaar eender wat kan inhouden (gezien het niet wordt gecompileerd, of dus ook niet wordt gecontroleerd), is zowel het sterkste als het zwakste punt van commentaar. Maar al te vaak wordt nagelaten bij aanpassingen van de code, ook de commentaar aan te passen.</p>
+<p>Commentaar dat niet up-to-date is, is zinloos en contraproductief.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Commentaar wordt vaak gebruikt tijdens het aanpassen van code. Soms helpt het bepaalde stukken code tijdelijk uit te schakelen.</p>
+<p><strong>Opmerking</strong></p>
+<p>Bemerk dat ook lege regels, of overige <em>whitespace</em> karakters zoals tabs, genegeerd worden door de compiler, en dus geen enkele invloed hebben op het programmaverloop.</p>
+</blockquote>
+<p>Commentaar die meerdere regels beslaat, kan je ook éénmalig starten met <code>/*</code> en afsluiten met <code>*/</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/* Volgende instructie</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cm">   zorgt voor</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cm">   uitvoer... */</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="34-variabelen">3.4. Variabelen<a class="headerlink" href="#34-variabelen" title="Permanent link">&para;</a></h3>
+<p>Om tijdens uitvoer van een programma informatie bij te houden, kan je gebruik maken van variabelen. Bij het introduceren van een variabele wordt geheugen gereserveerd. Dat geheugen wordt gebruikt om de informatie op te slaan.</p>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>De meeste algoritmes gaan typisch <em>informatie</em> aanpassen en doorsluizen doorheen het programma.</p>
+</blockquote>
+<p>Om welke informatie of waardes gaat het dan?</p>
+<ul>
+<li>
+<p>letterlijke waarden die we in ons algoritme nodig hebben, dit noemen we <em>literal values</em></p>
+</li>
+<li>
+<p>resultaten van berekeningen</p>
+</li>
+<li>
+<p>input van de gebruiker</p>
+</li>
+<li>
+<p>waardes ingelezen uit een bestand</p>
+</li>
+<li>
+<p>informatie die binnenkomt over een netwerkverbinding</p>
+</li>
+<li>
+<p>…​</p>
+</li>
+</ul>
+<p>De informatie die een method als <code>Console.WriteLine</code> moet afdrukken, kunnen we bijvoorbeeld aan de hand een <em>variabele</em> opgeven…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo&quot;</span><span class="p">;</span><span class="w">     </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">   </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Salut&quot;</span><span class="p">;</span><span class="w">            </span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">   </span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>
+<p>we introduceren een variabele met naam <em>s</em> en kennen er de waarde <em>Hallo</em> aan toe</p>
+</li>
+<li>
+<p>we lezen de inhoud van de variabele uit door van zijn naam <em>s</em> gebruik te maken</p>
+</li>
+<li>
+<p>we kennen een nieuwe waarde <em>Salut</em> toe aan onze <em>s</em> variabele</p>
+</li>
+<li>
+<p>we kunnen opnieuw onze variabele <em>s</em> uitgelezen</p>
+</li>
+</ol>
+<p>Indien we het voorbeeld uitvoeren dan krijgen we volgende output…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Hallo</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">Salut</span>
+</code></pre></div>
+<p>Bij het uitlezen van een variabele verwijs je eenvoudigweg naar zijn naam.</p>
+<blockquote>
+<p><strong>Let op</strong></p>
+<p>Laat opvallen dat er bijvoorbeeld geen omsluitende karakters worden ingezet.</p>
+<p>Kun je de output van deze code voorspellen en verklaren?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">);</span>
+</code></pre></div>
+</blockquote>
+<h4 id="341-declaratie">3.4.1. Declaratie<a class="headerlink" href="#341-declaratie" title="Permanent link">&para;</a></h4>
+<p>Nog voor je er een waarde aan kan toekennen, moet deze <em>gedeclareerd</em> worden.</p>
+<p>Bij dergelijke <em>declaratie</em> vertel je wat…​</p>
+<ul>
+<li>
+<p>de naam is van deze variabele</p>
+</li>
+<li>
+<p>het soort van informatie is die je wenst bij te houden</p>
+</li>
+</ul>
+<p>Het soort van informatie, of de vorm die deze kan aannemen, noemen we ook wel het <em>datatype</em>.</p>
+<p>In dit geval werken we met tekst, bijgevolg kiezen we voor het <code>string</code> datatype.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>Op de declaratieregel kan je ook meteen een waarde aan deze variabele toekennen.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>Zo meteen bekijken we ook enkele andere datatypes.</p>
+<h4 id="342-analogie-geheugen-en-datatype">3.4.2. Analogie, geheugen en datatype<a class="headerlink" href="#342-analogie-geheugen-en-datatype" title="Permanent link">&para;</a></h4>
+<p>Een variabele kan je zien als een doosje met een naam op, waarin alleen een bepaald soort van data past. <code>string s = "Hallo";</code> levert een doosje op -voor tekstuele informatie- met naam <em>s</em> waarin de tekst <em>Hallo</em> zit.</p>
+<p>De waarde die een variabele aanneemt kan tijdens de uitvoer van het programma <em>variëren</em>. In ons voorbeeld eerst de tekst <em>Hallo</em>, daarna de tekst <em>Salut</em>. Als je er een waarde instopt, blijft die er altijd inzitten, totdat je ze overschrijft met een andere waarde. Bij het toekennen van deze laatste waarde, gaat de eerst uiteraard verloren.</p>
+<p>Pas op dat je de analogie tussen variabelen en 'een doosje' niet te ver doortrekt. Als je de inhoud van een echt doosje gebruikt, blijft er een leeg doosje achter. Voor een variabele geldt dit helemaal niet, deze behouden hun waarde! Een echt doosje kan om het even wat bevatten maar een variabele kan enkel data bevatten van een specifieke soort (van een specifiek <em>datatype</em>).</p>
+<h4 id="343-meerdere-variabelen-en-hun-naam">3.4.3. Meerdere variabelen en hun naam<a class="headerlink" href="#343-meerdere-variabelen-en-hun-naam" title="Permanent link">&para;</a></h4>
+<p>Een programma kan gerust meerdere variabelen introduceren en gebruiken.</p>
+<p>Kies goeie namen voor je variabelen. <em>i</em> en <em>d</em> en <em>s</em> zijn goed voor kleine prutsprogramma’s, een beter keuze is bijvoorbeeld <em>leeftijd</em>, <em>voornaam</em> of <em>gemiddelde</em>.</p>
+<blockquote>
+<p><strong>Opmerking: Naming guideline</strong></p>
+<p>We spreken af de naam van een variabele te starten met een kleine letter (<em>camelCasing</em>).</p>
+<p>Bestaat de naam uit meerdere woorden, dan start men elk nieuw woord in de samenstelling met een hoofdletter. Bijvoorbeeld <em>gemiddeldeLeeftijd</em> of <em>maxLengte</em>.</p>
+</blockquote>
+<p>Merk op dat een naam geen spaties mag bevatten.</p>
+<h4 id="344-gebruiken-van-de-variabele">3.4.4. Gebruiken van de variabele<a class="headerlink" href="#344-gebruiken-van-de-variabele" title="Permanent link">&para;</a></h4>
+<p>Je kunt de naam van een variabele op twee manieren gebruiken:</p>
+<ol>
+<li>
+<p>om een andere waarde in de variabele te stoppen, bv. <code>s = "Salut";</code>, dit stopt de waarde <em>Salut</em> in de variabele <code>s</code></p>
+</li>
+<li>
+<p>om huidige waarde van de variabele te gebruiken, bv. <code>Console.WriteLine(s);</code>, dit lees de waarde van de variabele <code>s</code> uit en geeft ze mee met de <code>WriteLine</code> method</p>
+</li>
+</ol>
+<h3 id="35-string-int-en-double-waardes">3.5. String, int en double waardes<a class="headerlink" href="#35-string-int-en-double-waardes" title="Permanent link">&para;</a></h3>
+<p>Vaak gebruikte datatypes zijn:</p>
+<ul>
+<li>
+<p><code>string</code>: gebruikt voor tekst</p>
+</li>
+<li>
+<p><code>int</code>: gebruikt voor gehele getallen</p>
+</li>
+<li>
+<p><code>double</code>: gebruikt voor getallen met cijfers na de <em>komma</em></p>
+</li>
+</ul>
+<p>Het datatype geeft aan wat …​</p>
+<ul>
+<li>
+<p>wat voor informatie deze variabele kan bevatten</p>
+</li>
+<li>
+<p>welke acties we met deze, of op deze variabele kunnen toepassen</p>
+</li>
+</ul>
+<p>Twee numerieke variabelen bijvoorbeeld, kunnen getallen bevatten die men kan optellen, delen, vermenigvuldigen, enzovoort.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">bedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">125</span><span class="p">;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">bedrag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">            </span><span class="c1">// 250 (verdubbelde bedrag)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="kt">double</span><span class="w"> </span><span class="n">kilometer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12.3</span><span class="p">;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">kilometer</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.621371</span><span class="p">);</span><span class="w">  </span><span class="c1">// 7,6428633 (mijl)</span>
+</code></pre></div>
+<p>Indien we het voorbeeld uitvoeren dan krijgen we volgende output…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="mi">250</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="mi">7</span><span class="p">,</span><span class="mi">6428633</span>
+</code></pre></div>
+<p>We kunnen twee waardes van numerieke datatypes combineren met de <code>*</code> operator. Het product (resultaat van de vermenigvuldiging) wordt opgeleverd. Straks bespreken we andere <em>rekenkundige operatoren</em>.</p>
+<blockquote>
+<p><strong>Opmerking: int en double literals</strong></p>
+<p>Bemerk dat <em>int literals</em>, vast-opgegeven <code>int</code> waardes, in tegenstelling tot <em>string literals</em>, niet worden omsloten door aanhalingstekens, maar gewoon bestaan uit een geheel getal. Bijvoorbeeld <code>125</code>.</p>
+<p><em>Double literals</em>, vast-opgegeven <code>double</code> waardes, bevatten een punt als <em>scheidingssymbool</em>. Dit symbool scheidt de eenheden van de fracties. Bijvoorbeeld <code>12.3</code>.</p>
+</blockquote>
+<p>Bij het afdrukken van de <code>double</code> waarde <em>7,6428633</em> zie je waarschijnlijk op de console een komma als decimal. Op de console wordt steeds met tekst gewerkt. Geef je bij het aanroepen van een method als <code>Console.WriteLine</code> een getal mee, dan wordt deze omgezet in tekst. Deze tekst wordt vervolgens op de console weergegeven. Bij die omzetting wordt bekeken hoe het huidige systeem, waarop de toepassing wordt uitgevoerd, is geconfigureerd. Er wordt opgezocht welk symbool wordt gebruikt voor het scheiden van de eenheden en fracties is ingesteld. Omdat wij (allicht) werken met een komma als scheidingssymbool, wordt het getal ook zo weergegeven. Voer je dit voorbeeld uit onder andere <em>regional settings</em> dan krijg je misschien wel een punt te zien.</p>
+<h3 id="36-static-type-checking">3.6. Static type checking<a class="headerlink" href="#36-static-type-checking" title="Permanent link">&para;</a></h3>
+<p>De compiler helpt ons fouten te vermijden. Bij een poging handelingen uit te voeren die niet ondersteunt zijn, krijgen we <em>compilefouten</em>.</p>
+<p>Wat als operatie (handeling) al dan is toegelaten, is afhankelijk van het datatype van deze informatie.</p>
+<p>Proberen we <code>string</code> waardes te combineren met de <code>*</code> operator, dan krijgen we een compilefout.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">groet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo&quot;</span><span class="p">;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">groet</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="s">&quot;wereld&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// compilefout: Operator &#39;*&#39; cannot be applied</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">                                  </span><span class="c1">//              to operands of type &#39;string&#39; and &#39;string&#39;</span>
+</code></pre></div>
+<p>Er is geen ondersteuning voor het combineren van <code>string</code> waardes met deze operator. Geen ondersteuning betekent dat nergens is gedefinieerd wat het zou betekenen om <code>string</code> waardes hiermee te gaan combineren.</p>
+<p>Op <code>string</code> waardes kan je dan weer andere operaties uitvoeren, die niet mogelijk zijn met waardes van types als <code>int</code> of <code>double</code>.</p>
+<p>Zo kan je bijvoorbeeld van teksten een hoofdlettervariant opvragen via de <code>ToUpper</code> method.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">groet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo&quot;</span><span class="p">;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">groet</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;wereld&quot;</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span>
+</code></pre></div>
+<p>Indien we het voorbeeld uitvoeren dan krijgen we volgende output…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">HALLO</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">WERELD</span>
+</code></pre></div>
+<p>Zoiets is dan weer onmogelijk met int’s of double’s…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">bedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">125</span><span class="p">;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">bedrag</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span><span class="w">      </span><span class="c1">// compilefout: &#39;int&#39; does not contain</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">                                      </span><span class="c1">//               a definition for &#39;ToUpper&#39; ...</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="mi">125</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span><span class="w">         </span><span class="c1">// compilefout</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="kt">double</span><span class="w"> </span><span class="n">kilometer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12.3</span><span class="p">;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">kilometer</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span><span class="w">   </span><span class="c1">// compilefout</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="mf">12.3</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">());</span><span class="w">        </span><span class="c1">// compilefout</span>
+</code></pre></div>
+<p>Gelukkig krijgen we meteen bij het compileren foutmelding over onzinnige operaties als <code>groet * "wereld"</code> of <code>kilometer.ToUpper()</code>. Het zou vervelend zijn als deze code zou compileren, en we pas tijdens uitvoering opmerken dat voor deze operaties geen ondersteuning bestaat. We zouden enkel tijd verliezen, wat de productiviteit niet ten goede zou komen.</p>
+<h4 id="361-expressies-en-hun-datatype">3.6.1. Expressies en hun datatype<a class="headerlink" href="#361-expressies-en-hun-datatype" title="Permanent link">&para;</a></h4>
+<p>Voor de compiler is elke waarde die we in onze code uitdrukken van een welbepaald datatype. Dat stukje code dat de waarde uitdrukt wordt ook wel de <em>expressie</em> genoemd. Het datatype van die expressie gebruikt de compiler om uit te vissen wat mogelijk is met deze expressie. Om op te zoeken hoe die waarde kan worden ingezet, en bijgevolg ook uit te zoeken of er een foutmelding wordt opgeleverd.</p>
+<p>Tot nu toe hebben we gezien hoe we grammaticaal op verschillende plaatsen expressie kunnen gebruiken.</p>
+<ul>
+<li>
+<p>Rechts van de toekenningsoperator <code>=</code> staat het stukje code die aangeeft <em>welke waarde</em> aan de variabele wordt toegekend. Bv. <code>x = &lt;expressie&gt;</code></p>
+</li>
+<li>
+<p>Tussen haakjes bij <code>WriteLine</code> staat het stukje code die aangeeft <em>welke waarde</em> op de console wordt gedrukt. Bv. <code>Console.WriteLine(&lt;expressie&gt;)</code></p>
+</li>
+<li>
+<p>Links en rechts van de vermenigvuldigingsoperator <code>*</code> staat het stukje code die aangeeft <em>welke waardes</em> worden vermenigvuldigd. Bv. <code>x = &lt;expressie1&gt; * &lt;expressie2&gt;</code></p>
+</li>
+</ul>
+<p>Tijdens runtime zal steeds worden bekeken naar welke waarde deze expressie evalueert, welke waarde hiermee met andere woorden wordt voorgesteld.</p>
+<p>Een expressie kan voorkomen…​</p>
+<ul>
+<li>
+<p>in literal vorm, bijvoorbeeld <code>"Hallo"</code></p>
+</li>
+<li>
+<p>in de vorm van het uitlezen van een variabele, bijvoorbeeld <code>s</code></p>
+</li>
+<li>
+<p>in nog complexere vorm als <code>bedrag * 2</code> waarbij <em>subexpressies</em> gecombineerd worden met operatoren</p>
+</li>
+</ul>
+<p>Zo meteen kijken we hoe we verschillende waardes aan de hand van dergelijke <em>operatoren</em> (bijvoorbeeld <code>*</code>) kunnen combineren.</p>
+<blockquote>
+<p><strong>Opmerking: Datatype van een literal</strong></p>
+<p>Aan de literal vorm kan de compiler herkennen wat het type is van deze waarde…​</p>
+<ul>
+<li>
+<p>staat de literal tussen aanhalingstekens dan is dit voor de compiler een <code>string</code></p>
+</li>
+<li>
+<p>bestaat de literal uit een geheel getal dan wordt dit beschouwd als een <code>int</code></p>
+</li>
+<li>
+<p>heeft het getal een punt als separator dan is dit voor de compiler een <code>double</code> waarde</p>
+</li>
+<li>
+<p>…​</p>
+</li>
+</ul>
+<p><strong>Opmerking: Datatype van een variabele</strong></p>
+<p>Bij het uitlezen van een variabele kan de compiler op basis van de declaratie opzoeken wat het type is van deze waarde. Daarvoor dient ook deze declaratie, we vertellen aan de compiler met welke soort waardes we werken. En vragen hiermee bijgevolg ook ons toe te laten, of te verhinderen, bepaalde operaties uit te voeren.</p>
+</blockquote>
+<h3 id="37-berekeningen-maken">3.7. Berekeningen maken<a class="headerlink" href="#37-berekeningen-maken" title="Permanent link">&para;</a></h3>
+<p>Naast de <code>*</code> operator voor het berekenen van het product, beschikken we ook nog over:</p>
+<ul>
+<li>
+<p>de <code>+</code> voor het berekenen van de som</p>
+</li>
+<li>
+<p>de <code>-</code> voor het berekenen van het verschil</p>
+</li>
+<li>
+<p>de <code>/</code> voor het berekenen van het quotiënt</p>
+</li>
+<li>
+<p>de <code>%</code> voor het berekenen van de rest na deling</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">som</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">verschil</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">quotient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">restNaDeling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">som</span><span class="p">);</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">verschil</span><span class="p">);</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">product</span><span class="p">);</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">quotient</span><span class="p">);</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">restNaDeling</span><span class="p">);</span>
+</code></pre></div>
+<p>Indien we het voorbeeld uitvoeren dan krijgen we volgende output…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="mi">11</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="mi">1</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="mi">30</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="mi">0</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="mi">1</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Tip: Hoe bekom ik cijfers na de komma bij een deling?</strong></p>
+<p>Vervang in deze demo eens alle <em>ints</em> door <em>doubles</em> en probeer de demo opnieuw uit. Bemerk dat voor de <code>/</code> operator, afhankelijk van het datatype van de waardes die we combineren, een ander resultaat wordt opgeleverd.</p>
+<p>Indien beide <em>operanden</em> (waardes die we combineren) uitgedrukt zijn in <code>int</code> vorm bekomen we het resultaat van een <em>gehele deling</em>. Je kan één gehele keer <em>2</em> uit <em>3</em> halen…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// levert 1 op</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// levert 1 op</span>
+</code></pre></div>
+<p>Vanaf minstens één operand geformuleerd werd aan de hand van een <code>double</code> expressie, bekomen we het resultaat van een <em>gewone deling</em>. Waarmee we bedoelen dat er in het resultaat ook cijfers na de <em>komma</em> kunnen staan…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="mf">3.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// levert 1,5 op</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">    </span><span class="c1">// levert 1,5 op</span>
+</code></pre></div>
+<p><strong>Opmerking: Datatype van een gecombineerde expressie</strong></p>
+<p>In een gecombineerde expressie worden aan de hand van <em>operatoren</em> meerdere waardes met elkaar gecombineerd, bijvoorbeeld <code>x / 2</code>.</p>
+<p>Het datatype van zo’n gecombineerde expressie, is afhankelijk van hoe deze operator is gedefinieerd. Bij de definitie van operatoren kon men vrij bepalen wat de vorm is in dewelke het resultaat wordt opgeleverd.</p>
+</blockquote>
+<h4 id="371-rest-na-deling">3.7.1. Rest na deling<a class="headerlink" href="#371-rest-na-deling" title="Permanent link">&para;</a></h4>
+<p>De modulo operator <code>%</code> kan handig zijn om na te gaan of een getal even of oneven is…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>7 % 2 = 1
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>5 % 2 = 1
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>8 % 2 = 0
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>3 % 2 = 1
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>1 % 2 = 1
+</code></pre></div>
+<p>Bijvoorbeeld om wisselgeld te berekenen kan de operator zijn nut bewijzen…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">bedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">19</span><span class="p">;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">biljettenVan5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bedrag</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">bedragInBiljettenVan5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">biljettenVan5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">muntstukkenVan2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bedrag</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">bedragInBiljettenVan5</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">muntstukkenVan1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bedrag</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">bedragInBiljettenVan5</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">biljettenVan5</span><span class="p">);</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">muntstukkenVan2</span><span class="p">);</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">muntstukkenVan1</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li>bemerk het gebruik van meerdere operatoren en de ronde haakjes</li>
+</ol>
+<p>Indien we het voorbeeld uitvoeren dan krijgen we volgende output…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="mi">3</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="mi">2</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="mi">0</span>
+</code></pre></div>
+<h4 id="372-operator-precedence">3.7.2. Operator precedence<a class="headerlink" href="#372-operator-precedence" title="Permanent link">&para;</a></h4>
+<p>Merk op hoe we verschillende operatoren kunnen combineren. In één bewerking gebruik maken zowel van de <code>-</code> als <code>/</code> is bijvoorbeeld geen enkel probleem.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Test eens uit wat de uitvoer is van voorgaand voorbeeld indien je de haakjes zou verwijderen.</p>
+</blockquote>
+<p>Net zoals in de gewone wiskunde hebben bepaalde operatoren voorrang op andere operatoren. Zo hebben de <code>*</code>, <code>/</code> en <code>%</code> operatoren voorrang op de <code>+</code> en <code>-</code> operatoren.</p>
+<p>In een notatie als <code>100 x 1,21 + 200 x 1,21</code> verwachten de meesten onder jullie allicht ook dat hiermee de som wordt bedoeld van <em>121</em> en <em>242</em> (of <code>121 + 242</code>).</p>
+<p>Net hetzelfde mag je verwachten van deze code…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.21</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.21</span><span class="p">);</span><span class="w">  </span><span class="c1">// 363</span>
+</code></pre></div>
+<p>De som van <em>121</em> en <em>242</em>, of dus <em>363</em> wordt opgeleverd.</p>
+<h5 id="3721-haakjes">3.7.2.1. Haakjes<a class="headerlink" href="#3721-haakjes" title="Permanent link">&para;</a></h5>
+<p>Indien je de leesbaarheid wil bevorderen, of indien je de volgorde wil veranderen, gebruik je ronde haakjes om prioriteiten aan te duiden.</p>
+<p>Strikt gezien zijn de haakjes hier overbodig, toch bevorderen ze de leesbaarheid van onze code…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">((</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.21</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.21</span><span class="p">));</span><span class="w">  </span><span class="c1">// 363</span>
+</code></pre></div>
+<p>Wat zou volgend voorbeeld opleveren?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.21</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.21</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5980 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Leermateriaal — Graduaat Programmeren HOGENT">
+      
+      
+      
+        <link rel="canonical" href="https://GRAD-PRG.github.io/PB/deel-09-oefeningen/">
+      
+      
+        <link rel="prev" href="../deel-09/">
+      
+      
+        <link rel="next" href="../deel-09-oplossingen/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>oefeningen - Programmeren Basis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmeren-basis-deel-09-oefeningen" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programmeren Basis" class="md-header__button md-logo" aria-label="Programmeren Basis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmeren Basis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              oefeningen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Donkere modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Donkere modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Lichte modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lichte modus" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmeren Basis" class="md-nav__button md-logo" aria-label="Programmeren Basis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programmeren Basis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REGULIER UITGESCHREVEN CURSUSMATERIAAL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REGULIER UITGESCHREVEN CURSUSMATERIAAL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D00
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D01
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D01
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-01-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D02
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D02
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-02-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D03
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D03
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-03-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D04
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D04
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-04-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D05
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D05
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-05-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D06
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D06
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-06-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGFX1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DGFX1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx1-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D07
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D07
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-07-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D08
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D08
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-08-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D09
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D09
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vroegtijdig-een-loop-beeindigen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vroegtijdig een loop beëindigen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vroegtijdig een loop beëindigen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09zoekdier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09zoekdier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09herkansing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09herkansing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallelle-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallelle arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallelle arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09buisvakken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09buisvakken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09toonscore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09toonscore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09morse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09morse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09scrabble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09scrabble
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verdere-oefeningen-op-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verdere oefeningen op arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verdere oefeningen op arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09dagnummernaarmaand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09dagnummernaarmaand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09maximumtemperatuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09maximumtemperatuur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09speelkaarten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09speelkaarten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09aantalkarakters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09aantalkarakters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09durstenfeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09durstenfeld
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09getalfrequentie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09getalfrequentie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09zoekhistoriek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09zoekhistoriek
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09toongetallenmetjoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09toongetallenmetjoin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09geenscheldwoorden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09geenscheldwoorden
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09censuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09censuur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09censuuruitbreiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09censuuruitbreiding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09langstewoord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09langstewoord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09dierenwissen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09dierenwissen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-09-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa1-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D10
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D10
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-10-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D11
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D11
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-11-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa2-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSK1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSK1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-sk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D12
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D12
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-12-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEBD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DEBD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-ebd-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_19" id="__nav_2_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D13
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D13
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-13-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_20" id="__nav_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa3-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_21" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_21" id="__nav_2_21_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_21">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-14-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_22" id="__nav_2_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D15
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D15
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-15-verdieping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    verdieping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_23" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_23" id="__nav_2_23_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_23">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa4-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D16
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_24">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D16
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-16-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_25" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_25" id="__nav_2_25_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPA5
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_25">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DPA5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-pa5-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_26" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_26" id="__nav_2_26_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D17
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_26_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_26">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D17
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-17-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_27" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_27" id="__nav_2_27_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D18
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_27_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_27">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    D18
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-18-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_28" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_28" id="__nav_2_28_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DGFX2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_28_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_28">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DGFX2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uitleg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2-oefeningen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oefeningen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deel-gfx2-oplossingen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    oplossingen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AANVULLINGEN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AANVULLINGEN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    versiebeheer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    versiebeheer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20Git%28Hub%29%20in%20Visual%20Studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git(Hub) in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling - Git(Hub) in Visual Studio - Branches" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git(Hub) branches in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    generatieve ai
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    generatieve ai
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20GitHub%20Copilot%20in%20Visual%20Studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Copilot in Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    algoritmisch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    algoritmisch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D06%20-%20Iteratie%20statements%20-%20voordelen%20en%20verschillen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iteratie statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    datatypes (value vs reference)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    datatypes (value vs reference)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%20Nullable%20datatypes%20en%20null%20checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nullable datatypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    numerieke en temporal informatie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    numerieke en temporal informatie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%202.1.%20Numerieke%20datatypes%20en%20%28impliciete%29%20afrondingsfouten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numerieke datatypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%202.2%20expliciet%20afronden%20van%20komagetallen%20-%20belgische%20wetgeving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Afronden van komagetallen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D12%20-%203.1.1.%20DateTime%20waarde%20maken%20-%20omzetten%20van%20inputstrings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime waarde maken
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D16%20en%20D17%20-%20Collecties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    collecties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OOP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D18%20-%20Subtype%20polymorfisme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtype polymorfisme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20bij%20D18%20-%20Dependency%20inversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Inversion & Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aanvulling%20-%20Cs%20taalfeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# taalfeatures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vroegtijdig-een-loop-beeindigen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vroegtijdig een loop beëindigen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vroegtijdig een loop beëindigen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09zoekdier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09zoekdier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09herkansing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09herkansing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallelle-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallelle arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallelle arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09buisvakken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09buisvakken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09toonscore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09toonscore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09morse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09morse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09scrabble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09scrabble
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verdere-oefeningen-op-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verdere oefeningen op arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verdere oefeningen op arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09dagnummernaarmaand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09dagnummernaarmaand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09maximumtemperatuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09maximumtemperatuur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09speelkaarten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09speelkaarten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09aantalkarakters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09aantalkarakters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09durstenfeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09durstenfeld
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09getalfrequentie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09getalfrequentie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09zoekhistoriek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09zoekhistoriek
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09toongetallenmetjoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09toongetallenmetjoin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09geenscheldwoorden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09geenscheldwoorden
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09censuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09censuur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09censuuruitbreiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09censuuruitbreiding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09langstewoord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09langstewoord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oefening-d09dierenwissen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oefening D09dierenwissen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="programmeren-basis-deel-09-oefeningen">Programmeren Basis - Deel 09 - Oefeningen<a class="headerlink" href="#programmeren-basis-deel-09-oefeningen" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Opmerking</strong></p>
+<p>We raden je aan om zoveel mogelijk oefeningen te maken, dat is de beste voorbereiding.</p>
+<p>Als je te ver achterop raakt bij het volgen van deze cursus, dan zul je daar wellicht niet de tijd voor vinden want het zijn er behoorlijk veel.</p>
+<p><strong>Waarschuwing</strong></p>
+<p>Enkele aandachtspunten bij het oplossen van deze oefeningen :</p>
+</blockquote>
+<h2 id="vroegtijdig-een-loop-beeindigen">Vroegtijdig een loop beëindigen<a class="headerlink" href="#vroegtijdig-een-loop-beeindigen" title="Permanent link">&para;</a></h2>
+<h3 id="oefening-d09zoekdier">Oefening D09zoekdier<a class="headerlink" href="#oefening-d09zoekdier" title="Permanent link">&para;</a></h3>
+<p>Begin een programma met</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">boerderijDieren</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;kip&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;koe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;paard&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;geit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;schaap&quot;</span><span class="p">};</span>
+</code></pre></div>
+<p>en schrijf de rest van de code zodat het de gebruiker om een dier vraagt. Het programma meldt vervolgens of het wel of niet om een boerderijdier gaat. Dit programma is hoofdletterONgevoelig.</p>
+<h3 id="oefening-d09herkansing">Oefening D09herkansing<a class="headerlink" href="#oefening-d09herkansing" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat op basis van een puntenlijst meldt of er al dan niet een herkansing moet ingericht worden. Indien er minstens 1 student een onvoldoende behaalde (<code>score&lt;10</code>) moet er een herkansing worden ingericht.</p>
+<p>Gebruik de volgende puntenlijst in je programma :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">puntenlijst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h2 id="parallelle-arrays">Parallelle arrays<a class="headerlink" href="#parallelle-arrays" title="Permanent link">&para;</a></h2>
+<h3 id="oefening-d09buisvakken">Oefening D09buisvakken<a class="headerlink" href="#oefening-d09buisvakken" title="Permanent link">&para;</a></h3>
+<p>Begin een programma met de volgende twee arrays :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">vakken</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;Frans&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Engels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wiskunde&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Duits&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;L.O.&quot;</span><span class="p">};</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">scores</span><span class="o">=</span><span class="p">{</span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">};</span>
+</code></pre></div>
+<p>De punten voor een vak staan steeds op de overeenkomstige positie in het <code>punten</code> array. Bv. op index 1 vinden we dat de student voor het vak <code>Engels</code> een score van <code>55</code> behaalde (op 100).</p>
+<p>Schrijf een programma dat toont voor welke vakken de student een onvoldoende behaalde.</p>
+<h3 id="oefening-d09toonscore">Oefening D09toonscore<a class="headerlink" href="#oefening-d09toonscore" title="Permanent link">&para;</a></h3>
+<p>Begin weer met dezelfde twee arrays als in de vorige oefening :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">vakken</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;Frans&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Engels&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wiskunde&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Duits&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;L.O.&quot;</span><span class="p">};</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">scores</span><span class="o">=</span><span class="p">{</span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">};</span>
+</code></pre></div>
+<p>Het programma vraagt de gebruiker om de naam van een vak en toont vervolgens de score van die student. Het programma zoekt hoofdletterONgevoelig.</p>
+<p>Indien het vak niet gevonden wordt, toont het programma "geen score bekend".</p>
+<p>Enkel voorbeelduitvoeringen :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">naam</span><span class="w"> </span><span class="n">van</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">vak</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">wiskunde</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">De</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">dit</span><span class="w"> </span><span class="n">vak</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">20</span><span class="o">/</span><span class="mi">100</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">naam</span><span class="w"> </span><span class="n">van</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">vak</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Hoelahoepen</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Geen</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="n">bekend</span>
+</code></pre></div>
+<h3 id="oefening-d09morse">Oefening D09morse<a class="headerlink" href="#oefening-d09morse" title="Permanent link">&para;</a></h3>
+<p>Toen de communicatie over lange afstanden nog per telegraaf verliep, gebruikte men <a href="https://nl.wikipedia.org/wiki/Morse">Morse code</a> om teksten om te zetten naar een opeenvolging van lange en korte elektrische signalen. Die lange en korte signalen noteren we hieronder met streepjes en stipjes.</p>
+<p>Bijvoorbeeld, de letter <code>B</code> komt overeen met de combinatie <code>lang kort kort kort</code> en we noteren dit als <code>- . . .</code> in Morse code.</p>
+<p>Schrijf een programma dat de gebruiker telkens om de Morse code voor een letter vraagt en zo gaandeweg een tekstbericht opbouwt.</p>
+<p>Gegeven zijn de volgende twee declaraties :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">morse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;.-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-...&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.-.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..-.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;....&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.---&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.-..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;---&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.--.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--.-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.-.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;...-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.--&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-..-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.--&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--..&quot;</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">char</span><span class="p">[]</span><span class="w"> </span><span class="n">letters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;d&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;f&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;g&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;h&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;i&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;j&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;k&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;m&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;n&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;q&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;s&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;t&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;u&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;v&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;y&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;z&#39;</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>Dit zijn twee parallelle arrays waarmee je de omzetting van een letter naar diens Morse code kunt maken :</p>
+<ul>
+<li>
+<p>vind je een letter op positie <code>i</code> in array <code>letters</code></p>
+<ul>
+<li>
+<p>dan staat de morse code voor die letter op dezelfde positie <code>i</code> in het <code>morse</code> array</p>
+<ul>
+<li>
+<p>bv. de <code>f</code> staat op positie <code>5</code> in <code>letters</code> en op die positie <code>5</code> in array <code>morse</code> staat <code>..-.</code></p>
+</li>
+<li>
+<p>dus <code>f</code> komt overeen met <code>..-.</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Je kunt ook de omgekeerde omzetting opzoeken, dus van een morse code naar een letter :</p>
+<ul>
+<li>
+<p>vind je een morse code op positie <code>i</code> in array <code>morse</code></p>
+<ul>
+<li>
+<p>dan staat de letter voor die code op dezelfde positie <code>i</code> in het <code>letters</code> array</p>
+<ul>
+<li>
+<p>bv. de morse code <code>-…​</code> vinden we op positie <code>1</code> in array <code>morse</code> en op die positie <code>1</code> in array <code>letters</code> staat <code>b</code></p>
+</li>
+<li>
+<p>dus <code>-…​</code> komt overeen met <code>b</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Een voorbeeld uitvoering :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Morse</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">volgende</span><span class="w"> </span><span class="nf">letter</span><span class="w"> </span><span class="p">(.</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">kort</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">lang</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="p">...</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Opgebouwde</span><span class="w"> </span><span class="n">tekst</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">toe</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">b</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">Morse</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">volgende</span><span class="w"> </span><span class="nf">letter</span><span class="w"> </span><span class="p">(.</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">kort</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">lang</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="o">-</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">Opgebouwde</span><span class="w"> </span><span class="n">tekst</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">toe</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ba</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">Morse</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">volgende</span><span class="w"> </span><span class="nf">letter</span><span class="w"> </span><span class="p">(.</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">kort</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">lang</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="p">..</span><span class="o">--</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">Ongeldige</span><span class="w"> </span><span class="n">morse</span><span class="w"> </span><span class="n">code</span><span class="o">!</span><span class="w">                                                   </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">Opgebouwde</span><span class="w"> </span><span class="n">tekst</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">toe</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ba</span><span class="w">                                        </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">Morse</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">volgende</span><span class="w"> </span><span class="nf">letter</span><span class="w"> </span><span class="p">(.</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">kort</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">voor</span><span class="w"> </span><span class="n">lang</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="o">-</span><span class="p">..</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">Opgebouwde</span><span class="w"> </span><span class="n">tekst</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">toe</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">bal</span>
+</code></pre></div>
+<ol>
+<li>de ongeldige Morse code <code>-..--.</code> wordt genegeerd</li>
+</ol>
+<p>Indien je een bepaalde Morse code niet terugvindt in array <code>morse</code> mag je ervan uitgaan dat het een ongeldige code is en moet deze genegeerd worden.</p>
+<h3 id="oefening-d09scrabble">Oefening D09scrabble<a class="headerlink" href="#oefening-d09scrabble" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de gebruiker vraagt om een woord in te typen en vervolgens de Scrabble woordscore toont.</p>
+<p>Je mag ervan uitgaan dat de gebruiker steeds exact 1 woord ingeeft, dus alle symbolen zullen letters zijn (geen cijfers, geen leestekens).</p>
+<p>Elke letter van het alfabet heeft een score die op de overeenkomstige blokjes staat, je kunt deze opzoeken op <a href="https://nl.wikipedia.org/wiki/Scrabble">de Wikipedia pagina voor Scrabble</a>. De blanco blokjes zijn voor ons niet relevant.</p>
+<p><img alt="De scores op de letterblokjes" src="../images/d09scrabble-punten.png" /></p>
+<p>Daar zie je bv. dat een <code>A</code> 1 punt waard is, een <code>B</code> 3 punten, een <code>C</code> 5 punten, enz. Hoofdletters en kleine letters krijgen dezelfde score.</p>
+<p>Een voorbeeld uitvoering :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">woord</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">HoNd</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">Dat</span><span class="w"> </span><span class="n">woord</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">4</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">=</span><span class="mi">8</span><span class="w"> </span><span class="n">punten</span><span class="w"> </span><span class="n">waard</span><span class="p">.</span>
+</code></pre></div>
+<h2 id="verdere-oefeningen-op-arrays">Verdere oefeningen op arrays<a class="headerlink" href="#verdere-oefeningen-op-arrays" title="Permanent link">&para;</a></h2>
+<h3 id="oefening-d09dagnummernaarmaand">Oefening D09dagnummernaarmaand<a class="headerlink" href="#oefening-d09dagnummernaarmaand" title="Permanent link">&para;</a></h3>
+<p>Deze oefening is gebaseerd op <a href="../deel-04-oefeningen/deel-04-oefeningen.html#_oefening_d04dagnummer">oefening D04dagnummer</a>.</p>
+<p>Schrijf een programma dat de gebruiker vraagt om een dagnummer in het jaar (i.e. van 1 t.e.m. 365, dus geen schrikkeljaar). Het toont vervolgens in welke maand (als tekst) die dag zich bevindt.</p>
+<p>Gebruik hiervoor deze twee arrays :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">aantalDagen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">maandNamen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Januari&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Februari&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Maart&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;April&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mei&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Juni&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Juli&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Augustus&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;September&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oktober&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;November&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;December&quot;</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>Enkele voorbeeld uitvoeringen</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">het</span><span class="w"> </span><span class="n">dagnummer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">59</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">De</span><span class="w"> </span><span class="n">maand</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Februari</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">het</span><span class="w"> </span><span class="n">dagnummer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">183</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">De</span><span class="w"> </span><span class="n">maand</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Juli</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">het</span><span class="w"> </span><span class="n">dagnummer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">365</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">De</span><span class="w"> </span><span class="n">maand</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">December</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">het</span><span class="w"> </span><span class="n">dagnummer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">366</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">De</span><span class="w"> </span><span class="n">maand</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">onbepaald</span>
+</code></pre></div>
+<h3 id="oefening-d09maximumtemperatuur">Oefening D09maximumtemperatuur<a class="headerlink" href="#oefening-d09maximumtemperatuur" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de minimum en maximumtemperatuur van een bepaalde dag weergeeft, gebaseerd op een lijst van meetwaarden van die dag.</p>
+<p>Een waarde van -9999.0 wijst op een sensorprobleem en moet genegeerd worden.</p>
+<p>Om te testen gebruik je deze lijst :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">meetwaarden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">13.4</span><span class="p">,</span><span class="w"> </span><span class="mf">12.1</span><span class="p">,</span><span class="w"> </span><span class="mf">10.8</span><span class="p">,</span><span class="w"> </span><span class="mf">10.8</span><span class="p">,</span><span class="w"> </span><span class="mf">10.3</span><span class="p">,</span><span class="w"> </span><span class="mf">8.9</span><span class="p">,</span><span class="w"> </span><span class="mf">7.9</span><span class="p">,</span><span class="w"> </span><span class="mf">7.8</span><span class="p">,</span><span class="w"> </span><span class="mf">7.4</span><span class="p">,</span><span class="w"> </span><span class="mf">7.2</span><span class="p">,</span><span class="w"> </span><span class="mf">6.4</span><span class="p">,</span><span class="w"> </span><span class="mf">9.7</span><span class="p">,</span><span class="w"> </span><span class="mf">13.7</span><span class="p">,</span><span class="w"> </span><span class="mf">17.2</span><span class="p">,</span><span class="w"> </span><span class="mf">19.6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span><span class="w"> </span><span class="mf">22.4</span><span class="p">,</span><span class="w"> </span><span class="mf">22.7</span><span class="p">,</span><span class="w"> </span><span class="mf">22.8</span><span class="p">,</span><span class="w"> </span><span class="mf">22.3</span><span class="p">,</span><span class="w"> </span><span class="mf">18.4</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>Let op : je mag er niet van uitgaan dat er 24 waarden inzitten. Een echte lijst kan net zo goed leeg zijn, of enkel maar sensorproblemen bevatten.</p>
+<p>Je kan dit testen met de volgende lijsten :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">meetwaarden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// Duizend bommen en granaten Kuifje, een leeg array!</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">meetwaarden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">9999.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h3 id="oefening-d09speelkaarten">Oefening D09speelkaarten<a class="headerlink" href="#oefening-d09speelkaarten" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat alle 52 speelkaarten op het scherm weergeeft.</p>
+<p>In je programma begin je met deze twee arrays :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">kleuren</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;harten&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;klaver&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;schoppen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ruiten&quot;</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">waarden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;twee&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;drie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vier&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vijf&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zeven&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;acht&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;negen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tien&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;landbouwer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dame&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;koning&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aas&quot;</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>Je programma bouwt vervolgens een array van 52 strings op die kaarten voorstellen, bv. "harten twee", "klaver negen", "schoppen aas", enz.</p>
+<p>De output van dit programma ziet er zo uit :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">harten</span><span class="w"> </span><span class="n">twee</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">harten</span><span class="w"> </span><span class="n">drie</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">harten</span><span class="w"> </span><span class="n">vier</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">harten</span><span class="w"> </span><span class="n">vijf</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">...</span><span class="w"> </span><span class="p">(</span><span class="n">stuk</span><span class="w"> </span><span class="n">weggelaten</span><span class="p">)</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">ruiten</span><span class="w"> </span><span class="n">dame</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">ruiten</span><span class="w"> </span><span class="n">koning</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="n">ruiten</span><span class="w"> </span><span class="n">aas</span>
+</code></pre></div>
+<h3 id="oefening-d09aantalkarakters">Oefening D09aantalkarakters<a class="headerlink" href="#oefening-d09aantalkarakters" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de som van het aantal karakters van een reeks woorden kan bepalen.</p>
+<p>In je programma begin je met een <code>woorden</code> array :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">woorden</span><span class="p">;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">woorden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;dit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zijn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;een&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aantal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;woorden&quot;</span><span class="w"> </span><span class="p">};</span><span class="w">                  </span><span class="c1">// 3,7,10,16,23</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1">//woorden = new string[] { &quot;dit&quot;, &quot;zijn&quot;, &quot;dan&quot;, &quot;weer&quot;, &quot;wat&quot;, &quot;andere&quot;, &quot;woorden&quot; }; // 3,7,10,14,17,23,30</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1">// (1)</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1">// (2)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">aantalKarakters</span><span class="p">));</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Creëer een nieuwe array voor de <code>int</code> waardes.</p>
+</li>
+<li>
+<p>Vul deze op met de som van het aantal karakters.</p>
+</li>
+</ol>
+<p>Je programma bouwt vervolgens een array met plaats voor evenveel <code>int</code> waardes als er woorden zijn in het <code>woorden</code> array.</p>
+<p>Het nieuwe array vul je op met het aantal karakters van het woord op de corresponderende positie in het <code>woorden</code> array, en alle woorden op voorafgaande posities.</p>
+<ul>
+<li>
+<p>Het eerste element in deze array zal <em>3</em> zijn: het woord <em>dit</em> bestaat immers uit <em>3</em> karakters.</p>
+</li>
+<li>
+<p>Het tweede element is <em>7</em>: <em>3</em> verhoogt met <em>4</em>, het aantal karakters van het woord <em>zijn</em>.</p>
+</li>
+<li>
+<p>Het derde element is <em>10</em>: <em>7</em> verhoogt met <em>3</em>, het aantal karakters van het woord <em>een</em>.</p>
+</li>
+<li>
+<p>…​</p>
+</li>
+</ul>
+<p>De output van dit programma ziet er zo uit :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">23</span>
+</code></pre></div>
+<p>Of mogelijks…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">30</span>
+</code></pre></div>
+<p>Indien het <code>woorden</code> array de <em>andere woorden</em> bevat.</p>
+<h3 id="oefening-d09durstenfeld">Oefening D09durstenfeld<a class="headerlink" href="#oefening-d09durstenfeld" title="Permanent link">&para;</a></h3>
+<p>Breid de vorige oefening uit zodat het array met kaarten dooreengeschud wordt en toon dan pas alle kaarten in hun willekeurige volgorde.</p>
+<p>Merk op dat dit geen kwestie is van telkens een random getal te nemen en dan de kaart op die positie te tonen. Want naarmate je vordert wordt de kans steeds groter dat je een dubbele krijgt en om dat te vermijden wordt de code nogal complex.</p>
+<p>Een veel simpelere manier is de <strong><em>Durstenfeld shuffle</em></strong> (a.k.a. het <em>moderne Fisher-Yates algoritme</em>) te gebruiken. Hoe dit werkt zie je in deze <a href="https://www.youtube.com/embed/tLxBwSL3lPQ?start=0&amp;end=243&amp;autoplay=1">video demonstratie</a>.</p>
+<p>Let op : hij begint per ongeluk niet alfabetisch (<code>G</code> en <code>F</code> zijn al op voorhand verwisseld). De beginsituatie is :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Waarde</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>G</td>
+<td>F</td>
+<td>H</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oefening-d09getalfrequentie">Oefening D09getalfrequentie<a class="headerlink" href="#oefening-d09getalfrequentie" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de gebruiker om getallen vraag tussen 0 en 10 (grenzen inclusief) totdat de gebruiker 'stop' intypt (hoofdletterongevoelig).</p>
+<p>Na afloop toont het programma hoe vaak elk van de ingevoerde getallen voorkwam.</p>
+<p>Een voorbeeld uitvoering :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">getal</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">StOP</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="mi">2</span><span class="w"> </span><span class="n">kwam</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">keer</span><span class="w"> </span><span class="n">voor</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="mi">6</span><span class="w"> </span><span class="n">kwam</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">keer</span><span class="w"> </span><span class="n">voor</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="mi">7</span><span class="w"> </span><span class="n">kwam</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">keer</span><span class="w"> </span><span class="n">voor</span>
+</code></pre></div>
+<h3 id="oefening-d09zoekhistoriek">Oefening D09zoekhistoriek<a class="headerlink" href="#oefening-d09zoekhistoriek" title="Permanent link">&para;</a></h3>
+<p>Een programma houdt de 5 laatst ingetypte zoektermen bij, in een zoekhistoriek.</p>
+<p>Schrijf een programma dat de gebruiker om een nieuwe zoekterm vraagt en deze in de zoekhistoriek stopt. Vermits de historiek van een vaste grootte is, moet er natuurlijk een oudere zoekterm verloren gaan want we houden er ten allen tijde maar 5 bij.</p>
+<p>Begin met deze historiek :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">zoekhistoriek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Charlie Sheen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hot shots&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Winning&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Electrabel storing&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Geen elektriciteit&quot;</span><span class="p">};</span>
+</code></pre></div>
+<p>De recentste zoektermen staan meer naar achter in de historiek. Dit betekent dat de recentste zoekterm steeds achteraan erbij komt en dat de oudste (op positie <code>0</code>) verdwijnt uit de historiek.</p>
+<p>Indien de gebruiker meermaals dezelfde zoekterm intypt, komt die gewoon meermaals voor in de historiek.</p>
+<p>Het programma toont eerst de zoekhistoriek op 1 regel (zoektermen gescheiden met een <code>:</code> symbool). Daarna wordt de gebruiker om een nieuwe zoekterm gevraagd.</p>
+<p>Telkens de gebruiker een zoekterm ingeeft, wijzigt de historiek zoals hierboven beschreven en wordt ze opnieuw getoond.</p>
+<p>Het programma eindigt nooit.</p>
+<p>Een voorbeeld uitvoering :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">Charlie</span><span class="w"> </span><span class="n">Sheen</span><span class="p">:</span><span class="n">Hot</span><span class="w"> </span><span class="n">shots</span><span class="p">:</span><span class="n">Winning</span><span class="p">:</span><span class="n">Electrabel</span><span class="w"> </span><span class="n">storing</span><span class="p">:</span><span class="n">Geen</span><span class="w"> </span><span class="n">elektriciteit</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">Nieuwe</span><span class="w"> </span><span class="n">zoekterm</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">werking</span><span class="w"> </span><span class="n">zekeringskast</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">Hot</span><span class="w"> </span><span class="n">shots</span><span class="p">:</span><span class="n">Winning</span><span class="p">:</span><span class="n">Electrabel</span><span class="w"> </span><span class="n">storing</span><span class="p">:</span><span class="n">Geen</span><span class="w"> </span><span class="n">elektriciteit</span><span class="p">:</span><span class="n">werking</span><span class="w"> </span><span class="n">zekeringskast</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="n">Nieuwe</span><span class="w"> </span><span class="n">zoekterm</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">verbrande</span><span class="w"> </span><span class="n">vingertoppen</span><span class="w"> </span><span class="n">verzorgen</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="n">Winning</span><span class="p">:</span><span class="n">Electrabel</span><span class="w"> </span><span class="n">storing</span><span class="p">:</span><span class="n">Geen</span><span class="w"> </span><span class="n">elektriciteit</span><span class="p">:</span><span class="n">werking</span><span class="w"> </span><span class="n">zekeringskast</span><span class="p">:</span><span class="n">verbrande</span><span class="w"> </span><span class="n">vingertoppen</span><span class="w"> </span><span class="n">verzorgen</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="n">Nieuwe</span><span class="w"> </span><span class="n">zoekterm</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">elektricien</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="n">gent</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="n">Electrabel</span><span class="w"> </span><span class="n">storing</span><span class="p">:</span><span class="n">Geen</span><span class="w"> </span><span class="n">elektriciteit</span><span class="p">:</span><span class="n">werking</span><span class="w"> </span><span class="n">zekeringskast</span><span class="p">:</span><span class="n">verbrande</span><span class="w"> </span><span class="n">vingertoppen</span><span class="w"> </span><span class="n">verzorgen</span><span class="p">:</span><span class="n">elektricien</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="n">gent</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="n">Nieuwe</span><span class="w"> </span><span class="n">zoekterm</span><span class="w"> </span><span class="p">:</span>
+</code></pre></div>
+<h2 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h2>
+<h3 id="oefening-d09toongetallenmetjoin">Oefening D09toongetallenmetjoin<a class="headerlink" href="#oefening-d09toongetallenmetjoin" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de getallen in een <code>int[]</code> netjes gescheiden door komma’s op de console zet, dit is een variatie op <a href="../deel-08-oefeningen/deel-08-oefeningen.html#_oefening_d08toongetallen">oefening D08toongetallen</a></p>
+<p>Probeer dit uit met het volgende array :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">getallen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>Het programma toont…​</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span>
+</code></pre></div>
+<h3 id="oefening-d09geenscheldwoorden">Oefening D09geenscheldwoorden<a class="headerlink" href="#oefening-d09geenscheldwoorden" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de gebruiker om een tekst vraagt en vervolgens toont of deze tekst al dan niet aanvaardbaar is. De tekst wordt enkel aanvaard indien er geen scheldwoorden in voorkomen (op basis van een lijst). De zoektocht naar scheldwoorden is hoofdletter<strong>on</strong>gevoelig.</p>
+<p>Kies zelf je 10 favoriete scheldwoorden op https://nl.wiktionary.org/wiki/Categorie:Scheldwoord_in_het_Nederlands</p>
+<h3 id="oefening-d09censuur">Oefening D09censuur<a class="headerlink" href="#oefening-d09censuur" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de gebruiker om een tekst vraagt en vervolgens diezelfde tekst gecensureerd weergeeft. Elk scheldwoord (uit een voorgedefiniëerde lijst) wordt vervangen door een even lange rij sterretjes, bv. <code>druiloor</code> wordt vervangen door <code>********</code>. De zoektocht naar scheldwoorden is hoofdletter<strong>on</strong>gevoelig.</p>
+<p>Gebruik dezelfde lijst met scheldwoorden als in de vorige oefening.</p>
+<p>Let op :</p>
+<ul>
+<li>
+<p>een scheldwoord kan meermaals voorkomen</p>
+</li>
+<li>
+<p>een scheldwoord kan op vele manieren geschreven worden met hoofdletters en kleine letters, die moeten allemaal gecensureerd worden</p>
+</li>
+<li>
+<p>de gecensureerde versie moet gelijk zijn aan het origineel qua hoofdletters en kleine letters van de rest van de tekst.</p>
+</li>
+</ul>
+<h3 id="oefening-d09censuuruitbreiding">Oefening D09censuuruitbreiding<a class="headerlink" href="#oefening-d09censuuruitbreiding" title="Permanent link">&para;</a></h3>
+<p>Pas <a href="../deel-09-oplossingen/deel-09-oplossingen.html#_oplossing_d09censuur">de oplossing van D09censuur</a> aan zodat de eerste en laatste letters van het scheldwoord NIET worden vervangen door een sterretje.</p>
+<p>Bijvoorbeeld, <code>De grootste druiloor van Gent</code> wordt <code>De grootste d******r van Gent</code>.</p>
+<p>Let erop dat ook hier hoodletter / kleine letters bewaard moeten blijven!</p>
+<p>Dus bv. <code>De grootste DruilooR van Gent</code> wordt <code>De grootste D******R van Gent</code>.</p>
+<h3 id="oefening-d09langstewoord">Oefening D09langstewoord<a class="headerlink" href="#oefening-d09langstewoord" title="Permanent link">&para;</a></h3>
+<p>Schrijf een programma dat de gebruiker om een tekst vraagt en vervolgens toont hoeveel woorden erin voorkomen en wat het langste woord is. Indien er meerdere woorden zijn van die lengte, toon dan het eerste. Je mag ervan uitgaan dat woorden enkel door spaties, komma’s, punten, uitroeptekens en vraagtekens gescheiden worden.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">Geef</span><span class="w"> </span><span class="n">een</span><span class="w"> </span><span class="n">tekst</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Het</span><span class="w"> </span><span class="n">werd</span><span class="w"> </span><span class="n">donker</span><span class="p">,</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">kinderen</span><span class="w"> </span><span class="n">haastten</span><span class="w"> </span><span class="n">zich</span><span class="w"> </span><span class="n">naar</span><span class="w"> </span><span class="n">huis</span><span class="p">...</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">aantal</span><span class="w"> </span><span class="n">woorden</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">langste</span><span class="w"> </span><span class="n">woord</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">kinderen</span>
+</code></pre></div>
+<h3 id="oefening-d09dierenwissen">Oefening D09dierenwissen<a class="headerlink" href="#oefening-d09dierenwissen" title="Permanent link">&para;</a></h3>
+<p>Begin een programma met</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">boerderijDieren</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;kip&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;koe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;paard&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;geit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;schaap&quot;</span><span class="p">};</span>
+</code></pre></div>
+<p>Het programma toont de boerderijdieren met een spatie ertussen en vraagt de gebruiker welk dier hij wil wissen (hoofdlettergevoelig).</p>
+<p>In het array wordt de tekst van dat gewiste dier vervangen door de speciale <code>null</code> waarde. Indien het dier niet gevonden wordt, gebeurt er niks.</p>
+<p>Daarna toont het programma de lijst opnieuw en herhaalt het de vraag.</p>
+<p>Let op : op de plaatsen waar er geen boerderijdier meer voorkomt, verschijnt de tekst <code>GEWIST</code> maar deze komt niet letterlijk in het array voor (daar staat immers <code>null</code> op zo’n positie).</p>
+<p>Het programma eindigt nooit.</p>
+<p>Een voorbeeld uitvoering :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">kip</span><span class="w"> </span><span class="n">koe</span><span class="w"> </span><span class="n">paard</span><span class="w"> </span><span class="n">geit</span><span class="w"> </span><span class="n">schaap</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">Welk</span><span class="w"> </span><span class="n">wil</span><span class="w"> </span><span class="n">je</span><span class="w"> </span><span class="n">verwijderen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">paard</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">kip</span><span class="w"> </span><span class="n">koe</span><span class="w"> </span><span class="n">GEWIST</span><span class="w"> </span><span class="n">geit</span><span class="w"> </span><span class="n">schaap</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="n">Welk</span><span class="w"> </span><span class="n">wil</span><span class="w"> </span><span class="n">je</span><span class="w"> </span><span class="n">verwijderen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">kip</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="n">GEWIST</span><span class="w"> </span><span class="n">koe</span><span class="w"> </span><span class="n">GEWIST</span><span class="w"> </span><span class="n">geit</span><span class="w"> </span><span class="n">schaap</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="n">Welk</span><span class="w"> </span><span class="n">wil</span><span class="w"> </span><span class="n">je</span><span class="w"> </span><span class="n">verwijderen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dolfijn</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="n">GEWIST</span><span class="w"> </span><span class="n">koe</span><span class="w"> </span><span class="n">GEWIST</span><span class="w"> </span><span class="n">geit</span><span class="w"> </span><span class="n">schaap</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="n">Welk</span><span class="w"> </span><span class="n">wil</span><span class="w"> </span><span class="n">je</span><span class="w"> </span><span class="n">verwijderen</span><span class="w"> </span><span class="p">:</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
