@@ -61,7 +61,7 @@ Je werkt op je branch precies zoals je gewend bent:
 
 Bij de eerste push zal git (hier aangestuurd door Visual Studio) de branch ook aanmaken op GitHub. Dit gebeurt automatisch.
 
-> **Belangrijk:** schakel niet terug naar `main` zolang je aan het werk bent. Al je wijzigingen moeten op de branch terechtkomen.
+> **Belangrijk:** schakel niet terug naar `main` zolang je aan het werk bent. Al je wijzigingen moeten op de nieuwe branch terechtkomen.
 
 ## Een Pull Request aanmaken
 
