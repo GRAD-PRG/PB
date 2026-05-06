@@ -207,10 +207,9 @@ Bijna alle LINQ-methoden die ergens "gelijkheid" impliceren, gebruiken onder wat
 
 - `Contains`
 - `Distinct`
-- `Except`, `Intersect`, `Union`
-- `SequenceEqual`
 - `GroupBy` (voor het groeperen van sleutels)
 - `ToDictionary` en `ToHashSet` (om duplicaten te detecteren)
+- ...
 
 Voorbeeld:
 
