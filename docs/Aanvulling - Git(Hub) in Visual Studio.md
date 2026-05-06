@@ -268,7 +268,7 @@ De lector kan feedback geven via Issues op GitHub. Een issue is een soort ticket
 
 ### Labels
 
-Een GitHub _issue_ kan worden gemarkeerd met met specifieke labels die duiden om wat voor soort _kwestie_ het gaat, bijvoorbeeld:
+Een GitHub _issue_ kan worden gemarkeerd met specifieke labels die duiden wat voor soort _kwestie_ het betreft, bijvoorbeeld:
 
 - _bug_: iets werkt niet/fout
 - _invalid_: gebruikt wanneer iets niet aan de specificaties (functioneel of technisch) voldoet (het verschil met _bug_ is soms wat vaag)
