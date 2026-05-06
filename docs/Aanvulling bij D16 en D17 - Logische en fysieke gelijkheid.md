@@ -6,9 +6,42 @@ Tot nu toe heb je `List<T>`, `HashSet<T>` en `Dictionary<TKey, TValue>` gebruikt
 
 Zodra je diezelfde collecties gebruikt met **je eigen objecten**, breekt dat vanzelfsprekende gedrag. Een `List<Klant>.Contains(...)` vindt een klant die er nochtans in zit niet terug. Een `HashSet<Factuur>` laat plots duidelijke duplicaten toe. Een `Dictionary<Klant, ...>` kan een sleutel niet opzoeken, zelfs als je exact dezelfde gegevens meegeeft.
 
-De oorzaak is altijd dezelfde: C# weet niet wanneer twee objecten van jouw klasse *inhoudelijk* hetzelfde zijn. Dat moet je zelf vertellen, via `Equals` en `GetHashCode`.
+```csharp
+using Klant = string;
+class Program {
+    static void Main() {
+        Factuur fa = CreëerFactuur("a001");
+        Factuur fb = CreëerFactuur("b001");
 
----
+        List<Factuur> facturen = [fa, fb];
+        Console.WriteLine(facturen.Contains(fa)); // true
+        Factuur fc = CreëerFactuur("a001");
+        Console.WriteLine(facturen.Contains(fc)); // false !?!?!?!?!?!?!?!?!?!?!?!?!
+
+        HashSet<Factuur> uniekeFacturen = [fa, fb];
+        uniekeFacturen.Add(fc);
+        Console.WriteLine(uniekeFacturen.Count); // 3 !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
+
+        Dictionary<Factuur, Klant> factuurNaarKlant = new();
+        factuurNaarKlant.Add(fa, "Jan");
+        factuurNaarKlant.Add(fb, "Jan");
+        Console.WriteLine(factuurNaarKlant.ContainsKey(fa)); // true
+        Console.WriteLine(factuurNaarKlant[fa]);             // Jan
+        Console.WriteLine(factuurNaarKlant.ContainsKey(fc)); // false !?!?!?!?!?!?!?
+        //Console.WriteLine(factuurNaarKlant[fc]); // KeyNotFoundException
+    }
+    static Factuur CreëerFactuur(string id) {
+        return new Factuur() { ID = id, Datum = DateOnly.FromDateTime(DateTime.Today) };
+    }
+}
+class Factuur {
+    public required string ID { get; init; }
+    public DateOnly? Datum { get; set; }
+    //...
+}
+```
+
+De oorzaak is altijd dezelfde: C# weet niet wanneer twee objecten van jouw klasse *inhoudelijk* hetzelfde zijn. Dat moet je zelf vertellen, via `Equals` en `GetHashCode`.
 
 ## 1. Referentiegelijkheid vs. logische gelijkheid
 
@@ -38,17 +71,55 @@ Console.WriteLine(a == b);        // False
 Console.WriteLine(a.Equals(b));   // False
 ```
 
-Twee objecten, volledig identieke inhoud, en toch zijn ze "niet gelijk". Dat is geen bug. Het is de **standaardbetekenis van gelijkheid voor referentietypes in .NET**:
+Zowel aan de hand van de `Equals` method, als aan de hand van de `==` of `!=` operatoren kan je gelijkheid tussen verschillende instanties (bijvoorbeeld `a` en `b`) van een bepaald type (hier nu `Klant`) nagaan.
+
+We hebben in dit geval twee objecten, met volledig identieke inhoud, en toch zijn ze _"niet gelijk"_. Dat is geen fout, het is het geval van de **standaardbetekenis van gelijkheid voor referentietypes in .NET**:
 
 > Twee referenties zijn gelijk als ze naar *hetzelfde object in het geheugen* verwijzen.
 
-Dat heet **referentiegelijkheid** (*reference equality*). De standaard `Equals` die elke klasse van `object` erft, vergelijkt gewoon geheugenadressen. `a` en `b` zijn twee verschillende objecten op twee verschillende plaatsen in het heap-geheugen, dus ze zijn niet gelijk.
+Dat heet referentiegelijkheid (*reference equality*) of **fysieke gelijkheid**. De standaard `Equals` die elke klasse van `object` erft (*), vergelijkt gewoon geheugenadressen. `a` en `b` zijn twee verschillende objecten op twee verschillende plaatsen in het heap-geheugen, dus ze zijn niet gelijk.
 
 Wat we eigenlijk *willen* is **logische gelijkheid** (*value equality* of *structural equality*): twee `Klant`-objecten zijn gelijk als ze hetzelfde klantnummer hebben, ongeacht waar ze in het geheugen staan.
 
 Die logische gelijkheid moet je **zelf definiëren**. C# weet niet welke velden bepalend zijn voor identiteit. Is dat het klantnummer? De combinatie van naam en adres? Alle velden samen? Dat is een *domeinkeuze*, geen technische.
 
----
+(*) Elke klasse erf ex- of impliciet over van `System.Object` (ook wel gewoon `object` genoemd in C#)...
+
+```csharp
+// De voorgedefinieerde Object ziet er ongeveer zo uit
+class Object { // object in C#
+	public virtual bool Equals(object obj) { /* baseert zich op de fysieke identiteit */ }
+	// Summary: Determines whether the specified object is equal to the current object.
+	// Parameters: obj: The object to compare with the current object.
+	// Returns: true if the specified object is equal to the current object; otherwise, false.
+	
+	public virtual int GetHashCode() { /* baseert zich op de fysieke identiteit */ }
+	// Summary: Serves as the default hash function.
+	// Returns: A hash code for the current object.
+	
+	public virtual string ToString() { /* levert de naam van het type op */ }
+	// Summary: Returns a string that represents the current object.
+	
+	// Nog enkele overige utility members om gelijkheid af te toetsen (niet overschrijfbaar)...
+
+	public static bool Equals(object objA, object objB)
+	// Summary: Determines whether the specified object instances are considered equal.
+	// Parameters: objA: The first object to compare.
+	//             objB: The second object to compare.
+	// Returns: true if the objects are considered equal; otherwise, false. 
+	//          If both objA and objB are null, the method returns true.
+	
+	public static bool ReferenceEquals(object objA, object objB)
+	// Summary: Determines whether the specified System.Object instances are the same instance.
+	// Parameters: objA: The first object to compare.
+	//             objB: The second object to compare.
+	// Returns: true if objA is the same instance as objB or if both are null; otherwise, false.
+}
+
+// Volgende klassen kunnen bijgevolg de overgeërfde virtual (*overschrijfbare*) members (Equals, GetHashCode of ToString) herdefiniëren.
+class Factuur : Object { ... }
+class Klant : Object { ... }
+```
 
 ## 2. `Equals` overriden
 
@@ -97,8 +168,6 @@ Console.WriteLine(a == b);        // False — want == vergelijkt nog steeds ref
 ```
 
 > **Let op:** `==` roept niet automatisch jouw `Equals` op voor klassen. Als je ook `==` en `!=` wil laten werken, moet je die operatoren apart overladen — daarover meer in [sectie 8](#8-operator-overloading--en-). Voor de secties hiertussen werken we met `Equals`, omdat dat is wat collecties onder de motorkap gebruiken.
-
----
 
 ## 3. Welke methoden leunen op `Equals`?
 
@@ -173,9 +242,9 @@ Je hebt hierboven al gezien dat we naast `Equals` ook `GetHashCode` overschreven
 Een `HashSet<T>` of `Dictionary<TKey, TValue>` slaat zijn elementen niet sequentieel op zoals een lijst. Ze gebruiken een techniek die **hashing** heet:
 
 1. Bij het toevoegen van een element wordt eerst `GetHashCode()` van dat element opgevraagd.
-2. Die hashcode bepaalt in welk "bakje" (*bucket*) het element terechtkomt.
-3. Bij het opzoeken wordt opnieuw `GetHashCode()` berekend om meteen het juiste bakje te vinden — zonder de hele collectie te doorlopen.
-4. In dat bakje worden dan de elementen vergeleken met `Equals`, om te zien of het gezochte element er effectief in zit.
+2. Die hashcode bepaalt in welke "emmer" (*bucket*) het element terechtkomt.
+3. Bij het opzoeken wordt opnieuw `GetHashCode()` berekend om meteen het juiste emmer te vinden — zonder de hele collectie te doorlopen.
+4. In deze emmer worden dan de elementen vergeleken met `Equals`, om te zien of het gezochte element er effectief in zit.
 
 Dat is waarom `HashSet<T>.Contains` en `Dictionary<TKey, ...>.ContainsKey` bijna constante tijd (*O(1)*) halen, terwijl `List<T>.Contains` lineair is (*O(n)*).
 
@@ -187,9 +256,9 @@ Die werkwijze legt een harde regel op:
 
 Breek je die regel, dan gaat het mis:
 
-- `a` wordt toegevoegd aan een `HashSet` en belandt in bakje 7 (op basis van hash van `a`).
-- Je vraagt `set.Contains(b)`. `b` is logisch gelijk aan `a`, maar heeft een andere hash — bijvoorbeeld bakje 12.
-- Het `HashSet` kijkt in bakje 12, vindt niets, en antwoordt `false`.
+- `a` wordt toegevoegd aan een `HashSet` en belandt in emmer 7 (op basis van hash van `a`).
+- Je vraagt `set.Contains(b)`. `b` is logisch gelijk aan `a`, maar heeft een andere hash — bijvoorbeeld emmer 12.
+- Het `HashSet` kijkt in emmer 12, vindt niets, en antwoordt `false`.
 
 Je object is "onvindbaar geworden" in zijn eigen collectie.
 
@@ -212,106 +281,17 @@ public override int GetHashCode()
 }
 ```
 
+Dus als je je op `KlantNummer` gaat baseren in `Equals`, doe je dat ook in `GetHashCode`.
+
 De C#-compiler waarschuwt je trouwens als je `Equals` overschrijft zonder `GetHashCode`: **CS0659**. Negeer die waarschuwing nooit.
 
 ### Waarschuwing: muteerbare velden
 
-Gebruik in `GetHashCode` **geen velden die kunnen veranderen** zolang het object in een hashingstructuur zit. Als de hash van een object wijzigt terwijl het al in een `HashSet` of als `Dictionary`-sleutel gebruikt wordt, raakt het object zijn eigen bakje kwijt en wordt het onvindbaar — zelfs voor zichzelf. Kies daarom altijd voor **onveranderlijke** velden (`readonly` of `init`-only properties) als basis voor gelijkheid. In het `Klant`-voorbeeld is `KlantNummer` `get`-only; dat is bewust.
+Gebruik in `GetHashCode` **geen velden die kunnen veranderen** zolang het object in een hashingstructuur zit. Als de hash van een object wijzigt terwijl het al in een `HashSet` of als `Dictionary`-sleutel gebruikt wordt, raakt het object zijn eigen emmer kwijt en wordt het onvindbaar — zelfs voor zichzelf. Kies daarom altijd voor **onveranderlijke** velden (`readonly` of `init`-only properties) als basis voor gelijkheid. In het `Klant`-voorbeeld is `KlantNummer` `get`-only; dat is bewust.
 
----
+Een *workaround* zou er natuurlijk in bestaan dat je bij het wijzigen van een `KlantNummer` (als dat dan toch mogelijk zou zijn) eerst de `Klant` (met zijn oud nummer) uit de `Dictionary` of `HashSet` gaat verwijderen, om hem daarna met zijn ondertussen aangepast `KlantNummer` weer te gaan toevoegen.
 
-## 5. Voorbeeld: facturen opzoeken per klant
-
-Stel: een facturatiesysteem houdt per klant bij welke facturen er openstaan. De voor de hand liggende datastructuur is een `Dictionary` met de klant als sleutel:
-
-```csharp
-Dictionary<Klant, List<Factuur>> facturenPerKlant = new();
-```
-
-We vullen die dictionary op een bepaald moment in het programma:
-
-```csharp
-Klant jan   = new Klant(12345, "Jan Peeters");
-Klant marie = new Klant(67890, "Marie Janssens");
-
-facturenPerKlant[jan] = new List<Factuur>
-{
-    new Factuur("F-2025-001", 245.00m, "Consultancy januari"),
-    new Factuur("F-2025-017", 120.00m, "Licenties"),
-};
-
-facturenPerKlant[marie] = new List<Factuur>
-{
-    new Factuur("F-2025-002", 590.00m, "Consultancy januari"),
-};
-```
-
-Ergens anders in het programma — bijvoorbeeld in een web-API die een factuuroverzicht opvraagt — krijgen we een `Klant`-object van elders (uit de database, uit een sessie, uit een andere module). Dat is technisch gezien een *ander object* dan `jan` uit het fragment hierboven, maar logisch gezien gaat het om dezelfde persoon:
-
-```csharp
-Klant aangevraagdeKlant = new Klant(12345, "Jan Peeters");
-
-if (facturenPerKlant.TryGetValue(aangevraagdeKlant, out var facturen))
-{
-    Console.WriteLine($"Openstaande facturen voor {aangevraagdeKlant.Naam}:");
-    foreach (Factuur f in facturen)
-    {
-        Console.WriteLine($" - {f.Nummer}: {f.Bedrag:C} ({f.Omschrijving})");
-    }
-}
-else
-{
-    Console.WriteLine("Geen facturen gevonden.");
-}
-```
-
-### Wat gebeurt er afhankelijk van wat je overschreven hebt?
-
-**Zonder `Equals`- en `GetHashCode`-override** op `Klant`:
-
-```
-Geen facturen gevonden.
-```
-
-De `Dictionary` heeft `jan` opgeslagen in bakje X (op basis van een hash afgeleid van zijn geheugenadres). `aangevraagdeKlant` heeft een *ander* geheugenadres, dus een *andere* hash, en wijst naar bakje Y. Het zoeken lukt niet, hoewel de inhoud identiek is.
-
-**Met enkel `Equals` overschreven** (en `GetHashCode` vergeten):
-
-Dit lijkt misschien te werken, maar is gevaarlijk. Het `Dictionary` gebruikt nog steeds de standaard `GetHashCode` (afgeleid van de referentie). `jan` en `aangevraagdeKlant` hebben dus verschillende hashcodes, belanden in verschillende bakjes, en `TryGetValue` vindt niets. Opnieuw:
-
-```
-Geen facturen gevonden.
-```
-
-En je krijgt compilerwaarschuwing CS0659 die je niet mag negeren.
-
-**Met beide overschreven**, correct op `KlantNummer`:
-
-```
-Openstaande facturen voor Jan Peeters:
- - F-2025-001: € 245,00 (Consultancy januari)
- - F-2025-017: € 120,00 (Licenties)
-```
-
-Nu pas gedraagt de `Dictionary` zich zoals je logisch zou verwachten.
-
-### Zelfde principe met `HashSet`
-
-Als we willen bijhouden *welke klanten reeds betaald hebben*, kunnen we een `HashSet<Klant>` gebruiken:
-
-```csharp
-HashSet<Klant> betaaldeKlanten = new();
-betaaldeKlanten.Add(jan);
-
-// ergens anders
-bool heeftBetaald = betaaldeKlanten.Contains(new Klant(12345, "Jan Peeters"));
-```
-
-Exact dezelfde dynamiek: zonder overrides is `heeftBetaald` altijd `false`, ook al zit Jan er wel degelijk in. Met correcte overrides werkt het.
-
----
-
-## 6. `IEquatable<T>`
+## 5. `IEquatable<T>`
 
 Door `IEquatable<T>` te implementeren, kan je een **typed** `Equals` toevoegen. Collecties gebruiken die als ze beschikbaar is, wat een boxing-operatie en een typecast uitspaart:
 
@@ -334,11 +314,9 @@ public class Klant : IEquatable<Klant>
 
 Voor klassen die frequent in hashingstructuren gebruikt worden, is dit de aangeraden stijl.
 
----
+## 6. `record` in plaats van `class`
 
-## 7. `record` in plaats van `class`
-
-Als jouw type **waarde-achtig** is — twee objecten met dezelfde data zijn gewoon hetzelfde — dan is een `record` bijna altijd beter dan een `class`. Een `record` genereert automatisch een `Equals`, een `GetHashCode`, een `==`/`!=` operator en zelfs een leesbare `ToString`, op basis van **alle** velden:
+Als jouw type **waarde-achtig** is — twee objecten met dezelfde data zijn gewoon hetzelfde — dan is een `record` bijna altijd beter dan een `class`. Een `record` genereert automatisch properties, een constructor, een `Equals`, een `GetHashCode`, een `==`/`!=` operator en zelfs een leesbare `ToString`, op basis van **alle** velden:
 
 ```csharp
 public record Factuur(string Nummer, decimal Bedrag, string Omschrijving);
@@ -361,9 +339,7 @@ Vuistregel:
 | **Waarde-object** — alle velden samen definiëren identiteit (Factuur, Bedrag, Coördinaat, Datum) | `record` |
 | **Entiteit** — identiteit zit in een ID, andere velden kunnen wijzigen (Klant, Product, Gebruiker) | `class` met manuele overrides |
 
----
-
-## 8. Operator overloading: `==` en `!=`
+## 7. Operator overloading: `==` en `!=`
 
 Tot nu toe werkte `==` op klassen altijd als referentievergelijking, ook al hadden we `Equals` overschreven. Voor **waarde-achtige** types voelt dat onnatuurlijk aan: als twee `Temperatuur`-objecten dezelfde temperatuur voorstellen (ook al is de ene opgegeven in Celsius en de andere in Fahrenheit), dan wil je `==` kunnen gebruiken.
 
@@ -430,9 +406,7 @@ Console.WriteLine(vriespunt.Equals(zelfdeInFahrenheit));   // True
 
 > **Floating point in het echt.** In bovenstaand voorbeeld gebruiken we `int` voor de eenvoud, zodat 0 °C en 32 °F exact gelijk zijn. Zodra je met `double` werkt, wordt gelijkheid van temperaturen een tolerantie-vraagstuk (`Math.Abs(a - b) < epsilon`) — en dan is een `==` die naar exact-gelijk kijkt meestal *niet* wat je wil.
 
----
-
-## 9. `IEqualityComparer<T>`: gelijkheid zonder de klasse aan te passen
+## 8. `IEqualityComparer<T>`: gelijkheid zonder de klasse aan te passen
 
 Soms kan je `Equals` en `GetHashCode` **niet** overschrijven, of je **wil** dat niet. Bijvoorbeeld:
 
@@ -479,18 +453,6 @@ Dictionary<Klant, decimal> omzetPerPostcode =
 
 De rest van je programma blijft onaangetast: `klant1.Equals(klant2)` gebruikt nog altijd de gewone regel (op `KlantNummer`), maar *deze specifieke collectie* gebruikt de postcode-regel.
 
-### Ingebouwde comparers voor strings
-
-Voor strings heb je die comparers niet zelf nodig — .NET biedt ze kant-en-klaar:
-
-```csharp
-HashSet<string> woorden = new(StringComparer.OrdinalIgnoreCase);
-woorden.Add("Hello");
-woorden.Contains("HELLO");   // True
-```
-
-`StringComparer.OrdinalIgnoreCase`, `CurrentCultureIgnoreCase`, `InvariantCulture`... allemaal implementaties van `IEqualityComparer<string>`.
-
 ### Wanneer klasse-override vs. comparer?
 
 | Scenario | Aanpak |
@@ -498,146 +460,3 @@ woorden.Contains("HELLO");   // True
 | Dé gelijkheidsregel van het type (één, domein-bepaald) | `Equals`/`GetHashCode` overschrijven |
 | Tijdelijke of alternatieve regel (per collectie of per operatie) | `IEqualityComparer<T>` |
 | Type uit externe library, regel die je zelf wil bepalen | `IEqualityComparer<T>` |
-
----
-
-## 10. Alternatief: identity map / object registry
-
-Er is een radicaal ander antwoord op hetzelfde probleem: **zorg dat er voor elke logische klant maar één fysiek object in het geheugen bestaat**. Dan valt logische gelijkheid sowieso samen met referentiegelijkheid en heb je `Equals` en `GetHashCode` niet meer nodig.
-
-Dit patroon heeft meerdere namen:
-
-- **Identity Map** (Martin Fowler, *Patterns of Enterprise Application Architecture*)
-- **Object Registry** of **Object Cache**
-- Voor strings heet het **interning** (via `string.Intern`)
-
-Het idee: een centrale factory houdt een register bij van reeds aangemaakte objecten, en geeft hetzelfde exemplaar terug wanneer hetzelfde klantnummer opnieuw wordt opgevraagd.
-
-```csharp
-public class Klant
-{
-    public int KlantNummer { get; }
-    public string Naam { get; set; }
-
-    private static readonly Dictionary<int, Klant> _registry = new();
-
-    // Constructor is private — niemand kan rechtstreeks een Klant maken
-    private Klant(int klantNummer, string naam)
-    {
-        KlantNummer = klantNummer;
-        Naam = naam;
-    }
-
-    // Enige manier om een Klant te bekomen
-    public static Klant GetOrCreate(int klantNummer, string naam)
-    {
-        if (!_registry.TryGetValue(klantNummer, out Klant? bestaande))
-        {
-            bestaande = new Klant(klantNummer, naam);
-            _registry[klantNummer] = bestaande;
-        }
-        return bestaande;
-    }
-}
-```
-
-Gebruik:
-
-```csharp
-Klant jan1 = Klant.GetOrCreate(12345, "Jan Peeters");
-Klant jan2 = Klant.GetOrCreate(12345, "Jan Peeters");
-
-Console.WriteLine(ReferenceEquals(jan1, jan2));  // True — letterlijk hetzelfde object
-Console.WriteLine(jan1 == jan2);                  // True — zonder enige override
-```
-
-In dit model is er voor klantnummer 12345 maar één `Klant`-instantie in het hele programma. Elke verwijzing naar "die klant" is dezelfde referentie. `Dictionary<Klant, ...>` werkt, `HashSet<Klant>` werkt, `List<Klant>.Contains` werkt — allemaal zonder ook maar één `Equals`- of `GetHashCode`-override.
-
-### Afwegingen
-
-**Voordelen:**
-
-- Geen `Equals`/`GetHashCode`-boilerplate nodig.
-- Gegarandeerd consistent: er is maar één "waarheid" per klant in het geheugen.
-- Updates aan de klantgegevens worden automatisch overal zichtbaar — elke referentie wijst immers naar hetzelfde object.
-
-**Nadelen:**
-
-- **Geheugenlek**: objecten in het register worden nooit opgeruimd door de garbage collector. Voor langlopende applicaties moet je zelf een opruimstrategie voorzien (bv. met `WeakReference`).
-- **Thread-safety**: de `Dictionary` is niet thread-safe. In een multi-threaded context moet je locks of `ConcurrentDictionary` gebruiken.
-- **Globale state**: een statisch register maakt je code moeilijker te testen en te isoleren (twee tests kunnen elkaars `Klant`-objecten zien).
-- **Serialisatie**: als je klanten uit een database haalt of over een netwerk stuurt, moet je expliciet door je factory gaan, anders krijg je tóch dubbele objecten.
-- **Wie "wint" bij tegenstrijdige gegevens?** In het voorbeeld hierboven: als iemand `GetOrCreate(12345, "Jan Peeters")` oproept en later `GetOrCreate(12345, "Jan P.")`, welke naam hou je dan? Dat zijn niet-triviale ontwerpkeuzes.
-
-### Waar zie je dit in de echte wereld?
-
-- **Entity Framework Core** implementeert een identity map in zijn `DbContext`: binnen één context krijg je voor elke primary key exact hetzelfde object terug. Dat is waarom je binnen één EF-transactie geen zorgen moet maken over `Equals`-overrides op je entities.
-- **`string.Intern`** in .NET zelf: `string`-literals met dezelfde inhoud delen één object in de *intern pool*.
-- ORM-frameworks in het algemeen (Hibernate in Java, ActiveRecord in Ruby) steunen op varianten van dit patroon.
-
-### Wanneer wél, wanneer niet?
-
-Voor **klassiek cursuswerk** en de meeste business-applicaties is `Equals`/`GetHashCode` overschrijven het eenvoudigere en flexibelere antwoord. Een identity map is voornamelijk zinvol wanneer:
-
-- Je al met een persistentielaag werkt die het patroon aanbiedt (EF Core, ...) — dan gebruik je het gratis.
-- Identiteit delen over je hele applicatie heen een *ontwerpprincipe* is, niet alleen een technisch detail.
-
-Wees vooral op je hoede voor het handmatig implementeren ervan als "oplossing" voor Equals-problemen. De complexiteit die erbij komt kijken (geheugen, threads, levenscycli) is meestal groter dan het probleem dat je ermee oplost.
-
----
-
-## 11. Samenvatting
-
-| Situatie | Wat je nodig hebt |
-|---|---|
-| `List<T>.Contains`, `IndexOf`, `Remove` met eigen objecten | `Equals` overriden |
-| LINQ `Distinct`, `Except`, `Intersect`, `Union`, `SequenceEqual`, `Contains` | `Equals` overriden (en bij voorkeur ook `GetHashCode`) |
-| `HashSet<T>.Contains`, `Add` (duplicaatdetectie) | `Equals` **én** `GetHashCode` overriden |
-| `Dictionary<TKey, TValue>.ContainsKey`, `TryGetValue`, `[indexer]` | `Equals` **én** `GetHashCode` overriden op de *sleutel*-klasse |
-| `==` en `!=` als logische vergelijking | Operator overloading |
-| Waarde-achtig type (alle velden samen = identiteit) | `record` gebruiken |
-| Alternatieve of tijdelijke gelijkheidsregel | `IEqualityComparer<T>` |
-| Eén fysiek object per logische identiteit garanderen | Identity map / object registry (of een ORM die dit regelt) |
-
-**Het contract in één zin:**
-
-> Wie `Equals` overschrijft, overschrijft ook `GetHashCode`, en allebei steunen op exact dezelfde (onveranderlijke) velden.
-
-Negeer compilerwaarschuwing **CS0659** nooit: dat is letterlijk de compiler die zegt "dit gaat vroeg of laat mis".
-
----
-
-## Oefeningen
-
-1. Schrijf een klasse `Boek` met velden `ISBN`, `Titel`, `Auteur`. Overschrijf `Equals` en `GetHashCode` zodat twee `Boek`-objecten als gelijk beschouwd worden wanneer ze dezelfde `ISBN` hebben. Test met `List<Boek>.Contains` en met `HashSet<Boek>`.
-
-2. Schets wat er mis gaat in onderstaand fragment. Verklaar wat de output is en waarom:
-
-    ```csharp
-    public class Punt
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-
-        public override bool Equals(object? obj)
-        {
-            if (obj is not Punt p) return false;
-            return X == p.X && Y == p.Y;
-        }
-        // Geen GetHashCode-override
-    }
-
-    HashSet<Punt> set = new();
-    set.Add(new Punt { X = 1, Y = 2 });
-    Console.WriteLine(set.Contains(new Punt { X = 1, Y = 2 }));
-    ```
-
-3. Breid het voorbeeld van `facturenPerKlant` uit: voeg een methode toe die voor elke klant het totaalbedrag van de openstaande facturen berekent. Gebruik daarvoor `Dictionary.TryGetValue` en LINQ's `Sum`.
-
-4. Converteer de klasse `Factuur` naar een `record`. Wat verandert er aan het gedrag van `==` en `Equals`? Welke eigenschappen van `Factuur` moeten dan verplicht bij constructie worden opgegeven?
-
-5. Breid de `Temperatuur`-klasse uit met de operatoren `<`, `>`, `<=` en `>=`. Wat is het natuurlijke gedrag voor `new Temperatuur(0, Celsius) < new Temperatuur(32, Fahrenheit)`?
-
-6. Schrijf een `IEqualityComparer<Klant>` die twee klanten als gelijk beschouwt wanneer hun naam (hoofdletter-ongevoelig) gelijk is. Gebruik die comparer in een `HashSet<Klant>` en in `klanten.Distinct(...)`. Waarom is dit géén goede kandidaat voor een override van `Klant.Equals` zelf?
-
-7. *Denkoefening.* Neem het identity-map-voorbeeld uit sectie 10. Wat zijn concrete scenario's waarin het patroon tot vreemde bugs kan leiden (denk aan: unit tests die na elkaar lopen, een klant waarvan de naam in de database wijzigt terwijl het programma draait, multi-threaded webapplicaties)? Formuleer voor elk scenario één zin uitleg.
