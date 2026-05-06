@@ -266,6 +266,15 @@ De lector kan feedback geven via Issues op GitHub. Een issue is een soort ticket
 3. Je ziet een lijst van alle open issues. Een getal naast het tabblad geeft aan hoeveel open issues er zijn.
 4. Klik op een issue om de volledige feedback te lezen.
 
+### Labels
+
+Een GitHub _issue_ kan worden gemarkeerd met met specifieke labels die duiden om wat voor soort _kwestie_ het gaat, bijvoorbeeld:
+
+- _bug_: iets werkt niet/fout
+- _invalid_: gebruikt wanneer iets niet aan de specificaties (functioneel of technisch) voldoet (het verschil met _bug_ is soms wat vaag)
+- _enhancement_: verbetering of nieuwe feature
+- _refactor_ (geen default voorzien label, maar wordt vaak toegevoegd): voor herwerking (doorgaans van de code)
+
 ### Reageren op een issue
 
 Onderaan elk issue vind je een tekstveld waar je een reactie kunt schrijven. Gebruik dit om vragen te stellen of om aan te geven dat je de feedback hebt verwerkt. Klik daarna op de groene knop om je reactie te plaatsen.
