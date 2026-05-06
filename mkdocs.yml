@@ -172,7 +172,9 @@ nav:
       - Afronden van kommagetallen: Aanvulling bij D12 - 2.2 expliciet afronden van kommagetallen - belgische wetgeving.md
     - Temporal informatie:
       - DateTime waarde maken: Aanvulling bij D12 - 3.1.1. DateTime waarde maken - omzetten van inputstrings.md
-    - Collecties: Aanvulling bij D16 en D17 - Collecties.md
+    - Collecties: 
+      - Vaak gebruikte collectietypes: Aanvulling bij D16 en D17 - Vaak gebruikte collectietypes.md
+      - Logische en fysieke gelijkheid: Aanvulling bij D16 en D17 - Logische en fysieke gelijkheid.md
     - OOP:
       - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
       - Dependency Inversion & Injection: Aanvulling bij D18 - Dependency inversion.md

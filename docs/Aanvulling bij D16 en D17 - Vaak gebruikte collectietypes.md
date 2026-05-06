@@ -1,4 +1,4 @@
-# Collecties in C#
+# Vaak gebruikte collectiestypes
 
 ## Waarom collecties?
 
