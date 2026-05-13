@@ -13,8 +13,6 @@ Een programma kan extern perfect lijken en intern een puinhoop zijn. Dat valt op
 
 Hieronder lopen we de belangrijkste interne kwaliteitsfactoren door, van micro-niveau (één regel code) tot macro-niveau (architectuur).
 
----
-
 ## 1. Op het niveau van enkele regels code
 
 ### 1.1 Naming guidelines volgen
@@ -54,7 +52,7 @@ Console.WriteLine ("meerderjarig");
 } else{
    Console.WriteLine("minderjarig" );}
 
-// ✅ Beter
+// ✅ Beter in Allman style (de default in de .NET wereld) 
 if (leeftijd >= 18)
 {
     Console.WriteLine("meerderjarig");
@@ -63,13 +61,28 @@ else
 {
     Console.WriteLine("minderjarig");
 }
+
+// Of in K&R (Kernighan & Ritchie) style (populair in JavaScript)
+// en ook vaak gebruikt in ons leermateriaal (om wat "compacter" te zijn)
+if (leeftijd >= 18) {
+    Console.WriteLine("meerderjarig");
+} else {
+    Console.WriteLine("minderjarig");
+}
+
+// In dit geval kan je natuurlijk ook de accolades weglaten, 
+// maar dan nog steeds de spaties en indentatie behouden:
+if (leeftijd >= 18)
+    Console.WriteLine("meerderjarig");
+else
+    Console.WriteLine("minderjarig");
 ```
 
-Goed nieuws: dit hoef je niet manueel te doen. Visual Studio formatteert automatisch (Ctrl+K, Ctrl+D), en met een `.editorconfig` leg je teamregels vast.
+Goed nieuws: dit hoef je niet manueel te doen. Visual Studio formatteert automatisch (Ctrl+K, Ctrl+D).
 
-### 1.3 Geen *magic numbers* of *magic strings*
+### 1.3 Geen *magic values*
 
-Een "magic number" is een getal dat zomaar in de code staat, zonder uitleg.
+Een "magic value" is een waarde die zomaar in de code staat, zonder uitleg.
 
 ```csharp
 // ❌ Slecht: wat betekent 21? en 100?
@@ -88,6 +101,16 @@ if (status == "ACTIEF") { ... }
 
 // ✅ Beter: een enum of een constante
 if (status == KlantStatus.Actief) { ... }
+```
+
+Dat laatste veronderstelt natuurlijk dat je een `KlantStatus`-enum hebt gedefinieerd:
+```csharp
+public enum KlantStatus
+{
+    Actief,
+    Inactief,
+    Geblokkeerd
+}
 ```
 
 ### 1.4 Geen dode code
@@ -119,15 +142,15 @@ teller++;
 
 // ✅ Beter: zegt waarom we dit doen
 // We tellen pogingen om brute-force aanvallen na 5 pogingen te blokkeren
-mislukte Pogingen++;
+misluktePogingen++;
 ```
 
 ### 1.6 Guard clauses in plaats van geneste if's
 
-Een *piramide van doom* is moeilijk te volgen. Zet uitzonderingen vooraan en handel ze meteen af.
+Geneste if's zijn moeilijk te volgen. Zet uitzonderingen vooraan en handel ze meteen af.
 
 ```csharp
-// ❌ Slecht
+// ❌ Slecht (arrow anti-pattern)
 public double BerekenKorting(Klant klant)
 {
     if (klant != null)
@@ -136,7 +159,7 @@ public double BerekenKorting(Klant klant)
         {
             if (klant.Bestellingen.Count > 0)
             {
-                return klant.Bestellingen.Sum(b => b.Totaal) * 0.05;
+                return ...;
             }
         }
     }
@@ -150,11 +173,63 @@ public double BerekenKorting(Klant klant)
     if (!klant.IsActief) return 0;
     if (klant.Bestellingen.Count == 0) return 0;
 
-    return klant.Bestellingen.Sum(b => b.Totaal) * 0.05;
+    return ...;
 }
 ```
 
----
+Een **guard clause** is een check vooraan in een methode die een uitzonderlijk geval afhandelt en de methode meteen verlaat (via `return`, `throw` of `continue`/`break` in een lus). Het idee: de "wachter" staat aan de poort en stuurt foute gevallen meteen terug, zodat de rest van de methode op de normale weg kan focussen.
+
+De term is wijdverspreid, vooral gepopulariseerd door Martin Fowler in zijn boek Refactoring (1999), waar het opduikt als de refactoring **"Replace Nested Conditional with Guard Clauses"**.
+
+**Wat guard clauses doen**, drie typische rollen:
+
+**1. Validatie van parameters (defensief programmeren)**
+
+```csharp
+public void Storten(double bedrag)
+{
+    if (bedrag <= 0)
+        throw new ArgumentException("Bedrag moet positief zijn.");
+
+    Saldo += bedrag;
+}
+```
+**2. Vroeg terugkeren bij triviale gevallen**
+
+```csharp
+public double BerekenKorting(Klant klant)
+{
+    if (klant == null) return 0;
+    if (!klant.IsActief) return 0;
+
+    // hoofdlogica
+}
+```
+
+**3. In een lus: oninteressante items overslaan**
+
+```csharp
+foreach (var bestelling in bestellingen)
+{
+    if (bestelling.IsGeannuleerd) continue;
+    if (bestelling.Klant == null) continue;
+
+    Verwerk(bestelling);
+}
+```
+
+**Waarom dit beter is dan diep nesten**
+
+- **Het normale geval wordt zichtbaar.** Met geneste if's verstop je de hoofdlogica binnenin lagen indentatie. Met guards staat de hoofdlogica plat in de methode.
+- **Uitzonderingen staan bovenaan**, waar de lezer als eerste kijkt. Dat is ook waar je hersenen ze het makkelijkst verwerken: "deze gevallen tellen niet — al de rest van de methode handelt over het happy path".
+- **Lagere cyclomatische complexiteit** in visuele zin — al blijven het natuurlijk evenveel beslispunten.
+- **Makkelijker uitbreiden.** Een nieuwe randvoorwaarde? Eén regel erbij vooraan, geen herstructurering van geneste blokken.
+
+**Tegenargument: "single exit point"**
+
+Niet iedereen is fan. Er bestaat een oudere school (deels uit Pascal/structured-programming-tijdperk) die zegt: **één enkele exit per methode**. Volgens die visie zijn vroege return's slecht omdat ze het redeneren over de methode bemoeilijken — je moet alle mogelijke exit-punten in het oog houden.
+
+In moderne objectgeoriënteerde codebases is dit standpunt sterk in de minderheid. De consensus, ook in Microsofts eigen .NET-stijl, is dat de leesbaarheidswinst van guard clauses ruimschoots opweegt tegen het bezwaar — zolang je methodes kort houdt. Voor een methode van 200 regels met tien return's op willekeurige plekken geldt het bezwaar wél: dan ben je het overzicht kwijt. Daarom horen guard clauses **vooraan**, niet halverwege.
 
 ## 2. Op het niveau van een methode of functie
 
@@ -169,11 +244,11 @@ double prijsBroek = 50 + (50 * 0.21);
 double prijsSchoen = 80 + (80 * 0.21);
 
 // ✅ Beter
-double BerekenBrutoprijs(double netto) => netto + (netto * 0.21);
-
 double prijsTrui = BerekenBrutoprijs(25);
 double prijsBroek = BerekenBrutoprijs(50);
 double prijsSchoen = BerekenBrutoprijs(80);
+
+double BerekenBrutoprijs(double netto) { return netto + (netto * 0.21); }
 ```
 
 **Maar pas op**: niet alle herhaling is duplicatie. Als twee stukken code *toevallig* dezelfde regels hebben maar over verschillende concepten gaan, mag je ze gerust apart laten. Een vuistregel is de *Rule of Three*: pas extraheren als je het voor de **derde keer** schrijft.
@@ -193,7 +268,7 @@ public void VerwerkBestelling(int klantId, List<int> productIds)
     // korting toepassen
     // factuur aanmaken
     // mail versturen
-    // ... 80 regels code
+    // ... vele regels code
 }
 
 // ✅ Beter: opgesplitst per verantwoordelijkheid
@@ -225,6 +300,86 @@ public void MaakKlantAan(KlantGegevens gegevens) { ... }
 
 Hoe meer `if`, `else`, `switch`, `for` en `while` door elkaar in één methode, hoe moeilijker te lezen *en* te testen. Splits op in kleinere methodes.
 
+```csharp
+// ❌ Te complex: te veel beslissingen in één methode
+public double BerekenKorting(Klant klant, Bestelling bestelling)
+{
+    double korting = 0;
+
+    if (klant != null && klant.IsActief)
+    {
+        if (klant.Type == KlantType.Vip)
+        {
+            if (bestelling.Totaal > 500)
+                korting = bestelling.Totaal * 0.15;
+            else
+                korting = bestelling.Totaal * 0.10;
+        }
+        else if (klant.Type == KlantType.Standaard)
+        {
+            if (bestelling.Totaal > 1000)
+                korting = bestelling.Totaal * 0.05;
+        }
+
+        if (DateTime.Now.Month == 12)
+            korting += bestelling.Totaal * 0.02;
+    }
+
+    return korting;
+}
+```
+
+Wat hier mis loopt: één methode beantwoordt drie vragen tegelijk (komt deze klant in aanmerking? welk basistarief? geldt er een seizoenstoeslag?), en de lezer moet alles tegelijk in zijn hoofd houden.
+
+Opgesplitst per beslissing:
+
+```csharp
+// ✅ Beter: elke methode beantwoordt één vraag
+public double BerekenKorting(Klant klant, Bestelling bestelling)
+{
+    if (!KomtInAanmerking(klant)) return 0;
+
+    double basis = BepaalBasiskorting(klant, bestelling);
+    double seizoen = BepaalSeizoenskorting(bestelling);
+
+    return basis + seizoen;
+}
+
+private bool KomtInAanmerking(Klant klant)
+{
+    return klant != null && klant.IsActief;
+}
+
+private double BepaalBasiskorting(Klant klant, Bestelling bestelling)
+{
+    if (klant.Type == KlantType.Vip && bestelling.Totaal > 500)
+        return bestelling.Totaal * 0.15;
+
+    if (klant.Type == KlantType.Vip)
+        return bestelling.Totaal * 0.10;
+
+    if (klant.Type == KlantType.Standaard && bestelling.Totaal > 1000)
+        return bestelling.Totaal * 0.05;
+
+    return 0;
+}
+
+private double BepaalSeizoenskorting(Bestelling bestelling)
+{
+    if (DateTime.Now.Month == 12)
+        return bestelling.Totaal * 0.02;
+
+    return 0;
+}
+```
+
+Wat is er gebeurd?
+
+- De **hoofdmethode** leest nu als een verhaal: *komt in aanmerking → bereken basis → bereken seizoen → tel op*.
+- Elke deelmethode heeft een **naam die de bedoeling toont**.
+- De geneste if/else is vervangen door een rij **guard clauses** die elk één geval afhandelen en meteen terugkeren — plat in plaats van piramidaal.
+- Voor **unit tests** kan je nu `BepaalBasiskorting` apart testen zonder je zorgen te maken over seizoenslogica of de aanmerking-check.
+
 ### 2.5 Command-Query Separation
 
 Een methode doet **één** van twee dingen:
@@ -244,12 +399,12 @@ public int GeefAantalPogingen()
 
 // ✅ Beter
 public void RegistreerPoging() { _aantalPogingen++; }
-public int AantalPogingen => _aantalPogingen;
+public int AantalPogingen { get { return _aantalPogingen; } }
 ```
 
 ### 2.6 Foutafhandeling
 
-- Geen lege `catch`-blokken — fouten "stilletjes opslokken" is een doodzonde.
+- Geen lege `catch`-blokken — fouten "stilletjes opslokken" *doen we niet*.
 - Geen exceptions misbruiken als gewone controle-flow.
 - Vang enkel op wat je *kan* afhandelen.
 
@@ -276,7 +431,6 @@ catch (FileNotFoundException ex)
 }
 ```
 
----
 
 ## 3. Op het niveau van een klasse
 
@@ -299,8 +453,56 @@ public class Klant { public string Naam { get; set; } }
 public class KlantRepository { public void Opslaan(Klant k) { ... } }
 public class MailService { public void VerstuurWelkomMail(Klant k) { ... } }
 ```
+SRP wordt door beginners vaak letterlijk genomen: *"één klasse mag maar één ding doen"*. Maar dat klopt niet. Een `KlantRepository` mag perfect zowel `Opslaan`, `Inlezen`, `Verwijderen` als `ZoekOpEmail` bevatten — dat zijn vier methodes, maar samen vormen ze **één coherente verantwoordelijkheid: persistentie** van klanten.
 
-### 3.2 Encapsulatie
+```csharp
+public class KlantRepository
+{
+    public void Opslaan(Klant klant) { ... }
+    public Klant InlezenOpId(int id) { ... }
+    public List<Klant> InlezenAlle() { ... }
+    public void Verwijderen(int id) { ... }
+    public Klant ZoekOpEmail(string email) { ... }
+}
+```
+
+Dat is niet in strijd met SRP, ook al doet de klasse vijf dingen. De vraag is niet "hoeveel methodes?" maar **"hoeveel onafhankelijke redenen tot verandering?"** Robert C. Martin, die het principe geformuleerd heeft, omschrijft het zo: *"A class should have only one reason to change."*
+
+Voor `KlantRepository` is die reden: de manier waarop klanten worden opgeslagen wijzigt (bv. overstap van SQL Server naar PostgreSQL, of van database naar JSON-file). Alle vijf methodes veranderen mee — dus ze horen samen. Pas als je merkt dat je een klasse moet wijzigen om --fundamenteel verschillende redenen--, is er een probleem.
+
+**Een betere formulering: "redenen om te veranderen"**
+
+Vergelijk met het voorbeeld...
+
+```csharp
+public class Klant
+{
+    public string Naam { get; set; }
+    public void OpslaanInDatabase() { ... }    // verandert als DB wijzigt
+    public void VerstuurWelkomMail() { ... }   // verandert als mailprovider wijzigt
+    public string GenereerFactuurnummer() { ... } // verandert als boekhoudregels wijzigen
+}
+```
+
+Dit zijn **drie verschillende redenen tot verandering**, met drie verschillende "stakeholders": de database-administrator (DBA), de marketingmanager, en de boekhouder. Dát is een SRP-overtreding. Niet het feit dat er drie methodes zijn.
+
+Wat verschillende methodes "bij elkaar" maakt, is **cohesie**...
+
+### 3.2 Hoge cohesie
+
+Een klasse heeft **hoge cohesie** als haar leden allemaal rond hetzelfde concept of dezelfde verantwoordelijkheid draaien. SRP en cohesie zijn nauw verwant: SRP voorschrijft "één reden tot verandering"; cohesie meet hoe goed je daarin slaagt.
+
+Op grotere schaal bundelt men coherente verantwoordelijkheden in lagen of modules. Dat is wat we verderop **separation of concerns** noemden. De klassieke driedeling:
+
+| Laag | Verantwoordelijkheid | Typische klassen |
+|------|--------------------|----------------|
+| **Presentation / UI** | Gebruikersinteractie, weergave | `KlantForm`, `Program` (in een console-app), ... |
+| **Domain / Business** | Bedrijfsregels en -logica | `Klant`, `Bestelling`, `BerekenKorting`, `FactuurService`, ... |
+| **Persistence / Data Access** | Opslaan en ophalen van gegevens | `KlantRepository`, ... |
+
+Elke laag heeft zijn eigen "reden tot verandering": de UI verandert als de designer een knop verplaatst, de domeinlaag als de boekhouder de BTW-regels aanpast, de datalaag als de DBA naar een andere database overstapt. Door deze lagen netjes gescheiden te houden, **raken die wijzigingen elkaar niet**.
+
+### 3.3 Encapsulatie
 
 De interne werking van een klasse blijft binnen die klasse. Velden zijn `private`. Toegang verloopt via properties of methodes. Op die manier kan je later de implementatie wijzigen zonder dat de rest van je code breekt.
 
@@ -308,49 +510,40 @@ De interne werking van een klasse blijft binnen die klasse. Velden zijn `private
 // ❌ Slecht
 public class Rekening
 {
-    public double Saldo;  // iedereen kan dit aanpassen!
-}
-
-var r = new Rekening();
-r.Saldo = -1000000;  // oeps
-
-// ✅ Beter
-public class Rekening
-{
-    public double Saldo { get; private set; }
-
-    public void Storten(double bedrag)
+    public decimal Saldo;  // public veld => iedereen kan dit aanpassen!
+    public void Stort(decimal bedrag)
     {
         if (bedrag <= 0) throw new ArgumentException("Bedrag moet positief zijn.");
         Saldo += bedrag;
     }
 }
+
+Rekening r = new Rekening();
+r.Stort(1000m);
+r.Saldo -= 500m;  // oeps (of toch misschien niet de bedoeling?)
+
+// ✅ Beter
+public class Rekening
+{
+    public decimal Saldo { get; private set; }
+
+    public void Stort(decimal bedrag)
+    {
+        if (bedrag <= 0) throw new ArgumentException("Bedrag moet positief zijn.");
+        Saldo += bedrag;
+    }
+}
+
+Rekening r = new Rekening();
+r.Stort(1000m);
+r.Saldo -= 500m;  // kan niet (compilefout)
 ```
 
-### 3.3 Hoge cohesie
-
-Alle leden van een klasse horen logisch bij elkaar. Een klasse `Klant` met properties `Voornaam`, `Achternaam`, `Adres` is cohesief. Een klasse `Helper` met methodes voor PDF-generatie, datumberekeningen *en* string-manipulatie is dat niet.
+Vuistregel: velden steeds **hidden** (`private` of `protected` access modifiers), en toegang via **properties** of **methodes**. Dat geeft je later ook de vrijheid om validatie, logging, berekeningen of andere logica toe te voegen zonder dat de rest van je code er iets van merkt.
 
 ### 3.4 Lage koppeling
 
-Hoe minder een klasse over andere klassen weet, hoe makkelijker je iets kan wijzigen. Werk waar mogelijk met **interfaces** in plaats van concrete types.
-
-```csharp
-// ❌ Slecht: BestellingService is vastgenageld aan SqlKlantRepository
-public class BestellingService
-{
-    private SqlKlantRepository _repo = new SqlKlantRepository();
-}
-
-// ✅ Beter: hangt af van een abstractie
-public class BestellingService
-{
-    private readonly IKlantRepository _repo;
-    public BestellingService(IKlantRepository repo) { _repo = repo; }
-}
-```
-
-Het voordeel: voor het testen kan je nu een nep-implementatie (mock) doorgeven.
+Hoe minder een klasse over andere klassen weet, hoe makkelijker je iets kan wijzigen. Werk waar mogelijk met **interfaces** in plaats van concrete types, of pas wat men noemt **dependency inversion** toe (lees meer over dependency inversion verderop in het leermateriaal).
 
 ### 3.5 Tell, Don't Ask
 
@@ -373,10 +566,10 @@ Vermijd lange ketens van punten. Hoe langer de keten, hoe meer kennis je code he
 
 ```csharp
 // ❌ Slecht
-string straat = bestelling.Klant.Adres.Straat.ToUpper();
+string postcode = bestelling.Klant.Adres.Postcode.ToString();
 
 // ✅ Beter: laat Bestelling of Klant het werk doen
-string straat = bestelling.GeefAfleverStraatInHoofdletters();
+string postcode = bestelling.GeefPostcode().ToString();
 ```
 
 ### 3.7 Vermijd "primitive obsession"
@@ -400,41 +593,12 @@ public class EmailAdres
 public void StuurMail(EmailAdres email) { ... }
 ```
 
----
 
-## 4. Op het niveau van module of architectuur
-
-Op dit niveau bewegen we ons in de richting van *software design*. Een paar kernideeën:
-
-### 4.1 De rest van SOLID
-
-Naast Single Responsibility (zie 3.1) bestaan er nog vier principes. Je hoeft ze nu niet allemaal te beheersen, maar onthoud dat ze bestaan:
-
-- **O**pen/Closed: open voor uitbreiding, gesloten voor wijziging.
-- **L**iskov Substitution: een subklasse moet overal kunnen waar de superklasse staat.
-- **I**nterface Segregation: liever meerdere kleine interfaces dan één grote.
-- **D**ependency Inversion: hang af van abstracties, niet van concrete klassen.
-
-### 4.2 Separation of Concerns
-
-Splits je applicatie in **lagen** met elk hun eigen rol: presentatie (UI), business (regels), data (database). De UI mag niets weten van SQL, de business mag niets weten van knoppen.
-
-### 4.3 Modulariteit
-
-Duidelijke grenzen tussen namespaces en projecten. Geen kruisverwijzingen waarbij A van B afhangt én B van A.
-
-### 4.4 Testbaarheid
-
-Kan je een stuk code los testen, zonder een echte database, internetverbinding of `DateTime.Now`? Als het antwoord nee is, zit er waarschijnlijk te veel verstrengeld in dezelfde klasse.
-
-### 4.5 Geen overengineering — YAGNI & KISS
+## 4. Algemen principes 
 
 - **YAGNI**: *You Ain't Gonna Need It.* Bouw geen flexibiliteit in "voor het geval dat".
 - **KISS**: *Keep It Simple, Stupid.* De simpelste oplossing die werkt, is meestal de beste.
 
-Design patterns en abstracties zijn waardevol, maar enkel als ze een **bestaand probleem** oplossen. Een interface met één implementatie, een factory die één klasse aanmaakt, een abstracte basisklasse "voor later"... allemaal voorbeelden van overengineering die je code juist *slechter* maakt.
-
----
 
 ## 5. Waarom dit allemaal? (Ja, ook in tijden van AI)
 
@@ -452,7 +616,6 @@ Een legitieme vraag: *"Mijn AI-assistent genereert code voor mij. Moet ik dit no
 
 Of, kort: AI maakt het schrijven van code goedkoper, maar het *lezen* en *aanpassen* van code blijft net zo duur. Interne kwaliteit verlaagt die kost.
 
----
 
 ## 6. Tip: gebruik je AI-assistent als peer developer
 
@@ -473,7 +636,6 @@ Een paar bedenkingen daarbij:
 - **Twee passes** werken vaak goed: één pass met de AI, daarna zelf nog eens kijken met de checklist uit dit hoofdstuk.
 - **De checklist zelf laten meegeven** in de prompt verhoogt de kwaliteit van de review. Plak gerust een stuk van dit cursusmateriaal in de prompt mee.
 
----
 
 ## 7. Een waarschuwing
 
@@ -485,7 +647,6 @@ De principes hierboven zijn **richtlijnen**, geen wetten. Een veelgemaakte fout 
 
 De ultieme toets blijft: **kan iemand anders (of jij over zes maanden) deze code begrijpen en aanpassen zonder te vloeken?** Als het antwoord ja is, doe je het goed — onafhankelijk van welke regels je daarvoor wel of niet gevolgd hebt.
 
----
 
 ## Kader — ISO/IEC 25010
 
@@ -511,16 +672,3 @@ Bijna alles wat we in dit hoofdstuk besproken hebben, valt onder **Maintainabili
 | Testability | Kan ik dit los testen? |
 
 Met andere woorden: alle micro-praktijken in dit hoofdstuk — naming, DRY, SRP, encapsulatie, lage koppeling — dienen één of meerdere van deze vijf onderhoudbaarheidskenmerken. Het is geen verzameling losse "regeltjes", maar een samenhangend systeem dat ervoor zorgt dat software ook over jaren leefbaar blijft.
-
----
-
-## Samenvatting
-
-| Niveau | Belangrijkste principes |
-|---|---|
-| Regel | Naming, lay-out, geen magic numbers, geen dode code, commentaar = waarom, guard clauses |
-| Methode | DRY, kort, weinig parameters, lage complexiteit, command/query gescheiden, propere foutafhandeling |
-| Klasse | SRP, encapsulatie, hoge cohesie, lage koppeling, Tell-Don't-Ask, Law of Demeter, geen primitive obsession |
-| Architectuur | Rest van SOLID, separation of concerns, modulariteit, testbaarheid, YAGNI/KISS |
-
-Onthoud vooral: deze principes zijn niet bedoeld om je af te remmen of je code "mooi" te maken om de mooie. Ze bestaan omdat **de meeste tijd in software niet zit in het schrijven, maar in het lezen, begrijpen en aanpassen** van code die er al staat. Wie daar nu in investeert, betaalt zichzelf — en zijn toekomstige teamgenoten — later terug.

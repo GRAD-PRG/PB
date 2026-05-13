@@ -388,3 +388,61 @@ Dezelfde `LeesRegels`-method, maar telkens een andere foutafhandeling — aangep
 
 !!! tip "Vuistregel"
     Handel een exception af op de plek waar je voldoende context hebt om een zinvolle beslissing te nemen. Dat is vaak niet in de method waar de exception ontstaat, maar in de method die de aanroep doet.
+
+## Zelf exceptions opwerpen
+
+Tot nu toe heb je exceptions enkel *opgevangen*. Maar je kan ze ook zelf **opwerpen** met het `throw`-sleutelwoord. Dat doe je wanneer code wordt aangeroepen op een manier die niet toegestaan is — een situatie waarvan jij als ontwikkelaar vindt dat ze niet mag voorkomen.
+
+### Guard clauses
+
+Stel je een `Bankrekening`-klasse voor met een `Stort`-method. Een negatief bedrag storten slaat nergens op. In plaats van stilletjes niets te doen (of erger: een negatief bedrag effectief te verwerken), gooi je een exception op:
+
+```csharp
+class Bankrekening
+{
+    public decimal Saldo { get; private set; }
+
+    public void Stort(decimal bedrag)
+    {
+        if (bedrag <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(bedrag),
+                "Het te storten bedrag moet positief zijn."
+            );
+        }
+
+        Saldo += bedrag;
+    }
+}
+```
+
+De `if`-controle bovenaan de method noemt men een **guard clause**: ze bewaakt de voorwaarden waaronder de method mag uitgevoerd worden. Wordt de voorwaarde geschonden, dan stopt de method onmiddellijk door een exception op te gooien. De aanroepende code kan die exception vervolgens opvangen:
+
+```csharp
+Bankrekening rekening = new Bankrekening();
+
+try
+{
+    rekening.Stort(-50);
+}
+catch (ArgumentOutOfRangeException ex)
+{
+    Console.WriteLine($"Ongeldige storting: {ex.Message}");
+}
+```
+
+### Welk exception-type kiezen?
+
+.NET voorziet enkele standaard exception-types voor ongeldige argumenten:
+
+| Exception | Wanneer gebruiken? |
+|---|---|
+| `ArgumentException` | Het argument is ongeldig (bv. een lege string waar tekst verwacht wordt) |
+| `ArgumentOutOfRangeException` | Het argument valt buiten het toegelaten bereik (bv. een negatief bedrag) |
+| `ArgumentNullException` | Het argument is `null` terwijl dat niet mag |
+
+Kies het type dat het best de aard van het probleem beschrijft. Dat maakt het voor de aanroeper (of voor jezelf, later) makkelijker om te begrijpen wat er precies misging.
+
+!!! tip "Waarom niet gewoon negeren?"
+    Je zou de `Stort`-method ook kunnen schrijven met een stille `if`-controle die simpelweg niets doet bij een ongeldig bedrag. Maar dan merkt de aanroepende code niet dat er iets fout is. Een exception maakt het probleem **expliciet zichtbaar** — en dat is bijna altijd te verkiezen boven stilte.
