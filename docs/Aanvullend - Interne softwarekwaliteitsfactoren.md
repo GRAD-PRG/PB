@@ -673,10 +673,10 @@ LSP is niet "erf alleen als is-a klopt in natuurlijke taal" — het is een gedra
 
 ### 4.3 Interface Segregation Principle (ISP)
 
- Klanten moeten niet gedwongen worden afhankelijk te zijn van interfaces die ze niet gebruiken. In de praktijk: liever veel kleine, specifieke interfaces dan één grote, algemene interface.
+Klanten moeten niet gedwongen worden afhankelijk te zijn van interfaces die ze niet gebruiken. In de praktijk: liever veel kleine, specifieke interfaces dan één grote, algemene interface.
 
- ```csharp
- // Schending
+```csharp
+// Schending
 public interface IWerknemer {
     void Werken();
     void Eten();
