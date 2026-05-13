@@ -595,7 +595,7 @@ public void StuurMail(EmailAdres email) { ... }
 
 ## 4. SOLID
 
- SOLID is een set ontwerpregels die ervoor moeten zorgen dat OO-code onderhoudbaar en uitbreidbaar blijft.
+SOLID is een set ontwerpregels die ervoor moeten zorgen dat OO-code onderhoudbaar en uitbreidbaar blijft.
 
  - **S**: Single Responsibility Principle (SRP) — een klasse heeft één reden om te veranderen.
  - **O**: Open/Closed Principle (OCP) — software-entiteiten zijn open
@@ -603,15 +603,15 @@ public void StuurMail(EmailAdres email) { ... }
  - **I**: Interface Segregation Principle (ISP) — liever veel kleine interfaces dan één grote.
  - **D**: Dependency Inversion Principle (DIP) — afhankelijk van abstracties, niet van concrete implementaties.
 
- ### 4.1 Open/Closed Principle (OCP)
+### 4.1 Open/Closed Principle (OCP)
 
- Klassen moeten open zijn voor uitbreiding maar gesloten voor wijziging. In de praktijk: gedrag uitbreiden via nieuwe types (subklassen, nieuwe implementaties van een interface) in plaats van bestaande code aan te passen.
+Klassen moeten open zijn voor uitbreiding maar gesloten voor wijziging. In de praktijk: gedrag uitbreiden via nieuwe types (subklassen, nieuwe implementaties van een interface) in plaats van bestaande code aan te passen.
 
- ### 4.2 Liskov Substitution Principle (LSP)
+### 4.2 Liskov Substitution Principle (LSP)
 
- Een subtype moet z'n basistype kunnen vervangen zonder dat het programma stuk gaat. 
+Een subtype moet z'n basistype kunnen vervangen zonder dat het programma stuk gaat. 
 
- ```csharp
+```csharp
 public class Rekening
 {
     protected decimal _saldo;
