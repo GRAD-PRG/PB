@@ -158,6 +158,7 @@ nav:
       - oefeningen: deel-gfx2-oefeningen.md
       - oplossingen: deel-gfx2-oplossingen.md
   - AANVULLINGEN:
+    - Interne softwarekwaliteitsfactoren: Aanvullend - Interne softwarekwaliteitsfactoren.md
     - Versiebeheer:
       - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
       - Git(Hub) branches in Visual Studio: Aanvulling - Git(Hub) in Visual Studio - Branches
@@ -178,4 +179,5 @@ nav:
     - OOP:
       - Subtype polymorfisme: Aanvulling bij D18 - Subtype polymorfisme.md
       - Dependency Inversion & Injection: Aanvulling bij D18 - Dependency inversion.md
+    - Exceptions: Aanvulling bij D13 - Exceptions.md
     - C# taalfeatures: Aanvulling - Cs taalfeatures.md
