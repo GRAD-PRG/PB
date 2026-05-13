@@ -593,12 +593,113 @@ public class EmailAdres
 public void StuurMail(EmailAdres email) { ... }
 ```
 
+## 4. SOLID
 
-## 4. Algemen principes 
+ SOLID is een set ontwerpregels die ervoor moeten zorgen dat OO-code onderhoudbaar en uitbreidbaar blijft.
+
+ - **S**: Single Responsibility Principle (SRP) — een klasse heeft één reden om te veranderen.
+ - **O**: Open/Closed Principle (OCP) — software-entiteiten zijn open
+ - **L**: Liskov Substitution Principle (LSP) — subtypes moeten substitueerbaar zijn voor hun basistype.
+ - **I**: Interface Segregation Principle (ISP) — liever veel kleine interfaces dan één grote.
+ - **D**: Dependency Inversion Principle (DIP) — afhankelijk van abstracties, niet van concrete implementaties.
+
+ ### 4.1 Open/Closed Principle (OCP)
+
+ Klassen moeten open zijn voor uitbreiding maar gesloten voor wijziging. In de praktijk: gedrag uitbreiden via nieuwe types (subklassen, nieuwe implementaties van een interface) in plaats van bestaande code aan te passen.
+
+ ### 4.2 Liskov Substitution Principle (LSP)
+
+ Een subtype moet z'n basistype kunnen vervangen zonder dat het programma stuk gaat. 
+
+ ```csharp
+public class Rekening
+{
+    protected decimal _saldo;
+
+    // Postconditie: saldo is na afloop verhoogd met bedrag.
+    public virtual void Storten(decimal bedrag)
+    {
+        _saldo = _saldo + bedrag;
+    }
+
+    public decimal Saldo()
+    {
+        return _saldo;
+    }
+}
+
+public class SpaarRekening : Rekening
+{
+    // Verzwakt de postconditie:
+    // bij bedragen onder 10 euro gebeurt er niets.
+    public override void Storten(decimal bedrag)
+    {
+        if (bedrag < 10)
+        {
+            return;
+        }
+        _saldo = _saldo + bedrag;
+    }
+}
+```
+
+**Waarom dit LSP schendt**
+
+De basis belooft: na `Storten(b)` is het saldo met `b` verhoogd. Cliëntcode mag daarop rekenen:
+
+```csharp
+void VoerTransactieUit(Rekening r)
+{
+    decimal voor = r.Saldo();
+    r.Storten(5);
+    decimal na = r.Saldo();
+
+    Console.WriteLine($"Verschil: {na - voor}");
+    // Bij Rekening:      5
+    // Bij SpaarRekening: 0  ← contract gebroken
+}
+```
+
+De methode werkt correct met `Rekening` en faalt stilzwijgend met `SpaarRekening`. Geen exception, geen compilerfout — gewoon verkeerd gedrag. Dat is precies wat LSP-schendingen zo verraderlijk maakt.
+
+Hier verzwakt de subklasse de postconditie van `Storten`: in plaats van "saldo is verhoogd met bedrag" wordt het "saldo is verhoogd met bedrag, tenzij bedrag < 10". Dat is een contractbreuk. De subklasse voldoet niet aan de verwachtingen die de basis stelt.
+
+Andere typische LSP-violations in C#:
+
+- Subklasse versterkt precondities.
+- Subklasse retourneert null waar de basis dat niet doet.
+
+LSP is niet "erf alleen als is-a klopt in natuurlijke taal" — het is een gedragscontract.
+
+### 4.3 Interface Segregation Principle (ISP)
+
+ Klanten moeten niet gedwongen worden afhankelijk te zijn van interfaces die ze niet gebruiken. In de praktijk: liever veel kleine, specifieke interfaces dan één grote, algemene interface.
+
+ ```csharp
+ // Schending
+public interface IWerknemer {
+    void Werken();
+    void Eten();
+    void Slapen();
+}
+// Een Agent moet Eten() en Slapen() implementeren — onzin.
+
+// Beter: gesplitst per rol
+public interface IWerker  { void Werken(); }
+public interface IEter    { void Eten(); }
+public interface ISlaper  { void Slapen(); }
+```
+
+In C# is ISP relatief goedkoop dankzij multiple interface implementation. Wel waakzaam zijn voor interface-explosie.
+
+### 4.4 Dependency Inversion Principle (DIP)
+
+ Hoog-niveau modules mogen niet afhankelijk zijn van laag-niveau modules; beide moeten afhankelijk zijn van abstracties. In de praktijk: code afhankelijk maken van interfaces of abstracte klassen in plaats van concrete implementaties.
+
+## 5. Algemen principes 
 
 - **YAGNI**: *You Ain't Gonna Need It.* Bouw geen flexibiliteit in "voor het geval dat".
 - **KISS**: *Keep It Simple, Stupid.* De simpelste oplossing die werkt, is meestal de beste.
-
 
 ## 5. Waarom dit allemaal? (Ja, ook in tijden van AI)
 
