@@ -41,7 +41,7 @@ class Factuur {
 }
 ```
 
-De oorzaak is altijd dezelfde: C# weet niet wanneer twee objecten van jouw klasse *inhoudelijk* hetzelfde zijn. Dat moet je zelf vertellen, via `Equals` en `GetHashCode`.
+De oorzaak is altijd dezelfde: de runtime weet niet wanneer twee objecten van jouw klasse *inhoudelijk* hetzelfde zijn. Dat moet je zelf vertellen, via `Equals` en `GetHashCode`.
 
 ## 1. Referentiegelijkheid vs. logische gelijkheid
 
@@ -123,7 +123,7 @@ class Klant : Object { ... }
 
 ## 2. `Equals` overriden
 
-Het signaal aan C# dat jouw klasse zijn eigen gelijkheidsregel heeft, is het overschrijven van `object.Equals`:
+Het signaal aan de runtime dat jouw klasse zijn eigen gelijkheidsregel heeft, is het overschrijven van `object.Equals`:
 
 ```csharp
 public class Klant
