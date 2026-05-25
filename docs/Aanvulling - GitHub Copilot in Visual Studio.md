@@ -239,7 +239,7 @@ Overzicht van enkel modellen...
 
 **Advies:** gebruik **Auto** of **GPT-4.1** als standaard. Schakel alleen over naar een premium model als je echt betere antwoorden nodig hebt.
 
-#### Een vanuit een ander (taak) perspectief
+#### Eens vanuit een ander (taak) perspectief
 
 | Taak | Aanrader | Waarom | Multiplier |
 |---|---|---|---|
