@@ -239,6 +239,20 @@ Overzicht van enkel modellen...
 
 **Advies:** gebruik **Auto** of **GPT-4.1** als standaard. Schakel alleen over naar een premium model als je echt betere antwoorden nodig hebt.
 
+#### Een vanuit een ander (taak) perspectief
+
+| Taak | Aanrader | Waarom | Multiplier |
+|---|---|---|---|
+| **Nieuwe code opstellen** | GPT-5 mini, of Claude Sonnet 4.6 | Goede allrounders, gratis en ruime context. | 0x / 1x |
+| **Kleinschalige refactoring, snelle edits** | Claude Haiku 4.5 of Gemini 3 Flash | Lichtgewicht, bijna-instant antwoord, houdt je in flow | 0.33x |
+| **Grote/stevige refactoring (meerdere bestanden)** | GPT-5.3-Codex of GPT-5.4 | Kan een grote codebase in het geheugen houden en meenemen in zijn beschouwing | 1x |
+| **Pingpongen over ontwerp** | Claude Sonnet 4.6 of Gemini 3.1 Pro | Puur conversationeel, geen agent nodig; 1x volstaat ruim | 1x |
+| **Reverse-engineering (bv. UML-klassendiagram genereren)** | Claude Sonnet 4.6 of GPT-5 mini | Nette gestructureerde output. | 1x / 0x |
+| **Logische fouten opsporen (debugging)** | GPT-5.4, of Claude Opus 4.6 bij een zwaar geval | Reasoning-modellen verdienen hier hun meerwaarde; reserveer 3x voor écht vastzittende bugs | 1x / 3x |
+| **Technische/infra-vragen (Git, `.gitignore`, build, project setup)** | GPT-5 mini | Kennisvragen, geen agentische kracht nodig; gratis | 0x |
+
+Over het algemeen valt aan te raden in *chat modus* te beginnen, niet in *agent mode*.  Laat het model voorstellen doen en jij past toe.  Zodra je agent mode als default gaat gebruiken voor het "opstellen van code", ben je eerder het *AI-supported ontwikkelen* in tegenstelling tot het zelf ontwerpen en implementeren aan het inoefenen.
+
 ### 7.4 Je usage controleren
 
 Je kunt je verbruik van premium requests monitoren:
