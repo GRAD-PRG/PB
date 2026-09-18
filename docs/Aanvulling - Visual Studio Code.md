@@ -12,13 +12,12 @@ Vereiste markdown_extensions in mkdocs.yml (Material for MkDocs):
 
 # C# ontwikkelen met Visual Studio Code
 
+In dit opleidingsonderdeel bouwen we in hoofdzaak .NET Console App's.  Je kan dat met een ontwikkelomgeving als Visual Studio (*Community*/*Professional*/*Enterprise*), maar je zou ook aan de slag kunnen gaan met **Visual Studio Code** (kortweg ook wel VS Code).   VS Code draait op **Windows, macOS en Linux**, dus iedereen kan ermee aan de slag, ongeacht het besturingssysteem.
 
-In dit opleidingsonderdeel bouwen we in hoofdzaak .NET Console App's.  Je kan dat met een ontwikkelomgeving als **Visual Studio** (*Community*/*Professional*/*Enterprise*), maar je zou ook aan de slag kunnen gaan met **Visual Studio Code** (kortweg ook wel VS Code).   VS Code draait op Windows, macOS en Linux, dus iedereen kan ermee aan de slag, ongeacht het besturingssysteem.
+Belangrijk om te begrijpen: **Visual Studio en VS Code zijn dus twee verschillende ontwikkelomgevingen**.
 
-Belangrijk om te begrijpen: Visual Studio en VS Code zijn dus **twee verschillende programma's**.
-
-- **Visual Studio** (*Community*/*Professional*/*Enterprise*) is een volledige IDE (*Integrated Development Environment*): alles voor C# zit er standaard in.
-- **VS Code** is een lichte code-editor die je uitbreidt met *extensies*. Voor C# installeer je de extensie **C# Dev Kit**. Die voegt o.a. een Solution Explorer, IntelliSense, testondersteuning en een debugger toe.
+- Visual Studio (*Community*/*Professional*/*Enterprise*) is een **volledige IDE** (*Integrated Development Environment*): alles voor C# zit er standaard in.
+- VS Code is een **lichte code-editor** die je **uitbreidt met *extensies***. Voor C# bijvoorbeeld installeer je de extensie *C# Dev Kit*. Die voegt o.a. een *Solution Explorer* (*C# Project Details*) toolvenster toe, *IntelliSense* code-aanvulassistentie, testondersteuning en een debugger toe.
 
 In beide gevallen gebeurt het eigenlijke compileren en uitvoeren door de **.NET SDK** (.NET Software Development Kit). Een project dat je in Visual Studio maakt, kan je dus zonder aanpassingen openen in VS Code en omgekeerd.
 
@@ -36,81 +35,81 @@ Installeer de onderdelen en bij voorkeur **in deze volgorde**:
 
 > Installeer de **nieuwste stabiele versie** van de .NET SDK. Op dit moment is dat **.NET 10 (LTS)** (Long Term Support).
 >
-> Installeer **geen** versie met *Preview* of *RC* (Release Candidate) in de naam. **.NET 11** bijvoorbeeld is op van schrijven een release candidate en verschijnt normaal in november 2026.
+> Installeer geen versie met *Preview* of *RC* (Release Candidate) in de naam. *.NET 11* bijvoorbeeld is op van schrijven een release candidate en verschijnt normaal in november 2026.
 
-### "Windows"
+#### Op Windows
 
 Heb je ooit reeds een ontwikkelomgeving geïnstalleerd om .NET applicaties te bouwen, dan staat de .NET SDK vermoedelijk al op je toestel. Controleer dat eerst:
 
-1. Open **Terminal** (of *PowerShell*) via het startmenu.
-2. Typ:
+1. Open de opdrachtprompt of de Terminal via het startmenu: Zoek in je programma's naar "opdrachtprompt" of "terminal" en start deze op, of druk op `Win+R`, typ `cmd` of `powershell` en druk op `Enter`.
+2. Neem volgend commando over (hiermee laten we de geïnstalleerde .NET SDK's oplijsten):
     ```
     dotnet --list-sdks
     ```
-3. Zie je een regel die begint met `10.0.`? Dan kan je deze stap overslaan.
+3. Zie je een regel die begint met `10.0.`?  Dan kan je het installeren van deze .NET SDK overslaan.  Heb je nog een oudere versie, dan kan je die gerust laten staan: meerdere versies kunnen naast elkaar bestaan.  Ga in dat geval wel verder met het installeer van de nieuwste versie.
 
-Anders:
+Downloaden en installeren:
 
 1. Surf naar [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download).
-2. Kies **.NET 10.0** en download onder **SDK** de **Windows Installer**:
+2. Kies **.NET 10.0** en download onder **SDK** de **Windows Installer**: (Twijfel je over je processor? Kijk bij *Instellingen → Systeem → Info → Systeemtype*.)
     - **x64** voor de meeste laptops (Intel of AMD);
     - **Arm64** enkel voor laptops met een ARM-processor (bv. Snapdragon).
-        Twijfel je? Kijk bij *Instellingen → Systeem → Info → Systeemtype*.
 3. Voer het installatiebestand uit en volg de stappen.
-4. Sluit alle geopende terminalvensters. Open daarna een nieuwe terminal en controleer met `dotnet --list-sdks`.
+4. Sluit alle geopende terminalvensters. 
+5. Controleer opnieuw met `dotnet --list-sdks`.
 
-=== "macOS"
+#### Op macOS
 
-    1. Ga na welke processor je Mac heeft: klik op het **Apple-menu (appel linksboven) → Over deze Mac**.
-        - Staat er **Chip: Apple M1/M2/M3/M4/…**? Dan heb je **Arm64** nodig.
-        - Staat er **Processor: Intel**? Dan heb je **x64** nodig.
-    2. Surf naar [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download).
-    3. Kies **.NET 10.0** en download onder **SDK** de **macOS Installer** (Arm64 of x64).
-    4. Open het `.pkg`-bestand en volg de stappen. Je Mac-wachtwoord wordt gevraagd.
-    5. Open **Terminal** (via Spotlight: `⌘ Spatie` en typ *Terminal*) en controleer:
-       ```
-       dotnet --list-sdks
-       ```
-       Je zou een regel moeten zien die begint met `10.0.`.
+1. Open **Terminal** (via Spotlight: `⌘ Spatie` en typ *Terminal*) en controleer of welk .NET SDK reeds geïnstalleerd zijn:
+    ```
+    dotnet --list-sdks
+    ```
+    Indien er geen regel is die begint met `10.0.` ga je verder met de volgende stappen (installatie).
+2. Ga na welke processor je Mac heeft: klik op het **Apple-menu (appel linksboven) → Over deze Mac**.
+    - Staat er **Chip: Apple M1/M2/M3/M4/…**? Dan heb je **Arm64** nodig.
+    - Staat er **Processor: Intel**? Dan heb je **x64** nodig.
+3. Surf naar [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download).
+4. Kies **.NET 10.0** en download onder **SDK** de **macOS Installer** (Arm64 of x64).
+5. Open het `.pkg`-bestand en volg de stappen. (Je zal allicht je Mac-wachtwoord nodig hebben.)
+6. Controleer opnieuw met `dotnet --list-sdks`.  Je zou nu wel een regel moeten zien die begint met `10.0.`.
 
-!!! tip "Alternatief: installatie via de C# Dev Kit"
-    Na de installatie van C# Dev Kit (stap 1.3) opent een *walkthrough*. Via **Set up your environment → Install .NET SDK** kan je de SDK ook van daaruit installeren. De manuele installatie hierboven is wel voorspelbaarder: je weet precies welke versie je krijgt.
+#### Alternatief: installatie van de SDK via de C# Dev Kit
+
+Na de installatie van VS Code en de extensie C# Dev Kit (stap 1.3) opent een *walkthrough*. Via **Set up your environment → Install .NET SDK** kan je de SDK ook van daaruit installeren. 
+De manuele installatie hierboven is voorspelbaarder, je kiest zelf welke versie je krijgt.
 
 ### 1.2 Visual Studio Code installeren
 
-=== "Windows"
+#### Op Windows
 
-    1. Surf naar [code.visualstudio.com](https://code.visualstudio.com) en klik op **Download for Windows**. Je krijgt dan de *User Installer*. Die heeft geen administratorrechten nodig.
-    2. Voer het installatiebestand uit.
-    3. Laat bij **Select Additional Tasks** deze opties aangevinkt of vink ze aan:
-        - **Add "Open with Code" action to Windows Explorer directory context menu**: hiermee kan je een map openen met rechtsklik → *Open with Code*;
-        - **Add to PATH**: hiermee kan je `code .` typen in een terminal.
-    4. Rond de installatie af en start VS Code.
+1. Surf naar [code.visualstudio.com](https://code.visualstudio.com) en klik op **Download for Windows**. Je krijgt dan de *User Installer*. (Die heeft geen administratorrechten nodig.)
+2. Voer het installatiebestand uit.
+3. Laat bij **Select Additional Tasks** deze opties aangevinkt of vink ze aan:
+    - **Add "Open with Code" action to Windows Explorer directory context menu**: hiermee kan je een map openen met rechtsklik → *Open with Code*;
+    - **Add to PATH**: hiermee kan je `code .` typen in een terminal (zie verderop).
+4. Rond de installatie af en start VS Code.
 
-=== "macOS"
+#### Op macOS
 
-    1. Surf naar [code.visualstudio.com](https://code.visualstudio.com) en klik op **Download for Mac**. Je krijgt een `.zip`-bestand (*Universal*: werkt op Apple Silicon en Intel).
-    2. Pak het bestand uit (dubbelklik in *Downloads*).
-    3. **Sleep `Visual Studio Code.app` naar de map *Programma's*** (*Applications*).
-       Laat het programma niet in *Downloads* staan. Anders werken automatische updates niet goed.
-    4. Start VS Code vanuit *Programma's* of via Spotlight. Bevestig de beveiligingsmelding met **Open**.
-    5. Open het **Command Palette** met `⇧⌘P`, typ `shell command` en kies **Shell Command: Install 'code' command in PATH**. Nu kan je in Terminal `code .` typen om een map te openen.
-
-!!! note "Taal van de interface"
-    Laat VS Code in het **Engels** staan. Documentatie, foutmeldingen, tutorials en deze handleiding gebruiken de Engelse namen van menu's en commando's.
+1. Surf naar [code.visualstudio.com](https://code.visualstudio.com) en klik op **Download for Mac**. Je krijgt een `.zip`-bestand (*Universal*: werkt op Apple Silicon en Intel).
+2. Pak het bestand uit (dubbelklik in *Downloads*).
+3. **Sleep `Visual Studio Code.app` naar de map *Programma's*** (*Applications*).
+    Laat het programma niet in *Downloads* staan. Anders werken automatische updates niet goed.
+4. Start VS Code vanuit *Programma's* of via Spotlight. Bevestig de beveiligingsmelding met **Open**.
+5. Open het **Command Palette** met `⇧⌘P`, typ `shell command` en kies **Shell Command: Install 'code' command in PATH**. Nu kan je in Terminal `code .` typen om een map te openen (zie verderop).
 
 ### 1.3 De extensie C# Dev Kit installeren
 
 1. Open in VS Code de weergave **Extensions**: klik op het blokjes-icoon in de *Activity Bar* links, of gebruik `Ctrl+Shift+X` (Windows) of `⇧⌘X` (macOS).
 2. Zoek naar **C# Dev Kit**.
-3. Controleer dat de uitgever **Microsoft** is (met blauw vinkje). Installeer geen namaakextensies met een gelijkaardige naam.
+3. Controleer dat de uitgever **Microsoft** is (met blauw vinkje). 
 4. Klik op **Install**. De extensies **C#** en **.NET Install Tool** worden automatisch mee geïnstalleerd.
 5. Er opent een *walkthrough* (**Get Started with C# Dev Kit**). Heb je de SDK al geïnstalleerd, dan mag je die sluiten.
 
-!!! info "Licentie en aanmelden"
+> "Licentie en aanmelden"
     C# Dev Kit is **gratis voor persoonlijk, academisch en open-source gebruik**. Het valt onder dezelfde licentievoorwaarden als Visual Studio Community.
-
-    De extensie kan vragen om je aan te melden met een Microsoft-account. Aanmelden wordt technisch niet afgedwongen, maar hoort wel bij de licentievoorwaarden. Meld je daarom aan met je **schoolaccount** (werk- of schoolaccount) via het **Accounts**-icoon linksonder.
+>
+> De extensie kan vragen om je aan te melden met een Microsoft-account. Aanmelden wordt technisch niet afgedwongen, maar hoort wel bij de licentievoorwaarden. Je kan je aanmelden met je Microsoft **schoolaccount** (werk- of schoolaccount) via het **Accounts**-icoon linksonder.
 
 ### 1.4 Aanbevolen instellingen
 
@@ -123,18 +122,16 @@ Open de instellingen als JSON:
 ```json
 {
     "files.autoSave": "afterDelay",
-    "csharp.debug.console": "integratedTerminal"
+    "csharp.debug.console": "externalTerminal"
 }
 ```
 
-Waarom?
-
 | Instelling | Effect |
 |---|---|
-| `files.autoSave` | Bestanden worden automatisch bewaard. Zonder deze instelling voert `dotnet run` in de terminal de **laatst bewaarde** versie uit, niet wat je op het scherm ziet. |
-| `csharp.debug.console` | Je programma draait in het **Terminal**-paneel in plaats van in de *Debug Console*. `Console.ReadLine()` werkt in beide, maar `Console.ReadKey()`, `Console.Clear()` en het verplaatsen van de cursor werken enkel correct in een echte terminal. |
+| `"files.autoSave": "afterDelay"` | Bestanden worden automatisch bewaard. Zonder deze instelling voert `dotnet run` in de terminal de **laatst expliciet bewaarde** versie uit, soms is dat niet wat je op het scherm ziet en dat kan uiteraard leiden tot verwarring. |
+| `"csharp.debug.console": "externalTerminal"` | Deze instelling zorgt ervoor dat je C#-consoleapplicatie tijdens het debuggen opstart in een los, extern terminalvenster van je besturingssysteem, in plaats van binnen de interface van Visual Studio Code. Het gebruik van `"externalTerminal"` biedt ook de hoogst mogelijke compatibiliteit voor low-level console API's.`Console.ReadLine()` werkt in beide (*internal* en *external* terminal), maar instructies als `Console.ReadKey()`, `Console.Clear()` of deze voor het verplaatsen van de cursor werken enkel correct in een echte (*externe*) terminal. |
 
----
+
 
 ## 2. Een console-app aanmaken
 
@@ -145,8 +142,7 @@ Bij .NET heb je twee niveaus:
 
 Dat is identiek aan Visual Studio.
 
-!!! warning "Open altijd een map, geen los bestand"
-    VS Code werkt met **mappen**. Open altijd de map waarin je `.slnx`- of `.csproj`-bestand staat (**File → Open Folder…**). Open je een los `.cs`-bestand, of een map die veel te hoog ligt (bv. je hele *Documenten*-map), dan werkt C# Dev Kit niet of maar half.
+Open altijd een map, geen los bestand. VS Code werkt met **mappen**. Open altijd de map waarin je `.slnx`- of `.csproj`-bestand staat (**File → Open Folder…**). Open je een los `.cs`-bestand, of een map die veel te hoog ligt (bv. je hele *Documenten*-map), dan werkt C# Dev Kit niet of maar half, en ga je het project (of dus je programma) niet kunnen uitvoeren.
 
 ### 2.1 Via C# Dev Kit (grafisch)
 
