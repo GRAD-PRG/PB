@@ -1,11 +1,9 @@
 # Programmeren Basis - Deel 01
 > **Opmerking**
 >
-> In dit cursusmateriaal wordt verondersteld dat Visual Studio op je toestel is geïnstalleerd.
+> In dit cursusmateriaal vind je vooral schermafbeeldingen gemaakt met een Visual Studio Community, Professional of Enterprise (2019, 2022 en 2026).
 >
-> In dit cursusmateriaal wordt gewerkt met de *Enterprise* editie, geïnstalleerd op een Windows 10. We raden aan de studenten van onze opleiding dezelfde configuratie aan . De Enterprise versie heeft de meest volledige set aan mogelijkheden.
->
-> In het verdiepingsmateriaal vind je meer informatie over de verschillende versies van Visual Studio, en over het downloaden en installeren van Visual Studio.
+> Werk je met een andere ontwikkelomgeving neem dan toch eerst dit hoofdstuk door, en kijk dan na hoe je de hier uitgevoerde handelingen kan uitvoeren in jouw ontwikkelomgeving. De meeste ontwikkelomgevingen hebben immers gelijkaardige functionaliteit.
 
 ## 1. Hello World!
 ### 1.1. Projecten en solutions
@@ -80,8 +78,6 @@ Druk als gebruiker eender welke toets om de console af te sluiten, of gebruik de
 > **Opmerking**
 >
 > Wat hier de *console* wordt genoemd, is het venster -of anders gezegd de uitvoeringsomgeving- in dewelke het programma wordt uitgevoerd.
->
-> In het verdiepingsmateriaal vind je meer informatie over deze tekstuele *uitvoeromgeving*.
 
 ### 1.4. Wat is een Hello World app?
 Programmeercursussen starten typisch met een *Hello World* voorbeeld. Dergelijk voorbeeld illustreert een basishandeling van een programma, namelijk het brengen van uitvoer. In dit geval het brengen van tekst op de *console*.
@@ -119,34 +115,6 @@ We kunnen momenteel steeds dezelfde Solution1, Project1 en Program.cs voor het u
 Indien je een stuk programmacode wil bewaren, kan je bijvoorbeeld de inhoud van het broncode document (of van de `Main` method) kopiëren, en in een ander document opslaan. Daarna kan je eventueel de inhoud van de `Main` method vervangen om met een nieuw voorbeeld of oefening aan de slag te gaan.
 
 Taalelementen als *namespaces* (`namespace` sleutelwoord) en *klassen* (`class` sleutelwoord) mag je momenteel gewoon negeren. We komen hier later uitvoering op terug.
-
-> **Opmerking**
->
-> Kan je je toch niet bedwingen, dan vind je in bij de het verdiepingsmateriaal meer informatie terug over:
->
-> -   Dot notaties, bijvoorbeeld in `Console.WriteLine` of `Console` *dot* `WriteLine`
->
-> -   Using directives (`using` sleutelwoord)
->
-> -   Namespaces (`namespace` sleutelwoord)
->
-> -   Sleutelwoorden
-
-> **Opmerking**
->
-> Ook over het hoe en waarom code te structuren over verschillende methods, klassen, namespace of broncodedocumenten, kan je bij de verdieping nalezen:
->
-> -   Code onderdelen of klassen
->
-> -   Hoofdmethod Main
->
-> -   Meerdere methods in een klasse
->
-> -   Een method publiek of privaat definiëren
-
-> **Opmerking**
->
-> Ook al bij de verdieping kan je terugvinden hoe we in Visual Studio een nieuwe project creëren.
 
 > **Opmerking: Program.cs**
 >

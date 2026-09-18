@@ -6,8 +6,6 @@
 
     -   [Oplossingen](deel-01-oplossingen.md)
 
-    -   [Verdieping](deel-01-verdieping.md)
-
 -   [Deel 02](deel-02.md): Conversies en beslissingsstructuren.
 
     -   [Oefeningen](deel-02-oefeningen.md)
