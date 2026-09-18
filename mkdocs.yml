@@ -159,7 +159,7 @@ nav:
       - oplossingen: deel-gfx2-oplossingen.md
   - AANVULLINGEN:
     - Interne softwarekwaliteitsfactoren: Aanvullend - Interne softwarekwaliteitsfactoren.md
-    - Ontwikkelomgeving alternatief
+    - Ontwikkelomgeving alternatief:
       - Visual Studio Code: Aanvulling - Visual Studio Code.md
     - Versiebeheer:
       - Git(Hub) in Visual Studio: Aanvulling - Git(Hub) in Visual Studio.md
